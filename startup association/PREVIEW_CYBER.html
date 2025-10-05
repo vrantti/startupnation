@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Startup Nation - Ultra Modern Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .container {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        .logo {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00ffff 0%, #ff0080 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: hologram 3s ease-in-out infinite;
+        }
+        @keyframes hologram {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #a0a0a0;
+        }
+        .preview-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .preview-option {
+            background: rgba(0, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .preview-option::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #00ffff 0%, #ff0080 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .preview-option:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 255, 255, 0.1);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        .preview-option:hover::before {
+            transform: scaleX(1);
+        }
+        .preview-option h3 {
+            color: #00ffff;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .preview-option p {
+            color: #a0a0a0;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .preview-btn {
+            background: linear-gradient(135deg, #00ffff 0%, #ff0080 100%);
+            color: #0a0a0a;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+        .preview-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.3s ease;
+        }
+        .preview-btn:hover::before {
+            left: 100%;
+        }
+        .preview-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+        .features {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .features h3 {
+            color: #00ffff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+        .feature-list li {
+            color: #a0a0a0;
+            padding: 0.5rem;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .feature-list li:hover {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            transform: translateX(5px);
+        }
+        .status {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            color: #00ff41;
+        }
+        @media (max-width: 768px) {
+            .container { padding: 2rem 1rem; }
+            .preview-options { grid-template-columns: 1fr; }
+            .feature-list { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🚀 STARTUP NATION</div>
+        <div class="subtitle">ULTRA MODERN CYBERPUNK DESIGN PREVIEW</div>
+        
+        <div class="preview-options">
+            <div class="preview-option" onclick="openPreview('index.html')">
+                <h3>🔥 Cyberpunk Design</h3>
+                <p>Experience the full ultra-modern cyberpunk aesthetic with neon colors, animated grids, and cutting-edge animations</p>
+                <a href="index.html" class="preview-btn">View Full Site</a>
+            </div>
+            
+            <div class="preview-option" onclick="openPreview('launch.html')">
+                <h3>⚡ Original Design</h3>
+                <p>Check out the original clean Nordic design for comparison</p>
+                <a href="launch.html" class="preview-btn">View Original</a>
+            </div>
+            
+            <div class="preview-option" onclick="openPreview('QUICK_DEPLOY.html')">
+                <h3>🚀 Deploy Now</h3>
+                <p>Get your ultra-modern website online in seconds with our deployment tools</p>
+                <a href="QUICK_DEPLOY.html" class="preview-btn">Deploy Site</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3>🎨 NEW ULTRA-MODERN FEATURES</h3>
+            <ul class="feature-list">
+                <li>✨ Cyberpunk Color Palette</li>
+                <li>🌈 Neon Gradient Effects</li>
+                <li>⚡ Animated Grid Background</li>
+                <li>🚀 Holographic Text Animations</li>
+                <li>💫 Glowing Button Effects</li>
+                <li>🎯 Modern Typography</li>
+                <li>📱 Responsive Design</li>
+                <li>🔥 Hover Animations</li>
+                <li>💎 Glass Morphism</li>
+                <li>🌟 Particle Effects</li>
+                <li>🎪 Interactive Elements</li>
+                <li>⚡ Performance Optimized</li>
+            </ul>
+        </div>
+        
+        <div class="status">
+            ✅ <strong>READY TO LAUNCH!</strong> Your ultra-modern cyberpunk website is production-ready with cutting-edge design and animations that will make your startup stand out from the crowd!
+        </div>
+    </div>
+
+    <script>
+        function openPreview(url) {
+            window.open(url, '_blank');
+        }
+        
+        // Add some dynamic effects
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🚀 Ultra Modern Preview loaded!');
+            
+            // Add random glow effects
+            setInterval(() => {
+                const options = document.querySelectorAll('.preview-option');
+                const randomOption = options[Math.floor(Math.random() * options.length)];
+                randomOption.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.5)';
+                setTimeout(() => {
+                    randomOption.style.boxShadow = '';
+                }, 1000);
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

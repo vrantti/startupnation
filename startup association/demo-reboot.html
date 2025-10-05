@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO REBOOT 24.10.2025 1600 - 26.10.2025 1200 - THE RENAISSANCE OF ATTITUDE</title>
+    <meta name="description" content="DEMO REBOOT - Real Demos. Real People. The Renaissance of Attitude. 24.10.2025 1600 - 26.10.2025 1200 at Tampere Nokia Arena - Paidia. Non-stop gaming, streaming, creation and demoing!">
+    
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Override external stylesheets -->
+    <style>
+        html, body {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            color: #e0e0e0 !important;
+            min-height: 100vh !important;
+        }
+        /* Force background on html and body */
+        html, body {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        /* Ensure the body specifically shows the background */
+        body.demo-reboot-page {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* Easy way to change background image - just replace the URL above */
+        /* 
+        TO CHANGE BACKGROUND IMAGE:
+        1. Replace the URL in the background-image above
+        2. Or add your own image file to the project folder
+        3. Use: url('your-image.jpg') instead of the Unsplash URL
+        */
+        
+        @keyframes cyberpunkPulse {
+            0%, 100% { 
+                background-position: 0% 0%, 0% 0%, 100% 100%, 50% 0%, 25% 100%, 75% 0%, 0% 0%, 100% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                filter: hue-rotate(0deg);
+            }
+            25% { 
+                background-position: 25% 25%, 10% 20%, 90% 80%, 60% 10%, 30% 90%, 80% 10%, 5% 0%, 95% 0%, 5% 5%, 95% 95%, 25% 75%, 75% 25%, 50% 50%;
+                filter: hue-rotate(5deg);
+            }
+            50% { 
+                background-position: 50% 50%, 20% 30%, 80% 70%, 70% 20%, 40% 80%, 85% 20%, 10% 0%, 90% 0%, 10% 10%, 90% 90%, 50% 50%, 50% 50%, 50% 50%;
+                filter: hue-rotate(10deg);
+            }
+            75% { 
+                background-position: 75% 75%, 30% 40%, 70% 60%, 80% 30%, 50% 70%, 90% 30%, 15% 0%, 85% 0%, 15% 15%, 85% 85%, 75% 25%, 25% 75%, 50% 50%;
+                filter: hue-rotate(5deg);
+            }
+        }
+        .container, .hero, .about, .projects, .features, .contact, .footer {
+            background: transparent;
+        }
+        section {
+            background: transparent;
+        }
+        .punk-card {
+            background: rgba(26, 26, 46, 0.8) !important;
+            border: 1px solid #00ffff !important;
+            box-shadow: 
+                0 0 15px rgba(0, 255, 255, 0.3), 
+                0 0 30px rgba(0, 255, 255, 0.1) !important;
+            backdrop-filter: blur(5px) !important;
+            position: relative !important;
+        }
+        @keyframes cardDanger {
+            0%, 100% { 
+                border-color: #ff0040;
+                box-shadow: 
+                    0 0 25px rgba(255, 0, 64, 0.6), 
+                    0 0 50px rgba(255, 0, 64, 0.3),
+                    0 0 75px rgba(255, 0, 64, 0.1),
+                    inset 0 0 25px rgba(255, 0, 64, 0.2);
+            }
+            50% { 
+                border-color: #ff0080;
+                box-shadow: 
+                    0 0 35px rgba(255, 0, 128, 0.8), 
+                    0 0 60px rgba(255, 0, 128, 0.4),
+                    0 0 85px rgba(255, 0, 128, 0.2),
+                    inset 0 0 35px rgba(255, 0, 128, 0.3);
+            }
+        }
+        .punk-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: linear-gradient(45deg, 
+                rgba(0, 255, 255, 0.05) 0%, 
+                transparent 25%, 
+                rgba(0, 255, 255, 0.05) 50%, 
+                transparent 75%, 
+                rgba(0, 255, 255, 0.05) 100%) !important;
+            pointer-events: none !important;
+            animation: cyberShimmer 4s ease-in-out infinite !important;
+        }
+        @keyframes cyberShimmer {
+            0%, 100% { opacity: 0.3; transform: translateX(-100%); }
+            50% { opacity: 0.6; transform: translateX(100%); }
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff !important;
+            text-shadow: 
+                0 0 2px rgba(0, 255, 255, 0.8),
+                0 0 4px rgba(0, 255, 255, 0.6) !important;
+            filter: none !important;
+            font-weight: 700 !important;
+            letter-spacing: 1px !important;
+            text-transform: uppercase !important;
+        }
+        .punk-section-title {
+            color: #00ffff !important;
+            text-shadow: 
+                0 0 3px rgba(0, 255, 255, 0.9),
+                0 0 6px rgba(0, 255, 255, 0.7) !important;
+            filter: none !important;
+            font-weight: 700 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+        }
+        @keyframes dangerPulse {
+            0% { 
+                text-shadow: 
+                    0 0 10px rgba(255, 0, 64, 1),
+                    0 0 20px rgba(255, 0, 64, 0.8),
+                    0 0 30px rgba(255, 0, 64, 0.6),
+                    0 0 40px rgba(255, 0, 64, 0.4);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 15px rgba(255, 0, 64, 1),
+                    0 0 25px rgba(255, 0, 64, 0.9),
+                    0 0 35px rgba(255, 0, 64, 0.7),
+                    0 0 50px rgba(255, 0, 64, 0.5);
+                transform: scale(1.02);
+            }
+        }
+        .punk-title {
+            color: #00ffff !important;
+            text-shadow: 
+                0 0 10px rgba(0, 255, 255, 1),
+                0 0 20px rgba(0, 255, 255, 0.8), 
+                0 0 40px rgba(255, 0, 128, 0.6),
+                0 0 60px rgba(255, 255, 0, 0.3) !important;
+            filter: none !important;
+            -webkit-text-stroke: 1px rgba(0, 255, 255, 0.5) !important;
+            animation: titleGlow 2s ease-in-out infinite alternate !important;
+        }
+        @keyframes titleGlow {
+            0% { 
+                text-shadow: 
+                    0 0 10px rgba(0, 255, 255, 1),
+                    0 0 20px rgba(0, 255, 255, 0.8), 
+                    0 0 40px rgba(255, 0, 128, 0.6),
+                    0 0 60px rgba(255, 255, 0, 0.3);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 15px rgba(0, 255, 255, 1),
+                    0 0 30px rgba(0, 255, 255, 0.9), 
+                    0 0 50px rgba(255, 0, 128, 0.8),
+                    0 0 80px rgba(255, 255, 0, 0.5);
+            }
+        }
+        p, span, div, a {
+            color: #e0e0e0 !important;
+        }
+        .navbar {
+            background: rgba(26, 26, 46, 0.9) !important;
+            color: #ffffff !important;
+            backdrop-filter: blur(10px) !important;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.4) !important;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 255, 0.2) !important;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00ffff !important;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: logoPulse 3s ease-in-out infinite !important;
+        }
+
+        .logo:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1) !important;
+            transform: scale(1.05);
+        }
+
+        /* FINAL OVERRIDE - BACKGROUND IMAGE */
+        html, body, html body {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+        }
+
+        /* Improve overall layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced hero section - tighter */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        /* Enhanced punk cards - tighter */
+        .punk-card {
+            background: rgba(10, 10, 20, 0.85) !important;
+            backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(0, 255, 255, 0.3) !important;
+            border-radius: 15px !important;
+            padding: 20px !important;
+            margin: 10px 0 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .punk-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2) !important;
+            border-color: rgba(0, 255, 255, 0.6) !important;
+        }
+
+        .punk-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        /* Fix text colors in cards - tighter spacing */
+        .punk-card {
+            color: #e0e0e0 !important;
+        }
+        .punk-card h1, .punk-card h2, .punk-card h3, .punk-card h4, .punk-card h5 {
+            color: #00ffff !important;
+            margin-bottom: 10px !important;
+            margin-top: 0 !important;
+            font-weight: 600 !important;
+        }
+        .punk-card p, .punk-card span, .punk-card div, .punk-card li {
+            color: #e0e0e0 !important;
+            line-height: 1.6 !important;
+            margin-bottom: 8px !important;
+        }
+        .punk-card p:last-child, .punk-card div:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Enhanced buttons */
+        .btn, button {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1)) !important;
+            border: 1px solid rgba(0, 255, 255, 0.5) !important;
+            color: #00ffff !important;
+            padding: 12px 30px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
+            font-weight: 500 !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .btn:hover, button:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 128, 0.2)) !important;
+            border-color: #00ffff !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3) !important;
+        }
+
+        /* Section spacing - tighter */
+        section {
+            padding: 40px 0;
+            position: relative;
+        }
+
+        /* Navbar improvements */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            backdrop-filter: blur(20px) !important;
+            background: rgba(10, 10, 20, 0.85) !important;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3) !important;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #e0e0e0 !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-link:hover {
+            color: #00ffff !important;
+            background: rgba(0, 255, 255, 0.1) !important;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5) !important;
+        }
+
+        /* Footer improvements */
+        .footer {
+            background: rgba(10, 10, 20, 0.95) !important;
+            backdrop-filter: blur(20px) !important;
+            border-top: 1px solid rgba(0, 255, 255, 0.2) !important;
+            padding: 40px 0 20px !important;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive design - tighter */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 40px;
+                min-height: 70vh;
+            }
+
+            .punk-card {
+                padding: 15px !important;
+                margin: 8px 0 !important;
+            }
+
+            /* Tighter grid gap on mobile */
+            div[style*="grid-template-columns"] {
+                gap: 0.5rem !important;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 30px 0;
+            }
+
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .nav-link {
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 15px 30px;
+            }
+
+            .punk-card {
+                padding: 12px !important;
+                margin: 6px 0 !important;
+            }
+
+            .btn, button {
+                padding: 8px 20px !important;
+                font-size: 13px !important;
+            }
+
+            section {
+                padding: 20px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 10, 20, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 255, 0.7);
+        }
+        @keyframes logoPulse {
+            0%, 100% { 
+                text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 25px rgba(0, 255, 255, 1), 0 0 35px rgba(255, 0, 128, 0.5);
+                transform: scale(1.02);
+            }
+        }
+    </style>
+</head>
+<body class="demo-reboot-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">STARTUP NATION</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="demo-banner">
+                <a href="index.html" class="demo-link">
+                    <span class="demo-text">← BACK TO HOME</span>
+                </a>
+            </div>
+            <h1 class="punk-title">DEMO REBOOT</h1>
+            <p class="punk-subtitle">Tampere Nokia Arena - Paidia • 24.10.2025 1600 - 26.10.2025 1200 • The Renaissance of Attitude</p>
+            <p class="punk-subtitle" style="font-size: 1rem; margin-top: 0.5rem; color: #ff0080; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);">non stop gaming and streaming, non stop creation and demoing, ton of ad hoc speeches, open doors (just sign up), and ton of creativity</p>
+            <div class="hero-cta">
+                <a href="#register" class="punk-button">
+                    <i class="fas fa-ticket-alt"></i>
+                    REGISTER NOW
+                </a>
+                <a href="#schedule" class="punk-button">
+                    <i class="fas fa-calendar"></i>
+                    VIEW SCHEDULE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="punk-section-title">REAL DEMOS. REAL PEOPLE. ATTITUDE MATTERS.</h2>
+                <p class="punk-subtitle">The Renaissance of Attitude</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="punk-card" style="text-align: center; margin-bottom: 1rem;">
+                        <h3 class="punk-highlight" style="font-size: 1.6rem; margin-bottom: 1rem;">50% FUELS THE CREATORS</h3>
+                        <h3 class="punk-highlight" style="font-size: 1.6rem; margin-bottom: 1.5rem;">50% FUELS THE DEMO HOUSE</h3>
+                        <p class="punk-text" style="font-size: 1.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">NO RULES. NO KPIS. JUST CREATION.</p>
+                        <p class="punk-text" style="font-size: 1rem; line-height: 1.4; color: #00ffff; text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);">
+                            Our aim is to reward the participants who show their skills and fund the permanent <span class="punk-accent">DEMO HOUSE</span> in Tampere. Permanent location for crazy innovations and freedom of creation. The home for the community and community makes their own rules... <span class="punk-highlight">of no rules</span>.
+                        </p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-bottom: 1rem;">
+                        <div class="punk-card" style="text-align: center; padding: 15px;">
+                            <i class="fas fa-paint-brush" style="font-size: 2.5rem; color: #ff0080; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);"></i>
+                            <h4 class="punk-accent" style="font-size: 1.1rem; margin-bottom: 0.25rem; text-transform: uppercase;">CREATORS</h4>
+                            <p class="punk-text" style="font-size: 0.9rem;">Jam raw, show attitude, leave your mark</p>
+                        </div>
+                        <div class="punk-card" style="text-align: center; padding: 15px;">
+                            <i class="fas fa-handshake" style="font-size: 2.5rem; color: #00ffff; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);"></i>
+                            <h4 class="punk-highlight" style="font-size: 1.1rem; margin-bottom: 0.25rem; text-transform: uppercase;">SPONSORS</h4>
+                            <p class="punk-text" style="font-size: 0.9rem;">Fuel the rebellion, get real, no filters</p>
+                        </div>
+                        <div class="punk-card" style="text-align: center; padding: 15px;">
+                            <i class="fas fa-eye" style="font-size: 2.5rem; color: #ffff00; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 255, 0, 0.6);"></i>
+                            <h4 class="punk-accent" style="font-size: 1.1rem; margin-bottom: 0.25rem; text-transform: uppercase;">VISITORS</h4>
+                            <p class="punk-text" style="font-size: 0.9rem;">Witness the chaos, feel the movement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="punk-card" style="text-align: center; margin-bottom: 0.5rem;">
+                        <h3 class="punk-accent" style="font-size: 2rem; margin-bottom: 1rem; text-transform: uppercase;">NOT JUST ANOTHER EVENT.</h3>
+                        <p class="punk-text" style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">THIS IS THE RENAISSANCE OF ATTITUDE.</p>
+                        <p class="punk-highlight" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em;">A CULTURAL REBOOT FOR MISFITS AND PIONEERS.</p>
+                    </div>
+                    
+                    <div class="punk-card" style="text-align: center; background: linear-gradient(45deg, #ff0080, #00ffff); color: #000000;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">DEMO REBOOT → REAL DEMOS. REAL PEOPLE. THE RENAISSANCE OF ATTITUDE.</h3>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-calendar-alt" style="font-size: 4rem; color: var(--neon-cyan); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--neon-cyan); margin-bottom: 1rem;">24.10.2025 1600 - 26.10.2025 1200</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Tampere Nokia Arena - Paidia</p>
+                        <p style="color: var(--text-secondary);">Tampere, Finland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">EVENT SCHEDULE</h2>
+                <p class="section-subtitle">A day packed with innovation, networking, and groundbreaking demos</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3>09:00 - 10:00</h3>
+                    <p>Registration & Networking Breakfast</p>
+                    <div class="project-stats">
+                        <span>Welcome Reception</span>
+                        <span>Networking</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>10:00 - 10:30</h3>
+                    <p>Opening Keynote: "The Future of Innovation"</p>
+                    <div class="project-stats">
+                        <span>Keynote Speaker</span>
+                        <span>Vision 2030</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>10:30 - 12:00</h3>
+                    <p>Startup Demo Session 1: AI & Machine Learning</p>
+                    <div class="project-stats">
+                        <span>8 Startups</span>
+                        <span>AI Focus</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>12:00 - 13:00</h3>
+                    <p>Lunch & Networking</p>
+                    <div class="project-stats">
+                        <span>Networking</span>
+                        <span>Food & Drinks</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>13:00 - 14:30</h3>
+                    <p>Startup Demo Session 2: Mobile & Web</p>
+                    <div class="project-stats">
+                        <span>8 Startups</span>
+                        <span>Mobile Focus</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>14:30 - 15:30</h3>
+                    <p>Awards Ceremony & Prizes</p>
+                    <div class="project-stats">
+                        <span>€50,000 Prizes</span>
+                        <span>Recognition</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Information -->
+    <section id="sponsor" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="punk-section-title">SPONSOR THE REVOLUTION</h2>
+                <p class="punk-subtitle">Fuel the Renaissance of Attitude</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="punk-card" style="margin-bottom: 0.5rem;">
+                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">HELLO DEAR POSSIBLE CREATIVE REVOLUTIONIST!</h3>
+                        <p class="punk-text" style="line-height: 1.6; margin-bottom: 1.5rem;">
+                            We'd like to invite you to be part of <span class="punk-highlight">Demo Reboot</span>, a next-level creative weekend happening <span class="punk-accent">24.10.2025 1600 - 26.10.2025 1200</span> at <span class="punk-highlight">Tampere Nokia Arena - Paidia</span>. This event is organized as a non-profit initiative via Tampere Startup Association, with one mission: <span class="punk-highlight">reboot the Finnish demoscene</span> and give creators, coders, artists, and musicians a place to jam, collide, and spark new ideas.
+                        </p>
+                    </div>
+                    
+                    <h3 class="punk-accent" style="font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: uppercase;">WHY SUPPORT?</h3>
+                    <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.2rem;">By sponsoring <span class="punk-highlight">Demo Reboot</span>, you're not funding a traditional event. You're fueling:</p>
+                    
+                    <ul class="punk-list">
+                        <li>
+                            <i class="fas fa-lightbulb" style="color: #ff0080; margin-right: 1rem; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);"></i>
+                            <strong>Innovation Access</strong> → fresh demos, bold experiments, prototypes, and art styles.
+                        </li>
+                        <li>
+                            <i class="fas fa-brain" style="color: #00ffff; margin-right: 1rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);"></i>
+                            <strong>Outside-the-box thinking</strong> → non-conventional responses and unpredictable creative sparks.
+                        </li>
+                        <li>
+                            <i class="fas fa-star" style="color: #ffff00; margin-right: 1rem; text-shadow: 0 0 10px rgba(255, 255, 0, 0.6);"></i>
+                            <strong>New Talent Discovery</strong> → connect with exceptional developers and artists who rarely fit into "official" spaces.
+                        </li>
+                        <li>
+                            <i class="fas fa-sync-alt" style="color: #ff0080; margin-right: 1rem; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);"></i>
+                            <strong>Cross-sector Inspiration</strong> → games, art, tech, museums, culture — all colliding.
+                        </li>
+                        <li>
+                            <i class="fas fa-fire" style="color: #00ffff; margin-right: 1rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);"></i>
+                            <strong>Movement & Identity</strong> → be part of the Renaissance of Attitude — a grassroots cultural reboot, not a KPI-driven program.
+                        </li>
+                    </ul>
+                    
+                    <h3 class="punk-accent" style="font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: uppercase;">HOW IT WORKS:</h3>
+                    <div class="punk-card" style="margin-bottom: 0.5rem;">
+                        <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.1rem;">• <span class="punk-highlight">50% of sponsorship</span> goes directly to the creators.</p>
+                        <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.1rem;">• <span class="punk-highlight">50% builds the permanent DEMO HOUSE</span> in Tampere — ensuring the spark lasts beyond the weekend.</p>
+                        <p class="punk-text" style="font-size: 1.1rem;">As a sponsor, you can drop challenges, test ideas, or request creative input — and see what the community produces in real time.</p>
+                    </div>
+                    
+                    <div class="punk-quote">
+                        "This isn't about polished outcomes. It's about energy, experiments, and raw creativity — exactly where innovation comes from."
+                    </div>
+                    
+                    <div class="punk-card" style="margin-bottom: 0.5rem;">
+                        <p class="punk-text" style="font-size: 1.2rem; margin-bottom: 1rem;">
+                            We'd love to have you join as a sponsor and stand with us in shaping something <span class="punk-accent">bold, authentic, and future-facing</span>.
+                        </p>
+                        <p class="punk-text" style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;">
+                            <span class="punk-highlight">DEMO REBOOT → Real Demos. Real People. The Renaissance of Attitude.</span>
+                        </p>
+                        <p class="punk-text" style="margin-bottom: 0.5rem;">
+                            Best regards,
+                        </p>
+                        <p class="punk-accent" style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">
+                            Antti Martikainen (+358 40 307 5232 whatsapp ok)
+                        </p>
+                        <p class="punk-text" style="margin-bottom: 0.5rem;">
+                            Demo Reboot Team
+                        </p>
+                        <p class="punk-highlight" style="font-weight: 700;">
+                            Tampere Startup Association
+                        </p>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="punk-contact">
+                        <i class="fas fa-handshake" style="font-size: 4rem; color: #ff0080; margin-bottom: 1rem; text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);"></i>
+                        <h3>LET'S SCHEDULE A QUICK CALL</h3>
+                        <p>to discuss how your involvement could look.</p>
+                        <a href="tel:+358403075232" class="punk-button">
+                            <i class="fas fa-phone"></i>
+                            CALL NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">REGISTER NOW</h2>
+                <p class="section-subtitle">Secure your spot at the most anticipated startup event of the year</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Event Details</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar"></i>
+                        <div>
+                            <strong>Date:</strong> October 24-26, 2025
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Time:</strong> Full Weekend Event
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Location:</strong> Tampere Nokia Arena - Paidia<br>
+                            Tampere, Finland
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div>
+                            <strong>Price:</strong> Free for Startup Nation members<br>
+                            €50 for non-members
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company/Startup</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+                            <select id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="founder">Startup Founder</option>
+                                <option value="investor">Investor</option>
+                                <option value="mentor">Mentor</option>
+                                <option value="student">Student</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Why are you interested in attending?</label>
+                            <textarea id="message" name="message" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-ticket-alt"></i>
+                            Register for Demo Reboot
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Startup Nation</h4>
+                    <p>Building the future of innovation in Tampere, Finland.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="index.html#about">About</a></p>
+                    <p><a href="index.html#projects">Projects</a></p>
+                    <p><a href="index.html#contact">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Events</h4>
+                    <p><a href="demo-reboot.html">Demo Reboot 24.10</a></p>
+                    <p><a href="kasvihuoneilmiö.html">Kasvihuoneilmiö</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Startup Nation - Tampere Startup Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
