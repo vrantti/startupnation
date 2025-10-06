@@ -1,7 +1,6 @@
 {
   "version": 2,
   "name": "startupnation",
-  "_comment": "Static site deployment",
   "builds": [
     {
       "src": "**/*",
