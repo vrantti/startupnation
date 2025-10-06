@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Reboot Registration Monitor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a14, #1a1a2e);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            margin-bottom: 1rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(10, 10, 20, 0.8);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff0080;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+        }
+        
+        .registrations-table {
+            background: rgba(10, 10, 20, 0.8);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        th {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            font-weight: bold;
+        }
+        
+        .participant-type {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .guest { background: #4CAF50; color: white; }
+        .sponsor { background: #FF9800; color: white; }
+        .hacker { background: #9C27B0; color: white; }
+        
+        .actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid #00ffff;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 128, 0.2));
+            color: #00ffff;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(135deg, #00ffff, #ff0080);
+            color: #000000;
+            transform: translateY(-2px);
+        }
+        
+        .refresh-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid #00ffff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .refresh-indicator:hover {
+            background: rgba(0, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        
+        .auto-refresh {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 0, 128, 0.2);
+            border: 1px solid #ff0080;
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            table {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">🎛️ Demo Reboot Registration Monitor</h1>
+            <p>Real-time registration tracking and management</p>
+        </div>
+        
+        <div class="actions">
+            <button class="btn" onclick="refreshData()">🔄 Refresh Data</button>
+            <button class="btn" onclick="exportData('json')">📄 Export JSON</button>
+            <button class="btn" onclick="exportData('csv')">📊 Export CSV</button>
+            <button class="btn" onclick="clearAllData()">🗑️ Clear All</button>
+            <a href="demo-reboot.html" class="btn">🏠 Back to Form</a>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number" id="totalRegistrations">0</div>
+                <div class="stat-label">Total Registrations</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="guests">0</div>
+                <div class="stat-label">🎭 Guests</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="sponsors">0</div>
+                <div class="stat-label">💰 Sponsors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="hackers">0</div>
+                <div class="stat-label">⚡ Hackers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="sponsorshipInterested">0</div>
+                <div class="stat-label">🤝 Sponsorship Interest</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="hackInterested">0</div>
+                <div class="stat-label">💻 Hack Interest</div>
+            </div>
+        </div>
+        
+        <div class="registrations-table">
+            <h3 style="color: #00ffff; margin-bottom: 1rem;">Recent Registrations</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Type</th>
+                        <th>Company</th>
+                        <th>Role</th>
+                        <th>Contact</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody id="registrationsTable">
+                    <tr>
+                        <td colspan="7" style="text-align: center; color: #666;">No registrations yet</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="refresh-indicator" onclick="refreshData()" title="Refresh Data">
+        🔄
+    </div>
+    
+    <div class="auto-refresh">
+        Auto-refresh: <span id="autoRefreshStatus">ON</span> (every 30s)
+    </div>
+    
+    <script>
+        let autoRefreshInterval;
+        
+        function getRegistrations() {
+            return JSON.parse(localStorage.getItem('demoRebootRegistrations') || '[]');
+        }
+        
+        function updateStats() {
+            const registrations = getRegistrations();
+            
+            const stats = {
+                total: registrations.length,
+                guests: registrations.filter(r => r.participant_type === 'guest').length,
+                sponsors: registrations.filter(r => r.participant_type === 'sponsor').length,
+                hackers: registrations.filter(r => r.participant_type === 'hacker').length,
+                sponsorshipInterested: registrations.filter(r => r.sponsorship_interest && r.sponsorship_interest.includes('yes')).length,
+                hackInterested: registrations.filter(r => r.hack_interest && r.hack_interest.includes('yes')).length
+            };
+            
+            document.getElementById('totalRegistrations').textContent = stats.total;
+            document.getElementById('guests').textContent = stats.guests;
+            document.getElementById('sponsors').textContent = stats.sponsors;
+            document.getElementById('hackers').textContent = stats.hackers;
+            document.getElementById('sponsorshipInterested').textContent = stats.sponsorshipInterested;
+            document.getElementById('hackInterested').textContent = stats.hackInterested;
+        }
+        
+        function updateTable() {
+            const registrations = getRegistrations();
+            const tbody = document.getElementById('registrationsTable');
+            
+            if (registrations.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: #666;">No registrations yet</td></tr>';
+                return;
+            }
+            
+            // Sort by timestamp (newest first)
+            const sortedRegistrations = registrations.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            tbody.innerHTML = sortedRegistrations.map(reg => `
+                <tr>
+                    <td>${reg.name}</td>
+                    <td>${reg.email}</td>
+                    <td><span class="participant-type ${reg.participant_type}">${reg.participant_type.toUpperCase()}</span></td>
+                    <td>${reg.company || '-'}</td>
+                    <td>${reg.role || '-'}</td>
+                    <td>${reg.contact_preference || '-'}</td>
+                    <td>${new Date(reg.timestamp).toLocaleString()}</td>
+                </tr>
+            `).join('');
+        }
+        
+        function refreshData() {
+            updateStats();
+            updateTable();
+            console.log('Data refreshed at', new Date().toLocaleString());
+        }
+        
+        function exportData(format) {
+            const registrations = getRegistrations();
+            
+            if (registrations.length === 0) {
+                alert('No registrations to export');
+                return;
+            }
+            
+            if (format === 'json') {
+                const dataStr = JSON.stringify(registrations, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                downloadFile(dataBlob, `demo-reboot-registrations-${new Date().toISOString().split('T')[0]}.json`);
+            } else if (format === 'csv') {
+                const csv = convertToCSV(registrations);
+                const dataBlob = new Blob([csv], {type: 'text/csv'});
+                downloadFile(dataBlob, `demo-reboot-registrations-${new Date().toISOString().split('T')[0]}.csv`);
+            }
+        }
+        
+        function convertToCSV(data) {
+            if (data.length === 0) return '';
+            
+            const headers = Object.keys(data[0]);
+            const csvHeaders = headers.join(',');
+            
+            const csvRows = data.map(row => {
+                return headers.map(header => {
+                    const value = row[header];
+                    if (Array.isArray(value)) {
+                        return `"${value.join('; ')}"`;
+                    }
+                    if (typeof value === 'string' && (value.includes(',') || value.includes('"'))) {
+                        return `"${value.replace(/"/g, '""')}"`;
+                    }
+                    return value || '';
+                }).join(',');
+            });
+            
+            return [csvHeaders, ...csvRows].join('\n');
+        }
+        
+        function downloadFile(blob, filename) {
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+        }
+        
+        function clearAllData() {
+            if (confirm('Are you sure you want to clear all registrations? This cannot be undone!')) {
+                localStorage.removeItem('demoRebootRegistrations');
+                sessionStorage.removeItem('demoRebootRegistrations');
+                refreshData();
+                alert('All registrations cleared');
+            }
+        }
+        
+        function startAutoRefresh() {
+            autoRefreshInterval = setInterval(refreshData, 30000); // 30 seconds
+        }
+        
+        function stopAutoRefresh() {
+            if (autoRefreshInterval) {
+                clearInterval(autoRefreshInterval);
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            refreshData();
+            startAutoRefresh();
+            
+            // Listen for storage changes (from other tabs)
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'demoRebootRegistrations') {
+                    refreshData();
+                }
+            });
+        });
+        
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            stopAutoRefresh();
+        });
+    </script>
+</body>
+</html>

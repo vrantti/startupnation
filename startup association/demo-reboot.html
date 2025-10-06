@@ -479,6 +479,275 @@
                 transform: scale(1.02);
             }
         }
+
+        /* Enhanced Form Styles */
+        .punk-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .punk-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00ffff !important;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .punk-label i {
+            color: #ff0080 !important;
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);
+        }
+
+        .punk-input, .punk-select, .punk-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(10, 10, 20, 0.8) !important;
+            border: 2px solid rgba(0, 255, 255, 0.3) !important;
+            border-radius: 10px !important;
+            color: #e0e0e0 !important;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease !important;
+            backdrop-filter: blur(5px) !important;
+        }
+
+        .punk-input:focus, .punk-select:focus, .punk-textarea:focus {
+            outline: none !important;
+            border-color: #00ffff !important;
+            box-shadow: 
+                0 0 15px rgba(0, 255, 255, 0.4),
+                inset 0 0 15px rgba(0, 255, 255, 0.1) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .punk-input::placeholder, .punk-textarea::placeholder {
+            color: rgba(224, 224, 224, 0.6) !important;
+        }
+
+        .punk-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .punk-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .punk-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: #e0e0e0 !important;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .punk-checkbox:hover {
+            color: #00ffff !important;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+        }
+
+        .punk-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+            background: rgba(10, 10, 20, 0.8);
+        }
+
+        .punk-checkbox input[type="checkbox"]:checked + .checkmark {
+            background: linear-gradient(45deg, #00ffff, #ff0080);
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        }
+
+        .punk-checkbox input[type="checkbox"]:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .punk-button {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 128, 0.2)) !important;
+            border: 2px solid rgba(0, 255, 255, 0.6) !important;
+            color: #00ffff !important;
+            padding: 1rem 2rem !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            transition: all 0.3s ease !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            backdrop-filter: blur(10px) !important;
+            cursor: pointer !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .punk-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .punk-button:hover::before {
+            left: 100%;
+        }
+
+        .punk-button:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 128, 0.3)) !important;
+            border-color: #00ffff !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 
+                0 10px 25px rgba(0, 255, 255, 0.4),
+                0 0 30px rgba(0, 255, 255, 0.2) !important;
+        }
+
+        .punk-button:active {
+            transform: translateY(-1px) !important;
+        }
+
+        .punk-button-primary {
+            background: linear-gradient(135deg, #00ffff, #ff0080) !important;
+            color: #000000 !important;
+            border-color: #00ffff !important;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+        }
+
+        .punk-button-primary:hover {
+            background: linear-gradient(135deg, #00ffff, #ff0080) !important;
+            box-shadow: 
+                0 15px 35px rgba(0, 255, 255, 0.5),
+                0 0 40px rgba(255, 0, 128, 0.3) !important;
+        }
+
+        .punk-button i {
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Form validation styles */
+        .punk-input.error, .punk-select.error, .punk-textarea.error {
+            border-color: #ff0040 !important;
+            box-shadow: 0 0 15px rgba(255, 0, 64, 0.4) !important;
+        }
+
+        .punk-input.success, .punk-select.success, .punk-textarea.success {
+            border-color: #00ff00 !important;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4) !important;
+        }
+
+        /* Loading state */
+        .punk-button.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .punk-button.loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Form Styles */
+        @media (max-width: 768px) {
+            .punk-checkboxes {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
+            .punk-button {
+                padding: 0.8rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+            
+            .punk-input, .punk-select, .punk-textarea {
+                padding: 0.8rem !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .punk-label {
+                font-size: 0.8rem !important;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .punk-card {
+                padding: 1rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .punk-checkboxes {
+                gap: 0.5rem;
+            }
+            
+            .punk-button {
+                padding: 0.7rem 1.2rem !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .punk-input, .punk-select, .punk-textarea {
+                padding: 0.7rem !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .punk-label {
+                font-size: 0.75rem !important;
+            }
+            
+            .punk-card {
+                padding: 0.8rem !important;
+            }
+            
+            .punk-form {
+                gap: 1rem;
+            }
+        }
     </style>
 </head>
 <body class="demo-reboot-page">
@@ -510,7 +779,33 @@
             </div>
             <h1 class="punk-title">DEMO REBOOT</h1>
             <p class="punk-subtitle">Tampere Nokia Arena - Paidia • 24.10.2025 1600 - 26.10.2025 1200 • The Renaissance of Attitude</p>
+            
+            <!-- Promotional Messages -->
+            <div class="promo-messages" style="margin: 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="promo-card" style="background: rgba(0, 255, 255, 0.1); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 15px; padding: 1rem; text-align: center;">
+                    <h3 style="color: #00ffff; font-size: 1.1rem; margin-bottom: 0.5rem;">🎮 COME TO GAME TEST YOUR GAME!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">Show your creations, get feedback, iterate live</p>
+                </div>
+                <div class="promo-card" style="background: rgba(255, 0, 128, 0.1); border: 1px solid rgba(255, 0, 128, 0.3); border-radius: 15px; padding: 1rem; text-align: center;">
+                    <h3 style="color: #ff0080; font-size: 1.1rem; margin-bottom: 0.5rem;">🤝 FIND NEW TEAM MATES!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">Continue projects, get feedback, work together</p>
+                </div>
+                <div class="promo-card" style="background: rgba(255, 255, 0, 0.1); border: 1px solid rgba(255, 255, 0, 0.3); border-radius: 15px; padding: 1rem; text-align: center;">
+                    <h3 style="color: #ffff00; font-size: 1.1rem; margin-bottom: 0.5rem;">🎯 MEET INDUSTRY VETERANS!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">Get insights, network, learn from the best</p>
+                </div>
+                <div class="promo-card" style="background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 15px; padding: 1rem; text-align: center;">
+                    <h3 style="color: #00ff00; font-size: 1.1rem; margin-bottom: 0.5rem;">🎲 COME TO PLAY GAMES!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">Non-stop gaming, big screen, epic sessions</p>
+                </div>
+            </div>
+            
             <p class="punk-subtitle" style="font-size: 1rem; margin-top: 0.5rem; color: #ff0080; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);">non stop gaming and streaming, non stop creation and demoing, ton of ad hoc speeches, open doors (just sign up), and ton of creativity</p>
+            <div class="registration-counter-display" style="margin: 1rem 0; padding: 0.5rem 1rem; background: rgba(0, 255, 255, 0.1); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 20px; display: inline-block;">
+                <span style="color: #00ffff; font-weight: 600;">👥 </span>
+                <span class="registration-counter" style="color: #00ffff; font-weight: 700;">0</span>
+                <span style="color: #e0e0e0;"> rebels registered</span>
+            </div>
             <div class="hero-cta">
                 <a href="#register" class="punk-button">
                     <i class="fas fa-ticket-alt"></i>
@@ -582,78 +877,58 @@
         </div>
     </section>
 
-    <!-- Schedule -->
+    <!-- Event Info -->
     <section id="schedule" class="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">EVENT SCHEDULE</h2>
-                <p class="section-subtitle">A day packed with innovation, networking, and groundbreaking demos</p>
+                <h2 class="punk-section-title">EVENT INFORMATION</h2>
+                <p class="punk-subtitle">The Renaissance of Attitude - Creative Vibes & Non-Stop Creation</p>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-coffee"></i>
+            <div class="punk-card" style="text-align: center; margin-bottom: 2rem; padding: 2rem;">
+                <h3 class="punk-accent" style="font-size: 2rem; margin-bottom: 1.5rem; text-transform: uppercase;">🚪 DOORS OPEN</h3>
+                <p class="punk-text" style="font-size: 1.3rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                    For all of you amazing revolutionary people <strong style="color: #00ffff;">16:00 on Friday 24.10</strong> 
+                    and the doors close on <strong style="color: #ff0080;">Sunday 10:00</strong>
+                </p>
+                
+                <div class="contact-info" style="margin: 2rem 0; padding: 1.5rem; background: rgba(0, 255, 255, 0.05); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 15px;">
+                    <h4 class="punk-highlight" style="font-size: 1.2rem; margin-bottom: 1rem;">🔒 If doors are locked at night contact the organizers:</h4>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <a href="https://discord.gg/pTdzDHC5ax" target="_blank" class="punk-button" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                            <i class="fab fa-discord"></i>
+                            Discord
+                        </a>
+                        <a href="https://wa.me/358403075232" target="_blank" class="punk-button" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
                     </div>
-                    <h3>09:00 - 10:00</h3>
-                    <p>Registration & Networking Breakfast</p>
-                    <div class="project-stats">
-                        <span>Welcome Reception</span>
-                        <span>Networking</span>
-                    </div>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">+358 40 307 5232</p>
                 </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <h3>10:00 - 10:30</h3>
-                    <p>Opening Keynote: "The Future of Innovation"</p>
-                    <div class="project-stats">
-                        <span>Keynote Speaker</span>
-                        <span>Vision 2030</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>10:30 - 12:00</h3>
-                    <p>Startup Demo Session 1: AI & Machine Learning</p>
-                    <div class="project-stats">
-                        <span>8 Startups</span>
-                        <span>AI Focus</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <h3>12:00 - 13:00</h3>
-                    <p>Lunch & Networking</p>
-                    <div class="project-stats">
-                        <span>Networking</span>
-                        <span>Food & Drinks</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>13:00 - 14:30</h3>
-                    <p>Startup Demo Session 2: Mobile & Web</p>
-                    <div class="project-stats">
-                        <span>8 Startups</span>
-                        <span>Mobile Focus</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>14:30 - 15:30</h3>
-                    <p>Awards Ceremony & Prizes</p>
-                    <div class="project-stats">
-                        <span>€50,000 Prizes</span>
-                        <span>Recognition</span>
+                
+                <div class="event-focus" style="margin-top: 2rem;">
+                    <h4 class="punk-accent" style="font-size: 1.4rem; margin-bottom: 1rem;">🎨 WE FOCUS ON CREATIVE VIBES AND CREATION ITSELF</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                        <div class="focus-item" style="padding: 1rem; background: rgba(255, 0, 128, 0.1); border: 1px solid rgba(255, 0, 128, 0.3); border-radius: 10px;">
+                            <i class="fas fa-gamepad" style="font-size: 2rem; color: #ff0080; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #ff0080; margin-bottom: 0.5rem;">NON-STOP GAMING</h5>
+                            <p style="font-size: 0.9rem;">Big screen gaming sessions</p>
+                        </div>
+                        <div class="focus-item" style="padding: 1rem; background: rgba(0, 255, 255, 0.1); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 10px;">
+                            <i class="fas fa-microphone" style="font-size: 2rem; color: #00ffff; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #00ffff; margin-bottom: 0.5rem;">AD HOC SPEECHES</h5>
+                            <p style="font-size: 0.9rem;">Spontaneous presentations</p>
+                        </div>
+                        <div class="focus-item" style="padding: 1rem; background: rgba(255, 255, 0, 0.1); border: 1px solid rgba(255, 255, 0, 0.3); border-radius: 10px;">
+                            <i class="fas fa-bug" style="font-size: 2rem; color: #ffff00; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #ffff00; margin-bottom: 0.5rem;">GAME TESTING</h5>
+                            <p style="font-size: 0.9rem;">Test and iterate your games</p>
+                        </div>
+                        <div class="focus-item" style="padding: 1rem; background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 10px;">
+                            <i class="fas fa-code" style="font-size: 2rem; color: #00ff00; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #00ff00; margin-bottom: 0.5rem;">HACKER SHOWCASE</h5>
+                            <p style="font-size: 0.9rem;">See what hackers are creating</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -753,73 +1028,335 @@
     <section id="register" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">REGISTER NOW</h2>
-                <p class="section-subtitle">Secure your spot at the most anticipated startup event of the year</p>
+                <h2 class="punk-section-title">JOIN THE REVOLUTION</h2>
+                <p class="punk-subtitle">Secure your spot at the Renaissance of Attitude</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Event Details</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-calendar"></i>
+                    <div class="punk-card" style="margin-bottom: 1rem;">
+                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">EVENT DETAILS</h3>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-calendar" style="color: #00ffff; margin-right: 0.5rem;"></i>
                         <div>
-                            <strong>Date:</strong> October 24-26, 2025
+                                <strong style="color: #ff0080;">Date:</strong> October 24-26, 2025
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-clock" style="color: #00ffff; margin-right: 0.5rem;"></i>
                         <div>
-                            <strong>Time:</strong> Full Weekend Event
+                                <strong style="color: #ff0080;">Time:</strong> 24.10.2025 1600 - 26.10.2025 1200
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #00ffff; margin-right: 0.5rem;"></i>
                         <div>
-                            <strong>Location:</strong> Tampere Nokia Arena - Paidia<br>
+                                <strong style="color: #ff0080;">Location:</strong> Tampere Nokia Arena - Paidia<br>
                             Tampere, Finland
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-ticket-alt"></i>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-ticket-alt" style="color: #00ffff; margin-right: 0.5rem;"></i>
                         <div>
-                            <strong>Price:</strong> Free for Startup Nation members<br>
+                                <strong style="color: #ff0080;">Price:</strong> Free for Startup Nation members<br>
                             €50 for non-members
                         </div>
+                        </div>
+                    </div>
+                    
+                    <div class="punk-card" style="margin-bottom: 1rem;">
+                        <h3 class="punk-highlight" style="font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase;">WHAT TO EXPECT</h3>
+                        <ul class="punk-list" style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-gamepad" style="color: #ff0080; margin-right: 0.5rem;"></i>
+                                Non-stop gaming and streaming
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-code" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                                Non-stop creation and demoing
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-microphone" style="color: #ffff00; margin-right: 0.5rem;"></i>
+                                Ad hoc speeches and presentations
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-users" style="color: #ff0080; margin-right: 0.5rem;"></i>
+                                Open doors - just sign up!
+                            </li>
+                            <li>
+                                <i class="fas fa-lightbulb" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                                Tons of creativity and innovation
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <div class="punk-card" style="padding: 2rem;">
+                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase; text-align: center;">REGISTRATION FORM</h3>
+                        <form id="demoRebootForm" class="punk-form">
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
+                                <label for="name" class="punk-label">
+                                    <i class="fas fa-user"></i>
+                                    Full Name *
+                                </label>
+                                <input type="text" id="name" name="name" class="punk-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                                <label for="email" class="punk-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" class="punk-input" required>
                         </div>
                         <div class="form-group">
-                            <label for="company">Company/Startup</label>
-                            <input type="text" id="company" name="company">
+                                <label for="phone" class="punk-label">
+                                    <i class="fas fa-phone"></i>
+                                    Phone Number
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="punk-input">
                         </div>
                         <div class="form-group">
-                            <label for="role">Role</label>
-                            <select id="role" name="role" required>
-                                <option value="">Select your role</option>
-                                <option value="founder">Startup Founder</option>
-                                <option value="investor">Investor</option>
-                                <option value="mentor">Mentor</option>
-                                <option value="student">Student</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
+                                <label for="company" class="punk-label">
+                                    <i class="fas fa-building"></i>
+                                    Company/Startup/Organization
+                                </label>
+                                <input type="text" id="company" name="company" class="punk-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="participant_type" class="punk-label">
+                                    <i class="fas fa-users"></i>
+                                    How do you want to participate? *
+                                </label>
+                                <select id="participant_type" name="participant_type" class="punk-select" required>
+                                    <option value="">Choose your participation type</option>
+                                    <option value="guest">🎭 Guest - I want to attend and watch</option>
+                                    <option value="sponsor">💰 Sponsor - I want to sponsor the event</option>
+                                    <option value="hacker">⚡ Hacker - I want to hack/create with you</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="roles" class="punk-label">
+                                    <i class="fas fa-user-tag"></i>
+                                    Your Professional Roles (select all that apply)
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="creator">
+                                        <span class="checkmark"></span>
+                                        Creator/Artist
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="developer">
+                                        <span class="checkmark"></span>
+                                        Developer/Coder
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="founder">
+                                        <span class="checkmark"></span>
+                                        Startup Founder
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="investor">
+                                        <span class="checkmark"></span>
+                                        Investor
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="mentor">
+                                        <span class="checkmark"></span>
+                                        Mentor
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="student">
+                                        <span class="checkmark"></span>
+                                        Student
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="designer">
+                                        <span class="checkmark"></span>
+                                        Designer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="marketer">
+                                        <span class="checkmark"></span>
+                                        Marketer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="researcher">
+                                        <span class="checkmark"></span>
+                                        Researcher
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="other">
+                                        <span class="checkmark"></span>
+                                        Other
+                                    </label>
+                                </div>
+                            </div>
                         <div class="form-group">
-                            <label for="message">Why are you interested in attending?</label>
-                            <textarea id="message" name="message" rows="3"></textarea>
+                                <label for="experience" class="punk-label">
+                                    <i class="fas fa-star"></i>
+                                    Experience Level
+                                </label>
+                                <select id="experience" name="experience" class="punk-select">
+                                    <option value="">Select experience level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-ticket-alt"></i>
-                            Register for Demo Reboot
+                            <div class="form-group">
+                                <label for="interests" class="punk-label">
+                                    <i class="fas fa-heart"></i>
+                                    Areas of Interest (select all that apply)
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="gaming">
+                                        <span class="checkmark"></span>
+                                        Gaming
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="streaming">
+                                        <span class="checkmark"></span>
+                                        Streaming
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="coding">
+                                        <span class="checkmark"></span>
+                                        Coding/Development
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="art">
+                                        <span class="checkmark"></span>
+                                        Digital Art
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="music">
+                                        <span class="checkmark"></span>
+                                        Music Production
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="networking">
+                                        <span class="checkmark"></span>
+                                        Networking
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_preference" class="punk-label">
+                                    <i class="fas fa-phone-alt"></i>
+                                    Contact Preference
+                                </label>
+                                <select id="contact_preference" name="contact_preference" class="punk-select">
+                                    <option value="">How should we contact you?</option>
+                                    <option value="email">Email only</option>
+                                    <option value="phone">Phone call preferred</option>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="any">Any method is fine</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sponsorship_interest" class="punk-label">
+                                    <i class="fas fa-handshake"></i>
+                                    Sponsorship Interest
+                                </label>
+                                <select id="sponsorship_interest" name="sponsorship_interest" class="punk-select">
+                                    <option value="">Are you interested in sponsoring?</option>
+                                    <option value="yes_contact">Yes, please contact me about sponsorship</option>
+                                    <option value="maybe">Maybe, I'd like more information</option>
+                                    <option value="no">No, just attending</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hack_interest" class="punk-label">
+                                    <i class="fas fa-code"></i>
+                                    Hacking/Creation Interest
+                                </label>
+                                <select id="hack_interest" name="hack_interest" class="punk-select">
+                                    <option value="">Do you want to hack/create?</option>
+                                    <option value="yes_active">Yes, I want to actively participate</option>
+                                    <option value="yes_team">Yes, I want to join a team</option>
+                                    <option value="maybe">Maybe, depending on the project</option>
+                                    <option value="no">No, just observing</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="attendance_days" class="punk-label">
+                                    <i class="fas fa-calendar-check"></i>
+                                    Which days are you planning to attend? *
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="friday" required>
+                                        <span class="checkmark"></span>
+                                        Friday 24.10.2025 (1600-2400)
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="saturday">
+                                        <span class="checkmark"></span>
+                                        Saturday 25.10.2025 (1000-2400)
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="sunday">
+                                        <span class="checkmark"></span>
+                                        Sunday 26.10.2025 (1000-1200)
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="all_days">
+                                        <span class="checkmark"></span>
+                                        All three days (Full weekend)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="punk-label">
+                                    <i class="fas fa-comment"></i>
+                                    Additional Comments
+                                </label>
+                                <textarea id="message" name="message" class="punk-textarea" rows="4" placeholder="Tell us more about your interests, what you'd like to create, or any special requirements..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="punk-checkbox">
+                                    <input type="checkbox" name="newsletter" value="yes">
+                                    <span class="checkmark"></span>
+                                    Subscribe to Startup Nation newsletter for updates
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <div class="punk-card" style="padding: 1rem; margin-bottom: 1rem; background: rgba(0, 255, 255, 0.05); border: 1px solid rgba(0, 255, 255, 0.3);">
+                                    <h4 style="color: #00ffff; margin-bottom: 0.5rem; font-size: 0.9rem;">📋 DATA PROTECTION & GDPR</h4>
+                                    <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                                        We collect your data to organize Demo Reboot 2025 and communicate with you about the event. 
+                                        Your data is stored securely and will not be shared with third parties without your consent.
+                                    </p>
+                                    <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                                        <strong>Your rights:</strong> You can request access, correction, or deletion of your data at any time by contacting us.
+                                    </p>
+                                    <p style="font-size: 0.8rem; line-height: 1.4;">
+                                        <strong>Contact:</strong> For data protection questions, email: privacy@startupnation.fi
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="punk-checkbox">
+                                    <input type="checkbox" name="terms" value="accepted" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="#" style="color: #00ffff; text-decoration: underline;">terms and conditions</a> and <a href="#" style="color: #00ffff; text-decoration: underline;">privacy policy</a> *
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="punk-checkbox">
+                                    <input type="checkbox" name="gdpr_consent" value="accepted" required>
+                                    <span class="checkmark"></span>
+                                    I consent to the processing of my personal data for event organization purposes (GDPR Art. 6(1)(a)) *
+                                </label>
+                            </div>
+                            <button type="submit" class="punk-button punk-button-primary">
+                                <i class="fas fa-rocket"></i>
+                                JOIN THE REVOLUTION
                         </button>
                     </form>
+                    </div>
                 </div>
             </div>
         </div>
