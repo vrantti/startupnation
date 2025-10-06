@@ -224,8 +224,18 @@ body.demo-reboot-page {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
     color: #e0e0e0 !important;
     min-height: 100vh !important;
+}
+
+/* Ensure background shows on all elements */
+.demo-reboot-page html,
+.demo-reboot-page body {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 /* Demo Reboot Layout Fixes */
@@ -245,6 +255,35 @@ body.demo-reboot-page {
 .demo-reboot-page .hero-content {
     max-width: 800px;
     margin: 0 auto;
+}
+
+/* Demo Reboot Grid Layout Fixes */
+.demo-reboot-page .promo-messages {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1rem !important;
+    margin: 1.5rem 0 !important;
+}
+
+.demo-reboot-page .hack-challenges {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 1.5rem !important;
+    margin: 2rem 0 !important;
+}
+
+.demo-reboot-page .punk-checkboxes {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.demo-reboot-page .content-creation-checkboxes {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
 }
 
 /* Modern Focus Management */
