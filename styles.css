@@ -229,16 +229,22 @@ body.demo-reboot-page {
     min-height: 100vh !important;
 }
 
-/* Only apply background to main content areas, not individual elements */
-.demo-reboot-page .hero,
-.demo-reboot-page .container,
-.demo-reboot-page main {
-    background: transparent !important;
+/* Ensure background shows on all main elements */
+.demo-reboot-page html,
+.demo-reboot-page body {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
-/* Remove the aggressive background override that was causing issues */
-
-/* Background should only be on body, not individual elements */
+/* Make sure main content areas are transparent to show background */
+.demo-reboot-page .hero,
+.demo-reboot-page .container,
+.demo-reboot-page main,
+.demo-reboot-page section {
+    background: transparent !important;
+}
 
 /* Demo Reboot Layout Fixes */
 .demo-reboot-page .container {
@@ -248,7 +254,7 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .hero {
-    padding: 120px 0 80px;
+    padding: 80px 0 40px;
     text-align: center;
     position: relative;
     z-index: 10;
@@ -266,7 +272,7 @@ body.demo-reboot-page {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1.5rem !important;
-    margin: 1.5rem auto !important;
+    margin: 1rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
 }
@@ -276,7 +282,7 @@ body.demo-reboot-page {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1.5rem !important;
-    margin: 1.5rem auto !important;
+    margin: 1rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
 }
@@ -291,7 +297,7 @@ body.demo-reboot-page {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1.5rem !important;
-    margin: 1rem auto !important;
+    margin: 0.5rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
 }
@@ -315,7 +321,7 @@ body.demo-reboot-page {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1.5rem !important;
-    margin: 1.5rem auto !important;
+    margin: 1rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
 }
@@ -325,7 +331,7 @@ body.demo-reboot-page {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1.5rem !important;
-    margin: 1.5rem auto !important;
+    margin: 1rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
 }
