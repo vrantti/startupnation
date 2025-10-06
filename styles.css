@@ -267,7 +267,7 @@ body.demo-reboot-page {
 
 /* Demo Reboot Layout Fixes */
 .demo-reboot-page .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -280,17 +280,19 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .hero-content {
-    max-width: 800px;
+    max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
+    padding: 0 2rem;
 }
 
 /* Demo Reboot Grid Layout Fixes */
 .demo-reboot-page .promo-messages {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 2rem !important;
     margin: 1.5rem auto !important;
-    max-width: 1000px !important;
+    max-width: 1400px !important;
     width: 100% !important;
 }
 
@@ -298,9 +300,9 @@ body.demo-reboot-page {
 .demo-reboot-page .promo-messages[style] {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 2rem !important;
     margin: 1.5rem auto !important;
-    max-width: 1000px !important;
+    max-width: 1400px !important;
     width: 100% !important;
 }
 
@@ -312,9 +314,11 @@ body.demo-reboot-page {
 
 .demo-reboot-page .hack-challenges {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 1.5rem !important;
-    margin: 2rem 0 !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    margin: 2rem auto !important;
+    max-width: 1400px !important;
+    width: 100% !important;
 }
 
 .demo-reboot-page .punk-checkboxes {
@@ -335,9 +339,9 @@ body.demo-reboot-page {
 .demo-reboot-page [style*="grid-template-columns"] {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 2rem !important;
     margin: 1.5rem auto !important;
-    max-width: 1000px !important;
+    max-width: 1400px !important;
     width: 100% !important;
 }
 
@@ -345,9 +349,9 @@ body.demo-reboot-page {
 .demo-reboot-page [class*="promo-messages"] {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1rem !important;
+    gap: 2rem !important;
     margin: 1.5rem auto !important;
-    max-width: 1000px !important;
+    max-width: 1400px !important;
     width: 100% !important;
 }
 
