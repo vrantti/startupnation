@@ -219,6 +219,34 @@ body {
     flex-direction: column;
 }
 
+/* Demo Reboot Page Specific Styles */
+body.demo-reboot-page {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    color: #e0e0e0 !important;
+    min-height: 100vh !important;
+}
+
+/* Demo Reboot Layout Fixes */
+.demo-reboot-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.demo-reboot-page .hero {
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.demo-reboot-page .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* Modern Focus Management */
 :focus-visible {
     outline: 2px solid var(--color-primary-500);
