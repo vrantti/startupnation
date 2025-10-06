@@ -295,14 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Phone validation (basic)
-        if (fieldName === 'phone' && value) {
-            const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-            if (!phoneRegex.test(value.replace(/\s/g, ''))) {
-                field.classList.add('error');
-                return false;
-            }
-        }
+        // Phone validation removed - phone field no longer required
         
         // If we get here, field is valid
         if (value) {
@@ -939,7 +932,6 @@ document.addEventListener('DOMContentLoaded', function() {
 👤 PARTICIPANT INFO:
 Name: ${data.name}
 Email: ${data.email}
-Phone: ${data.phone || 'Not provided'}
 Company: ${data.company || 'Not provided'}
 
 🎯 PARTICIPATION:
@@ -950,13 +942,15 @@ Attendance Days: ${attendanceDays}
 
 💡 INTERESTS & PREFERENCES:
 Interests: ${Array.isArray(data.interests) ? data.interests.join(', ') : data.interests || 'Not provided'}
+Content Creation: ${Array.isArray(data.content_creation) ? data.content_creation.join(', ') : data.content_creation || 'Not specified'}
 Contact Preference: ${data.contact_preference || 'Not provided'}
 Sponsorship Interest: ${data.sponsorship_interest || 'Not provided'}
 Hack Interest: ${data.hack_interest || 'Not provided'}
+Equipment: ${data.equipment || 'Not specified'}
 
 📝 ADDITIONAL INFO:
+Topic Suggestion: ${data.topic_suggestion || 'No topic suggested'}
 Message: ${data.message || 'No additional comments'}
-Newsletter: ${data.newsletter === 'yes' ? 'Yes' : 'No'}
 Terms Accepted: ${data.terms === 'accepted' ? 'Yes' : 'No'}
 GDPR Consent: ${data.gdpr_consent === 'accepted' ? 'Yes' : 'No'}
 
