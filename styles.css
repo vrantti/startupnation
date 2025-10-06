@@ -219,32 +219,14 @@ body {
     flex-direction: column;
 }
 
-/* Demo Reboot Page Specific Styles - FORCE DEPLOYMENT */
+/* Demo Reboot Page Specific Styles - SIMPLE BACKGROUND */
 body.demo-reboot-page {
-    background: url('./backgroundreboot.png') center center fixed !important;
+    background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
     color: #e0e0e0 !important;
     min-height: 100vh !important;
-    background-color: #1a1a1a !important; /* Fallback color */
-}
-
-/* Ensure background shows on all elements */
-.demo-reboot-page {
-    background: url('./backgroundreboot.png') center center fixed !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
-/* Ensure background shows on all main elements */
-.demo-reboot-page html,
-.demo-reboot-page body {
-    background: url('./backgroundreboot.png') center center fixed !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
 }
 
 /* Make sure main content areas are transparent to show background */
@@ -314,9 +296,9 @@ body.demo-reboot-page {
 .demo-reboot-page .promo-messages {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     margin: 1rem auto !important;
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     width: 100% !important;
     padding: 0 1rem !important;
 }
@@ -325,10 +307,11 @@ body.demo-reboot-page {
 .demo-reboot-page .promo-messages[style] {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     margin: 1rem auto !important;
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     width: 100% !important;
+    padding: 0 1rem !important;
 }
 
 @media (max-width: 1200px) {
@@ -348,10 +331,11 @@ body.demo-reboot-page {
 .demo-reboot-page .hack-challenges {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     margin: 0.5rem auto !important;
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     width: 100% !important;
+    padding: 0 1rem !important;
 }
 
 .demo-reboot-page .punk-checkboxes {
@@ -372,20 +356,22 @@ body.demo-reboot-page {
 .demo-reboot-page [style*="grid-template-columns"] {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     margin: 1rem auto !important;
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     width: 100% !important;
+    padding: 0 1rem !important;
 }
 
 /* Specific override for promo-messages */
 .demo-reboot-page [class*="promo-messages"] {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 1.5rem !important;
+    gap: 1rem !important;
     margin: 1rem auto !important;
-    max-width: 1400px !important;
+    max-width: 1200px !important;
     width: 100% !important;
+    padding: 0 1rem !important;
 }
 
 /* Modern Focus Management */
