@@ -6,6 +6,16 @@
       "use": "@vercel/static"
     }
   ],
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/startup association/index.html"
+    },
+    {
+      "source": "/demo-reboot",
+      "destination": "/startup association/demo-reboot.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
