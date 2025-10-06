@@ -551,7 +551,7 @@
 
         .punk-checkboxes {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
             margin-top: 0.5rem;
         }
@@ -707,7 +707,7 @@
         /* Responsive Form Styles */
         @media (max-width: 768px) {
             .punk-checkboxes {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 gap: 0.8rem;
             }
             
@@ -795,7 +795,7 @@
             <p class="punk-subtitle">Tampere Nokia Arena - Paidia • 24.10.2025 1600 - 26.10.2025 1200 • The Renaissance of Attitude</p>
             
             <!-- Promotional Messages -->
-            <div class="promo-messages" style="margin: 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+            <div class="promo-messages" style="margin: 1.5rem 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
                 <div class="promo-card" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 200, 255, 0.1)); border: 2px solid rgba(0, 255, 255, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
                     <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
                     <h3 style="color: #00ffff; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); font-weight: 700;">🎮 COME TO GAME TEST YOUR GAME!</h3>
@@ -829,7 +829,7 @@
             </div>
             
             <!-- Hack Challenges Section -->
-            <div class="hack-challenges" style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <div class="hack-challenges" style="margin: 2rem 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
                 <div class="challenge-card" style="background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(255, 50, 120, 0.15)); border: 3px solid rgba(255, 20, 147, 0.6); border-radius: 20px; padding: 2rem; text-align: center; position: relative; backdrop-filter: blur(15px); box-shadow: 0 12px 40px rgba(255, 20, 147, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);">
                     <div style="position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: linear-gradient(45deg, #ff1493, #ff4080, #ff1493, #ff69b4); border-radius: 20px; z-index: -1; opacity: 0.4; animation: borderGlow 3s ease-in-out infinite alternate;"></div>
                     <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(255, 20, 147, 0.1) 0%, transparent 70%); border-radius: 20px; z-index: -1;"></div>
