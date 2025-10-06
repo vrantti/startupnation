@@ -219,7 +219,7 @@ body {
     flex-direction: column;
 }
 
-/* Demo Reboot Page Specific Styles - SIMPLE BACKGROUND */
+/* Demo Reboot Page Specific Styles - FORCE BACKGROUND */
 body.demo-reboot-page {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
@@ -229,12 +229,28 @@ body.demo-reboot-page {
     min-height: 100vh !important;
 }
 
+/* Force background on all elements */
+.demo-reboot-page,
+.demo-reboot-page * {
+    background-image: url('backgroundreboot.png') !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
 /* Make sure main content areas are transparent to show background */
 .demo-reboot-page .hero,
 .demo-reboot-page .container,
 .demo-reboot-page main,
 .demo-reboot-page section {
     background: transparent !important;
+}
+
+/* Ensure cards have their own backgrounds */
+.demo-reboot-page .promo-card,
+.demo-reboot-page .challenge-card {
+    background: inherit !important;
 }
 
 /* Demo Reboot Text Layout Improvements */
@@ -279,7 +295,7 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .hero {
-    padding: 150px 0 60px;
+    padding: 200px 0 60px;
     text-align: center;
     position: relative;
     z-index: 10;
