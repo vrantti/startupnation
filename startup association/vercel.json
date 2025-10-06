@@ -2,18 +2,16 @@
   "version": 2,
   "builds": [
     {
-      "src": "startup association/**/*",
+      "src": "startup association/index.html",
       "use": "@vercel/static"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/startup association/index.html"
     },
     {
-      "source": "/demo-reboot",
-      "destination": "/startup association/demo-reboot.html"
+      "src": "startup association/demo-reboot.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "startup association/**/*",
+      "use": "@vercel/static"
     }
   ],
   "headers": [
