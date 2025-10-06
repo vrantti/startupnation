@@ -230,6 +230,14 @@ body.demo-reboot-page {
     background-color: #1a1a1a !important; /* Fallback color */
 }
 
+/* Ensure background shows on all elements */
+.demo-reboot-page {
+    background: url('./backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
 /* Ensure background shows on all main elements */
 .demo-reboot-page html,
 .demo-reboot-page body {
@@ -247,6 +255,40 @@ body.demo-reboot-page {
     background: transparent !important;
 }
 
+/* Demo Reboot Text Layout Improvements */
+.demo-reboot-page .punk-title {
+    font-size: 3.5rem !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+    letter-spacing: 2px !important;
+}
+
+.demo-reboot-page .punk-subtitle {
+    font-size: 1.2rem !important;
+    margin-bottom: 2rem !important;
+    color: #e0e0e0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    line-height: 1.4 !important;
+}
+
+/* Better spacing for sections */
+.demo-reboot-page section {
+    margin: 2rem 0 !important;
+    padding: 1rem 0 !important;
+}
+
+/* Improve promo card text */
+.demo-reboot-page .promo-card h3 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.8rem !important;
+}
+
+.demo-reboot-page .promo-card p {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+}
+
 /* Demo Reboot Layout Fixes */
 .demo-reboot-page .container {
     max-width: 1400px;
@@ -255,7 +297,7 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .hero {
-    padding: 120px 0 40px;
+    padding: 150px 0 60px;
     text-align: center;
     position: relative;
     z-index: 10;
@@ -276,6 +318,7 @@ body.demo-reboot-page {
     margin: 1rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
+    padding: 0 1rem !important;
 }
 
 /* Override inline styles */
@@ -288,9 +331,17 @@ body.demo-reboot-page {
     width: 100% !important;
 }
 
+@media (max-width: 1200px) {
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.2rem !important;
+    }
+}
+
 @media (max-width: 768px) {
     .demo-reboot-page .promo-messages {
         grid-template-columns: 1fr !important;
+        gap: 1rem !important;
     }
 }
 
