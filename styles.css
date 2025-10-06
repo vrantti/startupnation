@@ -229,41 +229,16 @@ body.demo-reboot-page {
     min-height: 100vh !important;
 }
 
-/* Ensure background shows on all elements */
-.demo-reboot-page html,
-.demo-reboot-page body {
-    background: url('backgroundreboot.png') center center fixed !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
-/* Force background on main content areas */
+/* Only apply background to main content areas, not individual elements */
 .demo-reboot-page .hero,
 .demo-reboot-page .container,
 .demo-reboot-page main {
     background: transparent !important;
 }
 
-/* Override any conflicting background colors */
-.demo-reboot-page * {
-    background-color: transparent !important;
-}
+/* Remove the aggressive background override that was causing issues */
 
-/* Force background image on all elements */
-.demo-reboot-page,
-.demo-reboot-page *,
-.demo-reboot-page html,
-.demo-reboot-page body,
-.demo-reboot-page .hero,
-.demo-reboot-page .container,
-.demo-reboot-page main,
-.demo-reboot-page section {
-    background: url('backgroundreboot.png') center center fixed !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
+/* Background should only be on body, not individual elements */
 
 /* Demo Reboot Layout Fixes */
 .demo-reboot-page .container {
@@ -289,8 +264,8 @@ body.demo-reboot-page {
 /* Demo Reboot Grid Layout Fixes */
 .demo-reboot-page .promo-messages {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
     margin: 1.5rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
@@ -299,8 +274,8 @@ body.demo-reboot-page {
 /* Override inline styles */
 .demo-reboot-page .promo-messages[style] {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
     margin: 1.5rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
@@ -315,8 +290,8 @@ body.demo-reboot-page {
 .demo-reboot-page .hack-challenges {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
-    margin: 2rem auto !important;
+    gap: 1.5rem !important;
+    margin: 1rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
 }
@@ -338,8 +313,8 @@ body.demo-reboot-page {
 /* Force all grid layouts to work properly */
 .demo-reboot-page [style*="grid-template-columns"] {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
     margin: 1.5rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
@@ -348,8 +323,8 @@ body.demo-reboot-page {
 /* Specific override for promo-messages */
 .demo-reboot-page [class*="promo-messages"] {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 2rem !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
     margin: 1.5rem auto !important;
     max-width: 1400px !important;
     width: 100% !important;
