@@ -238,6 +238,18 @@ body.demo-reboot-page {
     background-attachment: fixed !important;
 }
 
+/* Force background on main content areas */
+.demo-reboot-page .hero,
+.demo-reboot-page .container,
+.demo-reboot-page main {
+    background: transparent !important;
+}
+
+/* Override any conflicting background colors */
+.demo-reboot-page * {
+    background-color: transparent !important;
+}
+
 /* Demo Reboot Layout Fixes */
 .demo-reboot-page .container {
     max-width: 1200px;
@@ -260,9 +272,18 @@ body.demo-reboot-page {
 /* Demo Reboot Grid Layout Fixes */
 .demo-reboot-page .promo-messages {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
     margin: 1.5rem 0 !important;
+    max-width: 1000px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (max-width: 768px) {
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 .demo-reboot-page .hack-challenges {
