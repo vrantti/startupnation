@@ -221,18 +221,19 @@ body {
 
 /* Demo Reboot Page Specific Styles - FORCE DEPLOYMENT */
 body.demo-reboot-page {
-    background: url('backgroundreboot.png') center center fixed !important;
+    background: url('./backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
     color: #e0e0e0 !important;
     min-height: 100vh !important;
+    background-color: #1a1a1a !important; /* Fallback color */
 }
 
 /* Ensure background shows on all main elements */
 .demo-reboot-page html,
 .demo-reboot-page body {
-    background: url('backgroundreboot.png') center center fixed !important;
+    background: url('./backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed !important;
@@ -254,7 +255,7 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .hero {
-    padding: 80px 0 40px;
+    padding: 120px 0 40px;
     text-align: center;
     position: relative;
     z-index: 10;
