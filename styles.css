@@ -250,6 +250,21 @@ body.demo-reboot-page {
     background-color: transparent !important;
 }
 
+/* Force background image on all elements */
+.demo-reboot-page,
+.demo-reboot-page *,
+.demo-reboot-page html,
+.demo-reboot-page body,
+.demo-reboot-page .hero,
+.demo-reboot-page .container,
+.demo-reboot-page main,
+.demo-reboot-page section {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
 /* Demo Reboot Layout Fixes */
 .demo-reboot-page .container {
     max-width: 1200px;
@@ -274,10 +289,19 @@ body.demo-reboot-page {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
-    margin: 1.5rem 0 !important;
+    margin: 1.5rem auto !important;
     max-width: 1000px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    width: 100% !important;
+}
+
+/* Override inline styles */
+.demo-reboot-page .promo-messages[style] {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin: 1.5rem auto !important;
+    max-width: 1000px !important;
+    width: 100% !important;
 }
 
 @media (max-width: 768px) {
@@ -305,6 +329,26 @@ body.demo-reboot-page {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
     gap: 1rem !important;
     margin-top: 1.5rem !important;
+}
+
+/* Force all grid layouts to work properly */
+.demo-reboot-page [style*="grid-template-columns"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin: 1.5rem auto !important;
+    max-width: 1000px !important;
+    width: 100% !important;
+}
+
+/* Specific override for promo-messages */
+.demo-reboot-page [class*="promo-messages"] {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+    margin: 1.5rem auto !important;
+    max-width: 1000px !important;
+    width: 100% !important;
 }
 
 /* Modern Focus Management */
