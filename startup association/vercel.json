@@ -2,15 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "startup association/index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "startup association/demo-reboot.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "startup association/**/*",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],

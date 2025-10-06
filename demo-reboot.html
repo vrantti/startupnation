@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO REBOOT 24.10.2025 1600 - 26.10.2025 1200 - THE RENAISSANCE OF ATTITUDE</title>
+    <meta name="description" content="DEMO REBOOT - Real Demos. Real People. The Renaissance of Attitude. 24.10.2025 1600 - 26.10.2025 1200 at Tampere Nokia Arena - Paidia. Non-stop gaming, streaming, creation and demoing!">
+    
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Override external stylesheets -->
+    <style>
+        html, body {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            color: #e0e0e0 !important;
+            min-height: 100vh !important;
+        }
+        /* Force background on html and body */
+        html, body {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        /* Ensure the body specifically shows the background */
+        body.demo-reboot-page {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+        
+        /* Easy way to change background image - just replace the URL above */
+        /* 
+        TO CHANGE BACKGROUND IMAGE:
+        1. Replace the URL in the background-image above
+        2. Or add your own image file to the project folder
+        3. Use: url('your-image.jpg') instead of the Unsplash URL
+        */
+        
+        @keyframes cyberpunkPulse {
+            0%, 100% { 
+                background-position: 0% 0%, 0% 0%, 100% 100%, 50% 0%, 25% 100%, 75% 0%, 0% 0%, 100% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                filter: hue-rotate(0deg);
+            }
+            25% { 
+                background-position: 25% 25%, 10% 20%, 90% 80%, 60% 10%, 30% 90%, 80% 10%, 5% 0%, 95% 0%, 5% 5%, 95% 95%, 25% 75%, 75% 25%, 50% 50%;
+                filter: hue-rotate(5deg);
+            }
+            50% { 
+                background-position: 50% 50%, 20% 30%, 80% 70%, 70% 20%, 40% 80%, 85% 20%, 10% 0%, 90% 0%, 10% 10%, 90% 90%, 50% 50%, 50% 50%, 50% 50%;
+                filter: hue-rotate(10deg);
+            }
+            75% { 
+                background-position: 75% 75%, 30% 40%, 70% 60%, 80% 30%, 50% 70%, 90% 30%, 15% 0%, 85% 0%, 15% 15%, 85% 85%, 75% 25%, 25% 75%, 50% 50%;
+                filter: hue-rotate(5deg);
+            }
+        }
+        
+        @keyframes borderGlow {
+            0% { 
+                opacity: 0.4;
+                transform: scale(1);
+            }
+            100% { 
+                opacity: 0.8;
+                transform: scale(1.02);
+            }
+        }
+        
+        .container, .hero, .about, .projects, .features, .contact, .footer {
+            background: transparent;
+        }
+        section {
+            background: transparent;
+        }
+        .punk-card {
+            background: rgba(26, 26, 46, 0.8) !important;
+            border: 1px solid #00ffff !important;
+            box-shadow: 
+                0 0 15px rgba(0, 255, 255, 0.3), 
+                0 0 30px rgba(0, 255, 255, 0.1) !important;
+            backdrop-filter: blur(5px) !important;
+            position: relative !important;
+        }
+        @keyframes cardDanger {
+            0%, 100% { 
+                border-color: #ff0040;
+                box-shadow: 
+                    0 0 25px rgba(255, 0, 64, 0.6), 
+                    0 0 50px rgba(255, 0, 64, 0.3),
+                    0 0 75px rgba(255, 0, 64, 0.1),
+                    inset 0 0 25px rgba(255, 0, 64, 0.2);
+            }
+            50% { 
+                border-color: #ff0080;
+                box-shadow: 
+                    0 0 35px rgba(255, 0, 128, 0.8), 
+                    0 0 60px rgba(255, 0, 128, 0.4),
+                    0 0 85px rgba(255, 0, 128, 0.2),
+                    inset 0 0 35px rgba(255, 0, 128, 0.3);
+            }
+        }
+        .punk-card::before {
+            content: '' !important;
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            background: linear-gradient(45deg, 
+                rgba(0, 255, 255, 0.05) 0%, 
+                transparent 25%, 
+                rgba(0, 255, 255, 0.05) 50%, 
+                transparent 75%, 
+                rgba(0, 255, 255, 0.05) 100%) !important;
+            pointer-events: none !important;
+            animation: cyberShimmer 4s ease-in-out infinite !important;
+        }
+        @keyframes cyberShimmer {
+            0%, 100% { opacity: 0.3; transform: translateX(-100%); }
+            50% { opacity: 0.6; transform: translateX(100%); }
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #ffffff !important;
+            text-shadow: 
+                0 0 2px rgba(0, 255, 255, 0.8),
+                0 0 4px rgba(0, 255, 255, 0.6) !important;
+            filter: none !important;
+            font-weight: 700 !important;
+            letter-spacing: 1px !important;
+            text-transform: uppercase !important;
+        }
+        .punk-section-title {
+            color: #00ffff !important;
+            text-shadow: 
+                0 0 3px rgba(0, 255, 255, 0.9),
+                0 0 6px rgba(0, 255, 255, 0.7) !important;
+            filter: none !important;
+            font-weight: 700 !important;
+            letter-spacing: 2px !important;
+            text-transform: uppercase !important;
+        }
+        @keyframes dangerPulse {
+            0% { 
+                text-shadow: 
+                    0 0 10px rgba(255, 0, 64, 1),
+                    0 0 20px rgba(255, 0, 64, 0.8),
+                    0 0 30px rgba(255, 0, 64, 0.6),
+                    0 0 40px rgba(255, 0, 64, 0.4);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 15px rgba(255, 0, 64, 1),
+                    0 0 25px rgba(255, 0, 64, 0.9),
+                    0 0 35px rgba(255, 0, 64, 0.7),
+                    0 0 50px rgba(255, 0, 64, 0.5);
+                transform: scale(1.02);
+            }
+        }
+        .punk-title {
+            color: #00ffff !important;
+            text-shadow: 
+                0 0 10px rgba(0, 255, 255, 1),
+                0 0 20px rgba(0, 255, 255, 0.8), 
+                0 0 40px rgba(255, 0, 128, 0.6),
+                0 0 60px rgba(255, 255, 0, 0.3) !important;
+            filter: none !important;
+            -webkit-text-stroke: 1px rgba(0, 255, 255, 0.5) !important;
+            animation: titleGlow 2s ease-in-out infinite alternate !important;
+        }
+        @keyframes titleGlow {
+            0% { 
+                text-shadow: 
+                    0 0 10px rgba(0, 255, 255, 1),
+                    0 0 20px rgba(0, 255, 255, 0.8), 
+                    0 0 40px rgba(255, 0, 128, 0.6),
+                    0 0 60px rgba(255, 255, 0, 0.3);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 15px rgba(0, 255, 255, 1),
+                    0 0 30px rgba(0, 255, 255, 0.9), 
+                    0 0 50px rgba(255, 0, 128, 0.8),
+                    0 0 80px rgba(255, 255, 0, 0.5);
+            }
+        }
+        p, span, div, a {
+            color: #e0e0e0 !important;
+        }
+        .navbar {
+            background: rgba(26, 26, 46, 0.9) !important;
+            color: #ffffff !important;
+            backdrop-filter: blur(10px) !important;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.4) !important;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 255, 0.2) !important;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #00ffff !important;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8) !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: logoPulse 3s ease-in-out infinite !important;
+        }
+
+        .logo:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 1) !important;
+            transform: scale(1.05);
+        }
+
+        /* FINAL OVERRIDE - BACKGROUND IMAGE */
+        html, body, html body {
+            background: url('backgroundreboot.png') center center fixed !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
+        }
+
+        /* Improve overall layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced hero section - tighter */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 100px 20px 60px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        /* Enhanced punk cards - tighter */
+        .punk-card {
+            background: rgba(10, 10, 20, 0.85) !important;
+            backdrop-filter: blur(15px) !important;
+            border: 1px solid rgba(0, 255, 255, 0.3) !important;
+            border-radius: 15px !important;
+            padding: 20px !important;
+            margin: 10px 0 !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+            transition: all 0.3s ease !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .punk-card:hover {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2) !important;
+            border-color: rgba(0, 255, 255, 0.6) !important;
+        }
+
+        .punk-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        /* Fix text colors in cards - tighter spacing */
+        .punk-card {
+            color: #e0e0e0 !important;
+        }
+        .punk-card h1, .punk-card h2, .punk-card h3, .punk-card h4, .punk-card h5 {
+            color: #00ffff !important;
+            margin-bottom: 10px !important;
+            margin-top: 0 !important;
+            font-weight: 600 !important;
+        }
+        .punk-card p, .punk-card span, .punk-card div, .punk-card li {
+            color: #e0e0e0 !important;
+            line-height: 1.6 !important;
+            margin-bottom: 8px !important;
+        }
+        .punk-card p:last-child, .punk-card div:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* Enhanced buttons */
+        .btn, button {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1)) !important;
+            border: 1px solid rgba(0, 255, 255, 0.5) !important;
+            color: #00ffff !important;
+            padding: 12px 30px !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
+            font-weight: 500 !important;
+            backdrop-filter: blur(10px) !important;
+        }
+
+        .btn:hover, button:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 128, 0.2)) !important;
+            border-color: #00ffff !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 25px rgba(0, 255, 255, 0.3) !important;
+        }
+
+        /* Section spacing - tighter */
+        section {
+            padding: 40px 0;
+            position: relative;
+        }
+
+        /* Navbar improvements */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            backdrop-filter: blur(20px) !important;
+            background: rgba(10, 10, 20, 0.85) !important;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3) !important;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: #e0e0e0 !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .nav-link:hover {
+            color: #00ffff !important;
+            background: rgba(0, 255, 255, 0.1) !important;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5) !important;
+        }
+
+        /* Footer improvements */
+        .footer {
+            background: rgba(10, 10, 20, 0.95) !important;
+            backdrop-filter: blur(20px) !important;
+            border-top: 1px solid rgba(0, 255, 255, 0.2) !important;
+            padding: 40px 0 20px !important;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive design - tighter */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 20px 40px;
+                min-height: 70vh;
+            }
+
+            .punk-card {
+                padding: 15px !important;
+                margin: 8px 0 !important;
+            }
+
+            /* Tighter grid gap on mobile */
+            div[style*="grid-template-columns"] {
+                gap: 0.5rem !important;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 30px 0;
+            }
+
+            .navbar {
+                padding: 15px 0;
+            }
+
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+            }
+
+            .nav-link {
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 60px 15px 30px;
+            }
+
+            .punk-card {
+                padding: 12px !important;
+                margin: 6px 0 !important;
+            }
+
+            .btn, button {
+                padding: 8px 20px !important;
+                font-size: 13px !important;
+            }
+
+            section {
+                padding: 20px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 10, 20, 0.5);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 255, 0.5);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 255, 255, 0.7);
+        }
+        @keyframes logoPulse {
+            0%, 100% { 
+                text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+                transform: scale(1);
+            }
+            50% { 
+                text-shadow: 0 0 25px rgba(0, 255, 255, 1), 0 0 35px rgba(255, 0, 128, 0.5);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Enhanced Form Styles */
+        .punk-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .punk-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #00ffff !important;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .punk-label i {
+            color: #ff0080 !important;
+            text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);
+        }
+
+        .punk-input, .punk-select, .punk-textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(10, 10, 20, 0.8) !important;
+            border: 2px solid rgba(0, 255, 255, 0.3) !important;
+            border-radius: 10px !important;
+            color: #e0e0e0 !important;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease !important;
+            backdrop-filter: blur(5px) !important;
+        }
+
+        .punk-input:focus, .punk-select:focus, .punk-textarea:focus {
+            outline: none !important;
+            border-color: #00ffff !important;
+            box-shadow: 
+                0 0 15px rgba(0, 255, 255, 0.4),
+                inset 0 0 15px rgba(0, 255, 255, 0.1) !important;
+            transform: translateY(-2px) !important;
+        }
+
+        .punk-input::placeholder, .punk-textarea::placeholder {
+            color: rgba(224, 224, 224, 0.6) !important;
+        }
+
+        .punk-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .punk-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .punk-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: #e0e0e0 !important;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .punk-checkbox:hover {
+            color: #00ffff !important;
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+        }
+
+        .punk-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            border-radius: 4px;
+            position: relative;
+            transition: all 0.3s ease;
+            background: rgba(10, 10, 20, 0.8);
+        }
+
+        .punk-checkbox input[type="checkbox"]:checked + .checkmark {
+            background: linear-gradient(45deg, #00ffff, #ff0080);
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+        }
+
+        .punk-checkbox input[type="checkbox"]:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000000;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .punk-button {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 128, 0.2)) !important;
+            border: 2px solid rgba(0, 255, 255, 0.6) !important;
+            color: #00ffff !important;
+            padding: 1rem 2rem !important;
+            border-radius: 25px !important;
+            text-decoration: none !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.5rem !important;
+            transition: all 0.3s ease !important;
+            font-weight: 700 !important;
+            font-size: 1.1rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 1px !important;
+            backdrop-filter: blur(10px) !important;
+            cursor: pointer !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+
+        .punk-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .punk-button:hover::before {
+            left: 100%;
+        }
+
+        .punk-button:hover {
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(255, 0, 128, 0.3)) !important;
+            border-color: #00ffff !important;
+            transform: translateY(-3px) !important;
+            box-shadow: 
+                0 10px 25px rgba(0, 255, 255, 0.4),
+                0 0 30px rgba(0, 255, 255, 0.2) !important;
+        }
+
+        .punk-button:active {
+            transform: translateY(-1px) !important;
+        }
+
+        .punk-button-primary {
+            background: linear-gradient(135deg, #00ffff, #ff0080) !important;
+            color: #000000 !important;
+            border-color: #00ffff !important;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+        }
+
+        .punk-button-primary:hover {
+            background: linear-gradient(135deg, #00ffff, #ff0080) !important;
+            box-shadow: 
+                0 15px 35px rgba(0, 255, 255, 0.5),
+                0 0 40px rgba(255, 0, 128, 0.3) !important;
+        }
+
+        .punk-button i {
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Form validation styles */
+        .punk-input.error, .punk-select.error, .punk-textarea.error {
+            border-color: #ff0040 !important;
+            box-shadow: 0 0 15px rgba(255, 0, 64, 0.4) !important;
+        }
+
+        .punk-input.success, .punk-select.success, .punk-textarea.success {
+            border-color: #00ff00 !important;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4) !important;
+        }
+
+        /* Loading state */
+        .punk-button.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .punk-button.loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 0.5rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Form Styles */
+        @media (max-width: 768px) {
+            .punk-checkboxes {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            
+            .punk-button {
+                padding: 0.8rem 1.5rem !important;
+                font-size: 1rem !important;
+            }
+            
+            .punk-input, .punk-select, .punk-textarea {
+                padding: 0.8rem !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .punk-label {
+                font-size: 0.8rem !important;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+            
+            .punk-card {
+                padding: 1rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .punk-checkboxes {
+                gap: 0.5rem;
+            }
+            
+            .punk-button {
+                padding: 0.7rem 1.2rem !important;
+                font-size: 0.9rem !important;
+            }
+            
+            .punk-input, .punk-select, .punk-textarea {
+                padding: 0.7rem !important;
+                font-size: 0.85rem !important;
+            }
+            
+            .punk-label {
+                font-size: 0.75rem !important;
+            }
+            
+            .punk-card {
+                padding: 0.8rem !important;
+            }
+            
+            .punk-form {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="demo-reboot-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">STARTUP NATION</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="demo-banner">
+                <a href="index.html" class="demo-link">
+                    <span class="demo-text">← BACK TO HOME</span>
+                </a>
+            </div>
+            <h1 class="punk-title">DEMO REBOOT</h1>
+            <p class="punk-subtitle">Tampere Nokia Arena - Paidia • 24.10.2025 1600 - 26.10.2025 1200 • The Renaissance of Attitude</p>
+            
+            <!-- Promotional Messages -->
+            <div class="promo-messages" style="margin: 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div class="promo-card" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 200, 255, 0.1)); border: 2px solid rgba(0, 255, 255, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                    <h3 style="color: #00ffff; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); font-weight: 700;">🎮 COME TO GAME TEST YOUR GAME!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);">Show your creations, get feedback, iterate live</p>
+                </div>
+                <div class="promo-card" style="background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 50, 150, 0.1)); border: 2px solid rgba(255, 0, 128, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(255, 0, 128, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                    <h3 style="color: #ff0080; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(255, 0, 128, 0.8); font-weight: 700;">🤝 FIND NEW TEAM MATES!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);">Continue projects, get feedback, work together</p>
+                </div>
+                <div class="promo-card" style="background: linear-gradient(135deg, rgba(255, 255, 0, 0.15), rgba(255, 200, 0, 0.1)); border: 2px solid rgba(255, 255, 0, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(255, 255, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ffff00, #ffcc00, #ffff00); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                    <h3 style="color: #ffff00; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(255, 255, 0, 0.8); font-weight: 700;">🎯 MEET INDUSTRY VETERANS!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);">Get insights, network, learn from the best</p>
+                </div>
+                <div class="promo-card" style="background: linear-gradient(135deg, rgba(0, 255, 0, 0.15), rgba(0, 200, 0, 0.1)); border: 2px solid rgba(0, 255, 0, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 255, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #00ff00, #00cc00, #00ff00); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                    <h3 style="color: #00ff00; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(0, 255, 0, 0.8); font-weight: 700;">🎲 COME TO PLAY GAMES!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);">Non-stop gaming, big screen, epic sessions</p>
+                </div>
+                <div class="promo-card" style="background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 140, 0, 0.1)); border: 2px solid rgba(255, 165, 0, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(255, 165, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ffa500, #ff8c00, #ffa500); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                    <h3 style="color: #ffa500; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(255, 165, 0, 0.8); font-weight: 700;">🎤 LISTEN TO INTERESTING REAL LIFE TECH AND BUSINESS AND GAMING EXPERIENCES IN AD HOC SPEECHES!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);">Real stories from industry veterans and developers</p>
+                </div>
+                <div class="promo-card" style="background: linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(120, 30, 200, 0.1)); border: 2px solid rgba(138, 43, 226, 0.5); border-radius: 15px; padding: 1.2rem; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(138, 43, 226, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                    <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #8a2be2, #7b1fa2, #8a2be2); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                    <h3 style="color: #8a2be2; font-size: 1.1rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(138, 43, 226, 0.8); font-weight: 700;">📱 NETWORKING OPPORTUNITY YOU CANNOT MISS, COME TO MAKE CONTENT FOR YOUR SOCIAL MEDIA, MEET PEOPLE!</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);">Connect, create content, build your network</p>
+                </div>
+            </div>
+            
+            <!-- Hack Challenges Section -->
+            <div class="hack-challenges" style="margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <div class="challenge-card" style="background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(255, 50, 120, 0.15)); border: 3px solid rgba(255, 20, 147, 0.6); border-radius: 20px; padding: 2rem; text-align: center; position: relative; backdrop-filter: blur(15px); box-shadow: 0 12px 40px rgba(255, 20, 147, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);">
+                    <div style="position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: linear-gradient(45deg, #ff1493, #ff4080, #ff1493, #ff69b4); border-radius: 20px; z-index: -1; opacity: 0.4; animation: borderGlow 3s ease-in-out infinite alternate;"></div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(255, 20, 147, 0.1) 0%, transparent 70%); border-radius: 20px; z-index: -1;"></div>
+                    <h3 style="color: #ff1493; font-size: 1.3rem; margin-bottom: 1rem; text-shadow: 0 0 15px rgba(255, 20, 147, 0.9); font-weight: 800; letter-spacing: 0.5px;">🚀 COME TO HACK CHALLENGES LIKE NEXR!</h3>
+                    <p style="font-size: 1rem; color: #e0e0e0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); line-height: 1.4;">How to achieve next level with Avatar driven tour by Vapriikki</p>
+                </div>
+                <div class="challenge-card" style="background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(0, 150, 200, 0.15)); border: 3px solid rgba(0, 191, 255, 0.6); border-radius: 20px; padding: 2rem; text-align: center; position: relative; backdrop-filter: blur(15px); box-shadow: 0 12px 40px rgba(0, 191, 255, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);">
+                    <div style="position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: linear-gradient(45deg, #00bfff, #0099cc, #00bfff, #40e0d0); border-radius: 20px; z-index: -1; opacity: 0.4; animation: borderGlow 3s ease-in-out infinite alternate;"></div>
+                    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%); border-radius: 20px; z-index: -1;"></div>
+                    <h3 style="color: #00bfff; font-size: 1.3rem; margin-bottom: 1rem; text-shadow: 0 0 15px rgba(0, 191, 255, 0.9); font-weight: 800; letter-spacing: 0.5px;">🤖 VIRTUAL DAWN - CREATE AI DRIVEN NPC PERSONAS!</h3>
+                    <p style="font-size: 1rem; color: #e0e0e0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); line-height: 1.4;">Give ideas and create the next AI driven NPC personas for diverse audience</p>
+                </div>
+            </div>
+            
+            <!-- Event Description with Background -->
+            <div class="event-description" style="margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 50, 150, 0.1)); border: 2px solid rgba(255, 0, 128, 0.4); border-radius: 20px; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(255, 0, 128, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080); border-radius: 20px; z-index: -1; opacity: 0.3;"></div>
+                <p style="font-size: 1.1rem; color: #ff0080; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6); font-weight: 600; text-align: center; margin: 0; line-height: 1.5;">non stop gaming and streaming, non stop creation and demoing, ton of ad hoc speeches, open doors (just sign up), and ton of creativity</p>
+            </div>
+            <div class="registration-counter-display" style="margin: 2rem 0; padding: 1.5rem 2rem; background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 200, 255, 0.15)); border: 3px solid rgba(0, 255, 255, 0.6); border-radius: 25px; display: inline-block; position: relative; backdrop-filter: blur(15px); box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);">
+                <div style="position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff, #40e0d0); border-radius: 25px; z-index: -1; opacity: 0.4; animation: borderGlow 3s ease-in-out infinite alternate;"></div>
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%); border-radius: 25px; z-index: -1;"></div>
+                <span style="color: #00ffff; font-weight: 700; font-size: 1.5rem; text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);">👥 </span>
+                <span class="registration-counter" style="color: #00ffff; font-weight: 800; font-size: 2rem; text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);">0</span>
+                <span style="color: #e0e0e0; font-size: 1.2rem; font-weight: 600; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);"> rebels registered</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#register" class="punk-button">
+                    <i class="fas fa-ticket-alt"></i>
+                    REGISTER NOW
+                </a>
+                <a href="#schedule" class="punk-button">
+                    <i class="fas fa-calendar"></i>
+                    VIEW SCHEDULE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="punk-section-title">REAL DEMOS. REAL PEOPLE. ATTITUDE MATTERS.</h2>
+                <p class="punk-subtitle">The Renaissance of Attitude</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="punk-card" style="text-align: center; margin-bottom: 1rem;">
+                        <h3 class="punk-highlight" style="font-size: 1.6rem; margin-bottom: 1rem;">50% FUELS THE CREATORS</h3>
+                        <h3 class="punk-highlight" style="font-size: 1.6rem; margin-bottom: 1.5rem;">50% FUELS THE DEMO HOUSE</h3>
+                        <p class="punk-text" style="font-size: 1.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">NO RULES. NO KPIS. JUST CREATION.</p>
+                        <p class="punk-text" style="font-size: 1rem; line-height: 1.4; color: #00ffff; text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);">
+                            Our aim is to reward the participants who show their skills and fund the permanent <span class="punk-accent">DEMO HOUSE</span> in Tampere. Permanent location for crazy innovations and freedom of creation. The home for the community and community makes their own rules... <span class="punk-highlight">of no rules</span>.
+                        </p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.5rem; margin-bottom: 1rem;">
+                        <div class="punk-card" style="text-align: center; padding: 15px;">
+                            <i class="fas fa-paint-brush" style="font-size: 2.5rem; color: #ff0080; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);"></i>
+                            <h4 class="punk-accent" style="font-size: 1.1rem; margin-bottom: 0.25rem; text-transform: uppercase;">CREATORS</h4>
+                            <p class="punk-text" style="font-size: 0.9rem;">Jam raw, show attitude, leave your mark</p>
+                        </div>
+                        <div class="punk-card" style="text-align: center; padding: 15px;">
+                            <i class="fas fa-handshake" style="font-size: 2.5rem; color: #00ffff; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);"></i>
+                            <h4 class="punk-highlight" style="font-size: 1.1rem; margin-bottom: 0.25rem; text-transform: uppercase;">SPONSORS</h4>
+                            <p class="punk-text" style="font-size: 0.9rem;">Fuel the rebellion, get real, no filters</p>
+                        </div>
+                        <div class="punk-card" style="text-align: center; padding: 15px;">
+                            <i class="fas fa-eye" style="font-size: 2.5rem; color: #ffff00; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(255, 255, 0, 0.6);"></i>
+                            <h4 class="punk-accent" style="font-size: 1.1rem; margin-bottom: 0.25rem; text-transform: uppercase;">VISITORS</h4>
+                            <p class="punk-text" style="font-size: 0.9rem;">Witness the chaos, feel the movement</p>
+                        </div>
+                    </div>
+                    
+                    <div class="punk-card" style="text-align: center; margin-bottom: 0.5rem;">
+                        <h3 class="punk-accent" style="font-size: 2rem; margin-bottom: 1rem; text-transform: uppercase;">NOT JUST ANOTHER EVENT.</h3>
+                        <p class="punk-text" style="font-size: 1.4rem; margin-bottom: 1rem; font-weight: 700;">THIS IS THE RENAISSANCE OF ATTITUDE.</p>
+                        <p class="punk-highlight" style="font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em;">A CULTURAL REBOOT FOR MISFITS AND PIONEERS.</p>
+                    </div>
+                    
+                    <div class="punk-card" style="text-align: center; background: linear-gradient(45deg, #ff0080, #00ffff); color: #000000;">
+                        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.1em;">DEMO REBOOT → REAL DEMOS. REAL PEOPLE. THE RENAISSANCE OF ATTITUDE.</h3>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div style="text-align: center; padding: 2rem;">
+                        <i class="fas fa-calendar-alt" style="font-size: 4rem; color: var(--neon-cyan); margin-bottom: 1rem;"></i>
+                        <h3 style="color: var(--neon-cyan); margin-bottom: 1rem;">24.10.2025 1600 - 26.10.2025 1200</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1rem;">Tampere Nokia Arena - Paidia</p>
+                        <p style="color: var(--text-secondary);">Tampere, Finland</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Info -->
+    <section id="schedule" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="punk-section-title">EVENT INFORMATION</h2>
+                <p class="punk-subtitle">The Renaissance of Attitude - Creative Vibes & Non-Stop Creation</p>
+            </div>
+            <div class="punk-card" style="text-align: center; margin-bottom: 2rem; padding: 2rem;">
+                <h3 class="punk-accent" style="font-size: 2rem; margin-bottom: 1.5rem; text-transform: uppercase;">🚪 DOORS OPEN</h3>
+                <p class="punk-text" style="font-size: 1.3rem; margin-bottom: 1.5rem; line-height: 1.6;">
+                    For all of you amazing revolutionary people <strong style="color: #00ffff;">16:00 on Friday 24.10</strong> 
+                    and the doors close on <strong style="color: #ff0080;">Sunday 10:00</strong>
+                </p>
+                
+                <div class="contact-info" style="margin: 2rem 0; padding: 1.5rem; background: rgba(0, 255, 255, 0.05); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 15px;">
+                    <h4 class="punk-highlight" style="font-size: 1.2rem; margin-bottom: 1rem;">🔒 If doors are locked at night contact the organizers:</h4>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <a href="https://discord.gg/pTdzDHC5ax" target="_blank" class="punk-button" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                            <i class="fab fa-discord"></i>
+                            Discord
+                        </a>
+                        <a href="https://wa.me/358403075232" target="_blank" class="punk-button" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">+358 40 307 5232</p>
+                    </div>
+                
+                <div class="event-focus" style="margin-top: 2rem;">
+                    <h4 class="punk-accent" style="font-size: 1.4rem; margin-bottom: 1rem;">🎨 WE FOCUS ON CREATIVE VIBES AND CREATION ITSELF</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                        <div class="focus-item" style="padding: 1rem; background: rgba(255, 0, 128, 0.1); border: 1px solid rgba(255, 0, 128, 0.3); border-radius: 10px;">
+                            <i class="fas fa-gamepad" style="font-size: 2rem; color: #ff0080; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #ff0080; margin-bottom: 0.5rem;">NON-STOP GAMING</h5>
+                            <p style="font-size: 0.9rem;">Big screen gaming sessions</p>
+                </div>
+                        <div class="focus-item" style="padding: 1rem; background: rgba(0, 255, 255, 0.1); border: 1px solid rgba(0, 255, 255, 0.3); border-radius: 10px;">
+                            <i class="fas fa-microphone" style="font-size: 2rem; color: #00ffff; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #00ffff; margin-bottom: 0.5rem;">AD HOC SPEECHES</h5>
+                            <p style="font-size: 0.9rem;">Spontaneous presentations</p>
+                    </div>
+                        <div class="focus-item" style="padding: 1rem; background: rgba(255, 255, 0, 0.1); border: 1px solid rgba(255, 255, 0, 0.3); border-radius: 10px;">
+                            <i class="fas fa-bug" style="font-size: 2rem; color: #ffff00; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #ffff00; margin-bottom: 0.5rem;">GAME TESTING</h5>
+                            <p style="font-size: 0.9rem;">Test and iterate your games</p>
+                    </div>
+                        <div class="focus-item" style="padding: 1rem; background: rgba(0, 255, 0, 0.1); border: 1px solid rgba(0, 255, 0, 0.3); border-radius: 10px;">
+                            <i class="fas fa-code" style="font-size: 2rem; color: #00ff00; margin-bottom: 0.5rem;"></i>
+                            <h5 style="color: #00ff00; margin-bottom: 0.5rem;">HACKER SHOWCASE</h5>
+                            <p style="font-size: 0.9rem;">See what hackers are creating</p>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Information -->
+    <section id="sponsor" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="punk-section-title">SPONSOR THE REVOLUTION</h2>
+                <p class="punk-subtitle">Fuel the Renaissance of Attitude</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="punk-card" style="margin-bottom: 0.5rem;">
+                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">HELLO DEAR POSSIBLE CREATIVE REVOLUTIONIST!</h3>
+                        <p class="punk-text" style="line-height: 1.6; margin-bottom: 1.5rem;">
+                            We'd like to invite you to be part of <span class="punk-highlight">Demo Reboot</span>, a next-level creative weekend happening <span class="punk-accent">24.10.2025 1600 - 26.10.2025 1200</span> at <span class="punk-highlight">Tampere Nokia Arena - Paidia</span>. This event is organized as a non-profit initiative via Tampere Startup Association, with one mission: <span class="punk-highlight">reboot the Finnish demoscene</span> and give creators, coders, artists, and musicians a place to jam, collide, and spark new ideas.
+                        </p>
+                    </div>
+                    
+                    <h3 class="punk-accent" style="font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: uppercase;">WHY SUPPORT?</h3>
+                    <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.2rem;">By sponsoring <span class="punk-highlight">Demo Reboot</span>, you're not funding a traditional event. You're fueling:</p>
+                    
+                    <ul class="punk-list">
+                        <li>
+                            <i class="fas fa-lightbulb" style="color: #ff0080; margin-right: 1rem; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);"></i>
+                            <strong>Innovation Access</strong> → fresh demos, bold experiments, prototypes, and art styles.
+                        </li>
+                        <li>
+                            <i class="fas fa-brain" style="color: #00ffff; margin-right: 1rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);"></i>
+                            <strong>Outside-the-box thinking</strong> → non-conventional responses and unpredictable creative sparks.
+                        </li>
+                        <li>
+                            <i class="fas fa-star" style="color: #ffff00; margin-right: 1rem; text-shadow: 0 0 10px rgba(255, 255, 0, 0.6);"></i>
+                            <strong>New Talent Discovery</strong> → connect with exceptional developers and artists who rarely fit into "official" spaces.
+                        </li>
+                        <li>
+                            <i class="fas fa-sync-alt" style="color: #ff0080; margin-right: 1rem; text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);"></i>
+                            <strong>Cross-sector Inspiration</strong> → games, art, tech, museums, culture — all colliding.
+                        </li>
+                        <li>
+                            <i class="fas fa-fire" style="color: #00ffff; margin-right: 1rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);"></i>
+                            <strong>Movement & Identity</strong> → be part of the Renaissance of Attitude — a grassroots cultural reboot, not a KPI-driven program.
+                        </li>
+                    </ul>
+                    
+                    <h3 class="punk-accent" style="font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: uppercase;">HOW IT WORKS:</h3>
+                    <div class="punk-card" style="margin-bottom: 0.5rem;">
+                        <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.1rem;">• <span class="punk-highlight">50% of sponsorship</span> goes directly to the creators.</p>
+                        <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.1rem;">• <span class="punk-highlight">50% builds the permanent DEMO HOUSE</span> in Tampere — ensuring the spark lasts beyond the weekend.</p>
+                        <p class="punk-text" style="font-size: 1.1rem;">As a sponsor, you can drop challenges, test ideas, or request creative input — and see what the community produces in real time.</p>
+                    </div>
+                    
+                    <div class="punk-quote">
+                        "This isn't about polished outcomes. It's about energy, experiments, and raw creativity — exactly where innovation comes from."
+                    </div>
+                    
+                    <div class="punk-card" style="margin-bottom: 0.5rem;">
+                        <p class="punk-text" style="font-size: 1.2rem; margin-bottom: 1rem;">
+                            We'd love to have you join as a sponsor and stand with us in shaping something <span class="punk-accent">bold, authentic, and future-facing</span>.
+                        </p>
+                        <p class="punk-text" style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;">
+                            <span class="punk-highlight">DEMO REBOOT → Real Demos. Real People. The Renaissance of Attitude.</span>
+                        </p>
+                        <p class="punk-text" style="margin-bottom: 0.5rem;">
+                            Best regards,
+                        </p>
+                        <p class="punk-accent" style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: 700;">
+                            Antti Martikainen (+358 40 307 5232 whatsapp ok)
+                        </p>
+                        <p class="punk-text" style="margin-bottom: 0.5rem;">
+                            Demo Reboot Team
+                        </p>
+                        <p class="punk-highlight" style="font-weight: 700;">
+                            Tampere Startup Association
+                        </p>
+                        
+                        <!-- TRES Shoutout -->
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 200, 255, 0.1)); border: 2px solid rgba(0, 255, 255, 0.4); border-radius: 15px; text-align: center; position: relative; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+                            <div style="position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff); border-radius: 15px; z-index: -1; opacity: 0.3;"></div>
+                            <h4 style="color: #00ffff; font-size: 1.3rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(0, 255, 255, 0.8); font-weight: 800; letter-spacing: 0.5px;">HUGE SHOUTOUT TO CO ORGANIZERS FROM</h4>
+                            <p style="color: #00ffff; font-size: 1.8rem; font-weight: 900; text-shadow: 0 0 15px rgba(0, 255, 255, 0.8); margin: 0; letter-spacing: 1px;">TRES</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="punk-contact" style="background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(255, 50, 150, 0.15)); border: 3px solid rgba(255, 0, 128, 0.6); border-radius: 25px; padding: 3rem; text-align: center; position: relative; backdrop-filter: blur(15px); box-shadow: 0 15px 50px rgba(255, 0, 128, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);">
+                        <div style="position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080, #ff69b4); border-radius: 25px; z-index: -1; opacity: 0.4; animation: borderGlow 3s ease-in-out infinite alternate;"></div>
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(255, 0, 128, 0.1) 0%, transparent 70%); border-radius: 25px; z-index: -1;"></div>
+                        <i class="fas fa-handshake" style="font-size: 4rem; color: #ff0080; margin-bottom: 1rem; text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);"></i>
+                        <h3 style="color: #ff0080; font-size: 1.5rem; margin-bottom: 1rem; text-shadow: 0 0 15px rgba(255, 0, 128, 0.8); font-weight: 800; letter-spacing: 0.5px;">LET'S SCHEDULE A QUICK CALL</h3>
+                        <p style="font-size: 1.1rem; color: #e0e0e0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); margin-bottom: 2rem;">to discuss how your involvement could look.</p>
+                        <a href="tel:+358403075232" class="punk-button" style="background: linear-gradient(135deg, #ff0080, #ff4080); border: 2px solid #ff0080; box-shadow: 0 8px 25px rgba(255, 0, 128, 0.5); font-size: 1.1rem; padding: 1rem 2rem;">
+                            <i class="fas fa-phone"></i>
+                            CALL NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration -->
+    <section id="register" class="contact">
+        <div class="container">
+            <div class="section-header" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 200, 255, 0.15)); border: 3px solid rgba(0, 255, 255, 0.6); border-radius: 25px; padding: 3rem; text-align: center; position: relative; backdrop-filter: blur(15px); box-shadow: 0 15px 50px rgba(0, 255, 255, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3); margin-bottom: 3rem;">
+                <div style="position: absolute; top: -3px; left: -3px; right: -3px; bottom: -3px; background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff, #40e0d0); border-radius: 25px; z-index: -1; opacity: 0.4; animation: borderGlow 3s ease-in-out infinite alternate;"></div>
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%); border-radius: 25px; z-index: -1;"></div>
+                <h2 class="punk-section-title" style="color: #00ffff; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); font-weight: 900; letter-spacing: 1px;">JOIN THE REVOLUTION</h2>
+                <p class="punk-subtitle" style="font-size: 1.3rem; color: #e0e0e0; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); font-weight: 600;">Secure your spot at the Renaissance of Attitude</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="punk-card" style="margin-bottom: 1rem;">
+                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">EVENT DETAILS</h3>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-calendar" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                        <div>
+                                <strong style="color: #ff0080;">Date:</strong> October 24-26, 2025
+                        </div>
+                    </div>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-clock" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                        <div>
+                                <strong style="color: #ff0080;">Time:</strong> 24.10.2025 1600 - 26.10.2025 1200
+                        </div>
+                    </div>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-map-marker-alt" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                        <div>
+                                <strong style="color: #ff0080;">Location:</strong> Tampere Nokia Arena - Paidia<br>
+                            Tampere, Finland
+                        </div>
+                    </div>
+                        <div class="contact-item" style="margin-bottom: 1rem;">
+                            <i class="fas fa-ticket-alt" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                        <div>
+                                <strong style="color: #ff0080;">Price:</strong> Free for Startup Nation members<br>
+                            €50 for non-members
+                        </div>
+                        </div>
+                        <div class="contact-item" style="margin-bottom: 1rem; padding: 1rem; background: linear-gradient(135deg, rgba(255, 255, 0, 0.1), rgba(255, 200, 0, 0.05)); border: 1px solid rgba(255, 255, 0, 0.3); border-radius: 10px;">
+                            <i class="fas fa-heart" style="color: #ffff00; margin-right: 0.5rem;"></i>
+                        <div>
+                                <strong style="color: #ffff00;">Event is free but hey, we do absolutely VALUE if we get sponsors</strong>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="punk-card" style="margin-bottom: 1rem;">
+                        <h3 class="punk-highlight" style="font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase;">WHAT TO EXPECT</h3>
+                        <ul class="punk-list" style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-gamepad" style="color: #ff0080; margin-right: 0.5rem;"></i>
+                                Non-stop gaming and streaming
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-code" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                                Non-stop creation and demoing
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-microphone" style="color: #ffff00; margin-right: 0.5rem;"></i>
+                                Ad hoc speeches and presentations
+                            </li>
+                            <li style="margin-bottom: 0.5rem;">
+                                <i class="fas fa-users" style="color: #ff0080; margin-right: 0.5rem;"></i>
+                                Open doors - just sign up!
+                            </li>
+                            <li>
+                                <i class="fas fa-lightbulb" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                                Tons of creativity and innovation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div class="punk-card" style="padding: 2rem;">
+                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase; text-align: center;">REGISTRATION FORM</h3>
+                        <form id="demoRebootForm" class="punk-form">
+                        <div class="form-group">
+                                <label for="name" class="punk-label">
+                                    <i class="fas fa-user"></i>
+                                    Full Name *
+                                </label>
+                                <input type="text" id="name" name="name" class="punk-input" required>
+                        </div>
+                        <div class="form-group">
+                                <label for="email" class="punk-label">
+                                    <i class="fas fa-envelope"></i>
+                                    Email Address *
+                                </label>
+                                <input type="email" id="email" name="email" class="punk-input" required>
+                        </div>
+                        <div class="form-group">
+                                <label for="company" class="punk-label">
+                                    <i class="fas fa-building"></i>
+                                    Company/Startup/Organization or Individual
+                                </label>
+                                <input type="text" id="company" name="company" class="punk-input" placeholder="e.g., My Startup Inc. or Individual">
+                        </div>
+                        <div class="form-group">
+                                <label for="participant_type" class="punk-label">
+                                    <i class="fas fa-users"></i>
+                                    How do you want to participate? *
+                                </label>
+                                <select id="participant_type" name="participant_type" class="punk-select" required>
+                                    <option value="">Choose your participation type</option>
+                                    <option value="guest">🎭 Guest - I want to attend and watch</option>
+                                    <option value="sponsor">💰 Sponsor - I want to sponsor the event</option>
+                                    <option value="hacker">⚡ Hacker - I want to hack/create with you</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                                <label for="roles" class="punk-label">
+                                    <i class="fas fa-user-tag"></i>
+                                    Your Professional Roles (select all that apply)
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="creator">
+                                        <span class="checkmark"></span>
+                                        Creator/Artist
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="developer">
+                                        <span class="checkmark"></span>
+                                        Developer/Coder
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="founder">
+                                        <span class="checkmark"></span>
+                                        Startup Founder
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="investor">
+                                        <span class="checkmark"></span>
+                                        Investor
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="mentor">
+                                        <span class="checkmark"></span>
+                                        Mentor
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="student">
+                                        <span class="checkmark"></span>
+                                        Student
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="designer">
+                                        <span class="checkmark"></span>
+                                        Designer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="marketer">
+                                        <span class="checkmark"></span>
+                                        Marketer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="researcher">
+                                        <span class="checkmark"></span>
+                                        Researcher
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="roles" value="other">
+                                        <span class="checkmark"></span>
+                                        Other
+                                    </label>
+                        </div>
+                            </div>
+                        <div class="form-group">
+                                <label for="experience" class="punk-label">
+                                    <i class="fas fa-star"></i>
+                                    Experience Level
+                                </label>
+                                <select id="experience" name="experience" class="punk-select">
+                                    <option value="">Select experience level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                    <option value="expert">Expert</option>
+                                </select>
+                        </div>
+                            <div class="form-group">
+                                <label for="interests" class="punk-label">
+                                    <i class="fas fa-heart"></i>
+                                    Areas of Interest (select all that apply)
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="gaming">
+                                        <span class="checkmark"></span>
+                                        Gaming
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="streaming">
+                                        <span class="checkmark"></span>
+                                        Streaming
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="coding">
+                                        <span class="checkmark"></span>
+                                        Coding/Development
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="art">
+                                        <span class="checkmark"></span>
+                                        Digital Art
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="music">
+                                        <span class="checkmark"></span>
+                                        Music Production
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="networking">
+                                        <span class="checkmark"></span>
+                                        Networking
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="education">
+                                        <span class="checkmark"></span>
+                                        Education
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="ai">
+                                        <span class="checkmark"></span>
+                                        AI & Machine Learning
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="interests" value="real_life_stories">
+                                        <span class="checkmark"></span>
+                                        Real Life Development Stories
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_preference" class="punk-label">
+                                    <i class="fas fa-phone-alt"></i>
+                                    Contact Preference
+                                </label>
+                                <select id="contact_preference" name="contact_preference" class="punk-select">
+                                    <option value="">How should we contact you?</option>
+                                    <option value="email">Email only</option>
+                                    <option value="phone">Phone call preferred</option>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="any">Any method is fine</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sponsorship_interest" class="punk-label">
+                                    <i class="fas fa-handshake"></i>
+                                    Sponsorship Interest
+                                </label>
+                                <select id="sponsorship_interest" name="sponsorship_interest" class="punk-select">
+                                    <option value="">Are you interested in sponsoring?</option>
+                                    <option value="yes_contact">Yes, please contact me about sponsorship</option>
+                                    <option value="maybe">Maybe, I'd like more information</option>
+                                    <option value="no">No, just attending</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hack_interest" class="punk-label">
+                                    <i class="fas fa-code"></i>
+                                    Hacking/Creation Interest
+                                </label>
+                                <select id="hack_interest" name="hack_interest" class="punk-select">
+                                    <option value="">Do you want to hack/create?</option>
+                                    <option value="yes_active">Yes, I want to actively participate</option>
+                                    <option value="yes_team">Yes, I want to join a team</option>
+                                    <option value="maybe">Maybe, depending on the project</option>
+                                    <option value="no">No, just observing</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="equipment" class="punk-label">
+                                    <i class="fas fa-laptop"></i>
+                                    Equipment for Hacking
+                                </label>
+                                <select id="equipment" name="equipment" class="punk-select">
+                                    <option value="">Will you bring your own equipment?</option>
+                                    <option value="yes_laptop">Yes, I'll bring my laptop</option>
+                                    <option value="yes_full_setup">Yes, I'll bring my full development setup</option>
+                                    <option value="maybe">Maybe, depends on the project</option>
+                                    <option value="no">No, I'll use provided equipment</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="content_creation" class="punk-label">
+                                    <i class="fas fa-palette"></i>
+                                    If you're coming to create content, what type of creator are you? (select all that apply)
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="digital_artist_2d">
+                                        <span class="checkmark"></span>
+                                        2D Digital Artist
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="digital_artist_3d">
+                                        <span class="checkmark"></span>
+                                        3D Digital Artist
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="programmer">
+                                        <span class="checkmark"></span>
+                                        Programmer/Developer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="unity_developer">
+                                        <span class="checkmark"></span>
+                                        Unity Developer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="unreal_developer">
+                                        <span class="checkmark"></span>
+                                        Unreal Engine Developer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="ai_creator">
+                                        <span class="checkmark"></span>
+                                        AI Creator/ML Engineer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="game_designer">
+                                        <span class="checkmark"></span>
+                                        Game Designer
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="content_creation" value="content_creator">
+                                        <span class="checkmark"></span>
+                                        Social Media Content Creator
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="attendance_days" class="punk-label">
+                                    <i class="fas fa-calendar-check"></i>
+                                    Which days are you planning to attend? *
+                                </label>
+                                <div class="punk-checkboxes">
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="friday" required>
+                                        <span class="checkmark"></span>
+                                        Friday 24.10.2025 (1600-2400)
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="saturday">
+                                        <span class="checkmark"></span>
+                                        Saturday 25.10.2025 (1000-2400)
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="sunday">
+                                        <span class="checkmark"></span>
+                                        Sunday 26.10.2025 (1000-1200)
+                                    </label>
+                                    <label class="punk-checkbox">
+                                        <input type="checkbox" name="attendance_days" value="all_days">
+                                        <span class="checkmark"></span>
+                                        All three days (Full weekend)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="topic_suggestion" class="punk-label">
+                                    <i class="fas fa-lightbulb"></i>
+                                    Suggest a Topic to Talk About
+                                </label>
+                                <input type="text" id="topic_suggestion" name="topic_suggestion" class="punk-input" placeholder="What would you like to hear about in ad hoc speeches?">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="punk-label">
+                                    <i class="fas fa-comment"></i>
+                                    Additional Comments
+                                </label>
+                                <textarea id="message" name="message" class="punk-textarea" rows="4" placeholder="Tell us more about your interests, what you'd like to create, or any special requirements..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="punk-card" style="padding: 1rem; margin-bottom: 1rem; background: rgba(0, 255, 255, 0.05); border: 1px solid rgba(0, 255, 255, 0.3);">
+                                    <h4 style="color: #00ffff; margin-bottom: 0.5rem; font-size: 0.9rem;">📋 DATA PROTECTION & GDPR</h4>
+                                    <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                                        We collect your data to organize Demo Reboot 2025 and communicate with you about the event. 
+                                        Your data is stored securely and will not be shared with third parties without your consent.
+                                    </p>
+                                    <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                                        <strong>Your rights:</strong> You can request access, correction, or deletion of your data at any time by contacting us.
+                                    </p>
+                                    <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem;">
+                                        <strong>Contact:</strong> For data protection questions, email: privacy@startupnation.fi<br>
+                                        <strong>Discord:</strong> <a href="https://discord.gg/pTdzDHC5ax" style="color: #00ffff; text-decoration: underline;">https://discord.gg/pTdzDHC5ax</a>
+                                    </p>
+                                    <p style="font-size: 0.8rem; line-height: 1.4;">
+                                        <strong>Privacy Policy:</strong> <a href="https://virtual-dawn.com/privacy-policy/" style="color: #00ffff; text-decoration: underline;">https://virtual-dawn.com/privacy-policy/</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="punk-checkbox">
+                                    <input type="checkbox" name="terms" value="accepted" required>
+                                    <span class="checkmark"></span>
+                                    I agree to the <a href="https://virtual-dawn.com/privacy-policy/" style="color: #00ffff; text-decoration: underline;">privacy policy</a> *
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="punk-checkbox">
+                                    <input type="checkbox" name="gdpr_consent" value="accepted" required>
+                                    <span class="checkmark"></span>
+                                    I consent to the processing of my personal data for event organization purposes (GDPR Art. 6(1)(a)) *
+                                </label>
+                            </div>
+                            <button type="submit" class="punk-button punk-button-primary">
+                                <i class="fas fa-rocket"></i>
+                                JOIN THE REVOLUTION
+                        </button>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Startup Nation</h4>
+                    <p>Building the future of innovation in Tampere, Finland.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="index.html#about">About</a></p>
+                    <p><a href="index.html#projects">Projects</a></p>
+                    <p><a href="index.html#contact">Contact</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Events</h4>
+                    <p><a href="demo-reboot.html">Demo Reboot 24.10</a></p>
+                    <p><a href="kasvihuoneilmiö.html">Kasvihuoneilmiö</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Startup Nation - Tampere Startup Association. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
