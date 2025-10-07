@@ -219,7 +219,7 @@ body {
     flex-direction: column;
 }
 
-/* Demo Reboot Page Specific Styles - ULTRA AGGRESSIVE BACKGROUND */
+/* Demo Reboot Page Specific Styles - BACKGROUND ON MOST BACKGROUND LAYER */
 body.demo-reboot-page {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
@@ -229,19 +229,8 @@ body.demo-reboot-page {
     min-height: 100vh !important;
 }
 
-/* Force background on html and body too */
-.demo-reboot-page html,
-.demo-reboot-page body {
-    background: url('backgroundreboot.png') center center fixed !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed !important;
-}
-
-/* Force background on all main containers */
-.demo-reboot-page .container,
-.demo-reboot-page main,
-.demo-reboot-page section {
+/* Ensure background shows on html element too */
+.demo-reboot-page html {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -252,7 +241,10 @@ body.demo-reboot-page {
 .demo-reboot-page .hero,
 .demo-reboot-page .container,
 .demo-reboot-page main,
-.demo-reboot-page section {
+.demo-reboot-page section,
+.demo-reboot-page .punk-card,
+.demo-reboot-page .contact-info,
+.demo-reboot-page .contact-form {
     background: transparent !important;
 }
 
@@ -296,8 +288,8 @@ body.demo-reboot-page {
 
 /* Better spacing for sections */
 .demo-reboot-page section {
-    margin: 2rem 0 !important;
-    padding: 1rem 0 !important;
+    margin: 1rem 0 !important;
+    padding: 0.5rem 0 !important;
 }
 
 /* Improve promo card text */
