@@ -219,7 +219,7 @@ body {
     flex-direction: column;
 }
 
-/* Demo Reboot Page Specific Styles - FORCE BACKGROUND IMAGE */
+/* Demo Reboot Page Specific Styles - ULTRA AGGRESSIVE BACKGROUND */
 body.demo-reboot-page {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
@@ -232,6 +232,16 @@ body.demo-reboot-page {
 /* Force background on html and body too */
 .demo-reboot-page html,
 .demo-reboot-page body {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+}
+
+/* Force background on all main containers */
+.demo-reboot-page .container,
+.demo-reboot-page main,
+.demo-reboot-page section {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -261,6 +271,19 @@ body.demo-reboot-page {
     background: rgba(0, 0, 0, 0.7) !important;
     border-radius: 15px !important;
     border: 2px solid rgba(0, 255, 255, 0.5) !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Make registration form wider */
+.demo-reboot-page .contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.demo-reboot-page .contact-content {
+    display: block !important;
+    width: 100% !important;
 }
 
 .demo-reboot-page .punk-subtitle {
