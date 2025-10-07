@@ -219,7 +219,7 @@ body {
     flex-direction: column;
 }
 
-/* Demo Reboot Page Specific Styles - BACKGROUND ONLY */
+/* Demo Reboot Page Specific Styles - FORCE BACKGROUND IMAGE */
 body.demo-reboot-page {
     background: url('backgroundreboot.png') center center fixed !important;
     background-size: cover !important;
@@ -227,6 +227,15 @@ body.demo-reboot-page {
     background-attachment: fixed !important;
     color: #e0e0e0 !important;
     min-height: 100vh !important;
+}
+
+/* Force background on html and body too */
+.demo-reboot-page html,
+.demo-reboot-page body {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 /* Make sure main content areas are transparent to show background */
@@ -243,6 +252,15 @@ body.demo-reboot-page {
     margin-bottom: 1rem !important;
     text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
     letter-spacing: 2px !important;
+}
+
+/* Separate questionnaire section */
+.demo-reboot-page #demoRebootForm {
+    margin-top: 3rem !important;
+    padding: 2rem !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 15px !important;
+    border: 2px solid rgba(0, 255, 255, 0.5) !important;
 }
 
 .demo-reboot-page .punk-subtitle {
@@ -279,7 +297,7 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .hero {
-    padding: 200px 0 60px;
+    padding: 250px 0 60px;
     text-align: center;
     position: relative;
     z-index: 10;
@@ -292,8 +310,20 @@ body.demo-reboot-page {
     padding: 0 2rem;
 }
 
-/* Demo Reboot Grid Layout Fixes */
+/* Demo Reboot Grid Layout Fixes - FORCE PROPER GRID */
 .demo-reboot-page .promo-messages {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+    margin: 1rem auto !important;
+    max-width: 1200px !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+}
+
+/* Force grid on all promo message containers */
+.demo-reboot-page [class*="promo-messages"],
+.demo-reboot-page [style*="promo-messages"] {
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 1rem !important;
