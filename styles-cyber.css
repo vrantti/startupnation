@@ -1377,8 +1377,6 @@ body::after {
 html.demo-reboot-page,
 html body.demo-reboot-page {
     font-family: var(--font-primary);
-    background: #000000 !important;
-    background-image: none !important;
     position: relative;
     overflow-x: hidden;
     color: #e0e0e0 !important;
@@ -1387,9 +1385,8 @@ html body.demo-reboot-page {
 /* Separate rule for the cyberpunk gradients */
 body.demo-reboot-page {
     background-image:
-        linear-gradient(135deg, #000000 0%, #0a0a0a 25%, #1a0a1a 50%, #0a0a0a 75%, #000000 100%),
         radial-gradient(circle at 30% 20%, rgba(255, 0, 128, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.06) 0%, transparent 40%) !important;
+        radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.06) 0%, transparent 40%);
 }
 
 .demo-reboot-page::before {
@@ -1730,6 +1727,232 @@ body.demo-reboot-page {
     font-size: 0.95rem;
 }
 
+/* PROMO CARD STYLES */
+.promo-card {
+    border-radius: 15px;
+    padding: 1.2rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.promo-card-cyan {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 200, 255, 0.1));
+    border: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+.promo-card-cyan::before {
+    background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff);
+    opacity: 0.3;
+}
+
+.promo-card-pink {
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 50, 150, 0.1));
+    border: 2px solid rgba(255, 0, 128, 0.5);
+}
+
+.promo-card-pink::before {
+    background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080);
+    opacity: 0.3;
+}
+
+.promo-card-yellow {
+    background: linear-gradient(135deg, rgba(255, 255, 0, 0.15), rgba(255, 200, 0, 0.1));
+    border: 2px solid rgba(255, 255, 0, 0.5);
+}
+
+.promo-card-yellow::before {
+    background: linear-gradient(45deg, #ffff00, #ffcc00, #ffff00);
+    opacity: 0.3;
+}
+
+.promo-card-green {
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.15), rgba(0, 200, 0, 0.1));
+    border: 2px solid rgba(0, 255, 0, 0.5);
+}
+
+.promo-card-green::before {
+    background: linear-gradient(45deg, #00ff00, #00cc00, #00ff00);
+    opacity: 0.3;
+}
+
+.promo-card-orange {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 140, 0, 0.1));
+    border: 2px solid rgba(255, 165, 0, 0.5);
+}
+
+.promo-card-orange::before {
+    background: linear-gradient(45deg, #ffa500, #ff8c00, #ffa500);
+    opacity: 0.3;
+}
+
+.promo-card-purple {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(120, 30, 200, 0.1));
+    border: 2px solid rgba(138, 43, 226, 0.5);
+}
+
+.promo-card-purple::before {
+    background: linear-gradient(45deg, #8a2be2, #7b1fa2, #8a2be2);
+    opacity: 0.3;
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.promo-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.promo-card-cyan h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.promo-card-pink h3 {
+    color: #ff0080;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.8);
+}
+
+.promo-card-yellow h3 {
+    color: #ffff00;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+}
+
+.promo-card-green h3 {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.promo-card-orange h3 {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+.promo-card-purple h3 {
+    color: #8a2be2;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+
+.promo-card p {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* CHALLENGE CARD STYLES */
+.challenge-card {
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 40px rgba(255, 20, 147, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 50px rgba(255, 20, 147, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.challenge-card-pink {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(255, 50, 120, 0.15));
+    border: 3px solid rgba(255, 20, 147, 0.6);
+}
+
+.challenge-card-pink::before {
+    background: linear-gradient(45deg, #ff1493, #ff4080, #ff1493, #ff69b4);
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.challenge-card-cyan {
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(0, 150, 200, 0.15));
+    border: 3px solid rgba(0, 191, 255, 0.6);
+}
+
+.challenge-card-cyan::before {
+    background: linear-gradient(45deg, #00bfff, #0099cc, #00bfff, #40e0d0);
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.challenge-card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.challenge-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.challenge-card-pink::after {
+    background: radial-gradient(circle at center, rgba(255, 20, 147, 0.1) 0%, transparent 70%);
+}
+
+.challenge-card-cyan::after {
+    background: radial-gradient(circle at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+}
+
+.challenge-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.challenge-card-pink h3 {
+    color: #ff1493;
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.9);
+}
+
+.challenge-card-cyan h3 {
+    color: #00bfff;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.9);
+}
+
+.challenge-card p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    line-height: 1.4;
+}
+
 /* DEMO REBOOT SPECIFIC GRID EFFECTS */
 .demo-reboot-page .hero {
     position: relative;
@@ -1847,8 +2070,8 @@ body.demo-reboot-page {
     }
     
     body {
-        background: #000000;
-        color: #ffffff;
+        background: #ffffff;
+        color: #000000;
     }
     
     .hero {
