@@ -2192,6 +2192,37 @@ body.demo-reboot-page {
     padding: 2rem;
 }
 
+/* Hero Section Container - Groups content with background */
+.hero-section-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(10, 10, 20, 0.8);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow:
+        0 0 40px rgba(0, 255, 255, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero-section-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #ff0080, #00ffff);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.2;
+    animation: borderGlow 4s ease-in-out infinite alternate;
+}
+
 /* Sponsor Section Layout - Single column flow */
 .demo-reboot-page .sponsor-section {
     display: block !important;
@@ -2279,12 +2310,14 @@ body.demo-reboot-page {
 .event-description {
     width: 100%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    text-align: center;
 }
 
 /* Registration Counter - Centered */
 .registration-counter-display {
     margin: 2rem auto;
+    text-align: center;
 }
 
 /* Responsive Breakpoints */
@@ -2404,4 +2437,22 @@ body.demo-reboot-page {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* ==================== FORM VALIDATION ==================== */
+/* Enhanced form validation styles */
+.punk-input.error, .punk-select.error, .punk-textarea.error {
+    border-color: #ff0040 !important;
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.4) !important;
+    animation: errorPulse 0.5s ease-in-out;
+}
+
+.punk-input.success, .punk-select.success, .punk-textarea.success {
+    border-color: #00ff00 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4) !important;
+}
+
+@keyframes errorPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
 }

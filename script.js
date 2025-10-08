@@ -195,9 +195,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             // Validate required fields
-            const requiredFields = ['name', 'email', 'participant_type', 'terms', 'gdpr_consent'];
-            const missingFields = requiredFields.filter(field => !data[field]);
-            
+            const requiredFields = ['name', 'email', 'participant_type', 'attendance_days', 'terms', 'gdpr_consent'];
+            const missingFields = [];
+
+            requiredFields.forEach(field => {
+                const value = data[field];
+                if (field === 'attendance_days') {
+                    // For checkbox arrays, check if array exists and has at least one element
+                    if (!value || (Array.isArray(value) && value.length === 0)) {
+                        missingFields.push(field);
+                    }
+                } else if (!value) {
+                    missingFields.push(field);
+                }
+            });
+
             if (missingFields.length > 0) {
                 showNotification('Please fill in all required fields marked with *.', 'error');
                 submitButton.classList.remove('loading');
