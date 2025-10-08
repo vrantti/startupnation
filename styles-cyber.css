@@ -2060,6 +2060,125 @@ body.demo-reboot-page {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 }
 
+/* ==================== SPONSOR SECTION STYLES ==================== */
+/* TRES Shoutout */
+.tres-shoutout {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 200, 255, 0.1));
+    border: 2px solid rgba(0, 255, 255, 0.4);
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 255, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.tres-shoutout::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff);
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.tres-shoutout h4 {
+    color: #00ffff;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.tres-shoutout p {
+    color: #00ffff;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Call to Action Section - Now flows under content */
+.call-to-action-section {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.punk-contact {
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(255, 50, 150, 0.15));
+    border: 3px solid rgba(255, 0, 128, 0.6);
+    border-radius: 25px;
+    padding: 3rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 50px rgba(255, 0, 128, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.punk-contact::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080, #ff69b4);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.punk-contact::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 0, 128, 0.1) 0%, transparent 70%);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+.punk-contact i {
+    font-size: 4rem;
+    color: #ff0080;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+}
+
+.punk-contact h3 {
+    color: #ff0080;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(255, 0, 128, 0.8);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.punk-contact p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    margin-bottom: 2rem;
+}
+
+.punk-contact .punk-button {
+    background: linear-gradient(135deg, #ff0080, #ff4080);
+    border: 2px solid #ff0080;
+    box-shadow: 0 8px 25px rgba(255, 0, 128, 0.5);
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+}
+
 /* ==================== 4. LAYOUT STRUCTURE ==================== */
 /* Grid layouts and responsive organization */
 
@@ -2071,6 +2190,69 @@ body.demo-reboot-page {
     align-items: center;
     gap: 2rem; /* Clear spacing between sections */
     padding: 2rem;
+}
+
+/* Sponsor Section Layout - Single column flow */
+.demo-reboot-page .sponsor-section {
+    display: block !important;
+    width: 100% !important;
+}
+
+.demo-reboot-page .sponsor-section .about-content {
+    display: block !important;
+    width: 100% !important;
+}
+
+.demo-reboot-page .sponsor-section .about-text,
+.demo-reboot-page .sponsor-section .about-visual {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+.demo-reboot-page .sponsor-section .call-to-action-section {
+    margin-top: 2rem;
+    width: 100%;
+    display: block;
+}
+
+/* Enhanced Text Readability for Sponsor Section */
+.demo-reboot-page .sponsor-section .punk-text {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+}
+
+.demo-reboot-page .sponsor-section .punk-highlight {
+    color: #00ffff !important;
+    font-weight: 700;
+    text-shadow:
+        0 0 3px rgba(0, 255, 255, 0.9),
+        0 0 8px rgba(0, 255, 255, 0.6);
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.05));
+    padding: 0.1em 0.3em;
+    border-radius: 4px;
+}
+
+.demo-reboot-page .sponsor-section .punk-accent {
+    color: #ff0080 !important;
+    font-weight: 700;
+    text-shadow:
+        0 0 3px rgba(255, 0, 128, 0.9),
+        0 0 8px rgba(255, 0, 128, 0.6);
+}
+
+.demo-reboot-page .sponsor-section .punk-card {
+    background: rgba(10, 10, 20, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.4) !important;
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.3),
+        0 8px 32px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Promotional Messages Grid - 3 columns on desktop */
