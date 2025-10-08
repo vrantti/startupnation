@@ -1382,11 +1382,12 @@ html body.demo-reboot-page {
     color: #e0e0e0 !important;
 }
 
-/* Separate rule for the cyberpunk gradients */
+/* MAIN BACKGROUND - The image should be the base layer */
 body.demo-reboot-page {
-    background-image:
-        radial-gradient(circle at 30% 20%, rgba(255, 0, 128, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.06) 0%, transparent 40%);
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
 }
 
 .demo-reboot-page::before {
@@ -1727,7 +1728,15 @@ body.demo-reboot-page {
     font-size: 0.95rem;
 }
 
-/* PROMO CARD STYLES */
+/* ==========================================
+   COMPARTMENTALIZED CODE SECTIONS
+   ========================================== */
+
+/* ==================== 1. CORE FOUNDATION ==================== */
+/* Base styles, variables, and fundamental structure */
+
+/* ==================== 2. HERO SECTION ==================== */
+/* Main hero area with background and layout */
 .promo-card {
     border-radius: 15px;
     padding: 1.2rem;
@@ -1953,93 +1962,196 @@ body.demo-reboot-page {
     line-height: 1.4;
 }
 
-/* DEMO REBOOT SPECIFIC GRID EFFECTS */
+/* ==================== 3. CONTENT SECTIONS ==================== */
+/* Organized content blocks with clear separation */
+
+/* Event Description Section */
+.event-description {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 50, 150, 0.1));
+    border: 2px solid rgba(255, 0, 128, 0.4);
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(255, 0, 128, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.event-description::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.event-description p {
+    font-size: 1.1rem;
+    color: #ff0080;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.6);
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Registration Counter Section */
+.registration-counter-display {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 200, 255, 0.15));
+    border: 3px solid rgba(0, 255, 255, 0.6);
+    border-radius: 25px;
+    display: inline-block;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 40px rgba(0, 255, 255, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+}
+
+.registration-counter-display::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff, #40e0d0);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.registration-counter-display::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+.counter-icon {
+    color: #00ffff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.registration-counter {
+    color: #00ffff;
+    font-weight: 800;
+    font-size: 2rem;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+.counter-text {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* ==================== 4. LAYOUT STRUCTURE ==================== */
+/* Grid layouts and responsive organization */
+
+/* Hero Section Layout - Organized Content Flow */
 .demo-reboot-page .hero {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Clear spacing between sections */
+    padding: 2rem;
 }
 
-.demo-reboot-page .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Promotional Messages Grid - 3 columns on desktop */
+.promo-messages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     width: 100%;
-    height: 100%;
-    background: 
-        /* Subtle concentric circles */
-        radial-gradient(circle at 50% 50%, transparent 0%, rgba(255, 0, 128, 0.02) 30%, transparent 60%),
-        /* Gentle grid overlay */
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 34px,
-            rgba(0, 255, 255, 0.008) 35px,
-            rgba(0, 255, 255, 0.008) 36px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 34px,
-            rgba(255, 0, 128, 0.008) 35px,
-            rgba(255, 0, 128, 0.008) 36px
-        );
-    pointer-events: none;
-    z-index: 1;
-    animation: heroGridPulse 10s ease-in-out infinite;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.demo-reboot-page .punk-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.demo-reboot-page .punk-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Hack Challenges Grid - 2 columns */
+.hack-challenges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
     width: 100%;
-    height: 100%;
-    background: 
-        /* Micro grid pattern */
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 9px,
-            rgba(0, 255, 255, 0.01) 10px,
-            rgba(0, 255, 255, 0.01) 11px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 9px,
-            rgba(255, 0, 128, 0.01) 10px,
-            rgba(255, 0, 128, 0.01) 11px
-        );
-    pointer-events: none;
-    z-index: 1;
-    animation: cardGridFlicker 3s ease-in-out infinite;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Event Description - Full width centered */
+.event-description {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Registration Counter - Centered */
+.registration-counter-display {
+    margin: 2rem auto;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .promo-messages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .demo-reboot-page .hero {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .promo-messages {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hack-challenges {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
 }
 
 @keyframes heroGridPulse {
-    0%, 100% { 
+    0%, 100% {
         opacity: 0.15;
         transform: scale(1);
     }
-    50% { 
+    50% {
         opacity: 0.3;
         transform: scale(1.002);
     }
 }
 
 @keyframes cardGridFlicker {
-    0%, 100% { 
+    0%, 100% {
         opacity: 0.1;
     }
-    50% { 
+    50% {
         opacity: 0.3;
     }
 }
+
+/* ==================== 5. UTILITIES & ANIMATIONS ==================== */
+/* Helper classes and animation effects */
 
 /* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
