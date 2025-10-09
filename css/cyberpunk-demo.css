@@ -61,12 +61,13 @@ body.demo-reboot-page {
     font-family: 'Space Grotesk', sans-serif !important;
     font-size: clamp(2.5rem, 7vw, 4.5rem) !important;
     font-weight: 900 !important;
-    background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080, #ffff00, #ff0080) !important;
+    color: #00ffff !important; /* Fallback color */
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080, #8000ff, #ff0080) !important;
     background-size: 300% 300% !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
-    text-shadow: 
+    text-shadow:
         0 0 20px rgba(255, 0, 128, 0.8),
         0 0 40px rgba(0, 255, 255, 0.4),
         0 0 60px rgba(255, 0, 128, 0.2) !important;
@@ -778,8 +779,62 @@ body.demo-reboot-page {
 }
 
 /* ==========================================
-   MISSING AUDIENCE CARDS & SPLIT SECTIONS
+   DEBUGGING: Ensure all content is visible
    ========================================== */
+
+/* Force visibility for all text elements */
+.demo-reboot-page h1,
+.demo-reboot-page h2,
+.demo-reboot-page h3,
+.demo-reboot-page h4,
+.demo-reboot-page h5,
+.demo-reboot-page h6,
+.demo-reboot-page p,
+.demo-reboot-page span,
+.demo-reboot-page div {
+    color: #e0e0e0 !important;
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Ensure section headers are visible */
+.demo-reboot-page .section-header h2 {
+    color: #00ffff !important;
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+    margin-bottom: 1rem !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+.demo-reboot-page .section-header p {
+    color: #e0e0e0 !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 2rem !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+/* Ensure promo cards are visible */
+.demo-reboot-page .promo-card {
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+.demo-reboot-page .promo-card h3 {
+    color: #e0e0e0 !important;
+    visibility: visible !important;
+    display: block !important;
+}
+
+.demo-reboot-page .promo-card p {
+    color: #e0e0e0 !important;
+    visibility: visible !important;
+    display: block !important;
+}
 
 /* Renaissance Mission Section */
 .demo-reboot-page .renaissance-mission-section {
