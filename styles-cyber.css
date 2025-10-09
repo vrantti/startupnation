@@ -2273,31 +2273,37 @@ body.demo-reboot-page {
     padding: 0.5rem 1rem !important;
 }
 
-/* NUCLEAR OPTION - ALL TEXT MUST BE VISIBLE */
-.demo-reboot-page .punk-text,
-.demo-reboot-page p,
-.demo-reboot-page div,
-.demo-reboot-page span {
+/* BALANCED TEXT READABILITY - Cool but Visible */
+.demo-reboot-page .punk-text {
     color: #ffffff !important;
-    font-size: 1.1rem !important;
-    line-height: 1.7 !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
     text-shadow:
-        0 0 10px rgba(255, 255, 255, 1) !important,
-        0 0 20px rgba(255, 255, 255, 1) !important,
-        0 0 30px rgba(255, 255, 255, 1) !important,
-        0 2px 15px rgba(0, 0, 0, 1) !important,
-        0 4px 25px rgba(0, 0, 0, 1) !important;
-    font-weight: 800 !important;
-    background: rgba(0, 0, 0, 1) !important;
-    padding: 0.8em 1em !important;
-    border-radius: 12px !important;
-    border: 4px solid rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(15px) !important;
-    box-shadow: 
-        0 0 30px rgba(0, 0, 0, 1) !important,
-        inset 0 0 20px rgba(255, 255, 255, 0.1) !important;
-    margin: 0.5rem 0 !important;
-    display: block !important;
+        0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.7),
+        0 2px 8px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 0.5em 0.7em;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    margin: 0.3rem 0;
+}
+
+/* Remove nuclear styling from other elements */
+.demo-reboot-page p:not(.punk-text),
+.demo-reboot-page div:not(.punk-text):not(.punk-card):not(.punk-highlight):not(.punk-accent),
+.demo-reboot-page span:not(.punk-text):not(.punk-highlight):not(.punk-accent) {
+    color: inherit;
+    background: none;
+    border: none;
+    padding: inherit;
+    margin: inherit;
+    text-shadow: inherit;
+    font-weight: inherit;
+    display: inherit;
 }
 
 /* Special styling for sponsor section text */
@@ -2320,30 +2326,28 @@ body.demo-reboot-page {
 
 .demo-reboot-page .punk-highlight {
     color: #00ffff !important;
-    font-weight: 800;
+    font-weight: 700;
     text-shadow:
-        0 0 4px rgba(0, 255, 255, 0.8),
-        0 0 8px rgba(0, 255, 255, 0.6),
-        0 2px 6px rgba(0, 0, 0, 1);
+        0 0 6px rgba(0, 255, 255, 0.8),
+        0 0 12px rgba(0, 255, 255, 0.6),
+        0 2px 6px rgba(0, 0, 0, 0.8);
     background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.08));
-    padding: 0.2em 0.5em;
+    padding: 0.2em 0.4em;
     border-radius: 6px;
     border: 1px solid rgba(0, 255, 255, 0.3);
-    filter: brightness(0.9);
 }
 
 .demo-reboot-page .punk-accent {
     color: #ff0080 !important;
-    font-weight: 800;
+    font-weight: 700;
     text-shadow:
-        0 0 4px rgba(255, 0, 128, 0.8),
-        0 0 8px rgba(255, 0, 128, 0.6),
-        0 2px 6px rgba(0, 0, 0, 1);
+        0 0 6px rgba(255, 0, 128, 0.8),
+        0 0 12px rgba(255, 0, 128, 0.6),
+        0 2px 6px rgba(0, 0, 0, 0.8);
     background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 0, 128, 0.08));
-    padding: 0.2em 0.5em;
+    padding: 0.2em 0.4em;
     border-radius: 6px;
     border: 1px solid rgba(255, 0, 128, 0.3);
-    filter: brightness(0.9);
 }
 
 .demo-reboot-page .punk-card {
@@ -2356,49 +2360,46 @@ body.demo-reboot-page {
     backdrop-filter: blur(10px);
 }
 
-/* NUCLEAR SECTION HEADERS - MUST BE VISIBLE */
+/* BALANCED SECTION HEADERS - Cool but Visible */
 .demo-reboot-page .section-header {
     margin-bottom: 2rem !important;
-    background: rgba(0, 0, 0, 1) !important;
-    padding: 2rem !important;
-    border-radius: 20px !important;
-    border: 5px solid rgba(0, 255, 255, 0.9) !important;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 255, 255, 0.4);
     box-shadow: 
-        0 0 50px rgba(0, 255, 255, 0.6) !important,
-        0 0 100px rgba(0, 0, 0, 1) !important;
-    backdrop-filter: blur(20px) !important;
+        0 0 25px rgba(0, 255, 255, 0.3),
+        0 8px 32px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
 }
 
 .demo-reboot-page .punk-section-title {
     color: #00ffff !important;
-    font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
-    font-weight: 900 !important;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 900;
     text-shadow:
-        0 0 15px rgba(0, 255, 255, 1) !important,
-        0 0 30px rgba(0, 255, 255, 1) !important,
-        0 0 45px rgba(0, 255, 255, 0.8) !important,
-        0 2px 10px rgba(0, 0, 0, 1) !important;
-    margin-bottom: 0.5rem !important;
-    background: rgba(0, 0, 0, 1) !important;
-    padding: 0.6em 1em !important;
-    border-radius: 15px !important;
-    border: 3px solid rgba(0, 255, 255, 0.8) !important;
-    display: block !important;
+        0 0 10px rgba(0, 255, 255, 0.8),
+        0 0 20px rgba(0, 255, 255, 0.6),
+        0 2px 8px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.4em 0.8em;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .demo-reboot-page .punk-subtitle {
     color: #ffffff !important;
-    font-size: 1.2rem !important;
-    font-weight: 800 !important;
+    font-size: 1.2rem;
+    font-weight: 700;
     text-shadow:
-        0 0 10px rgba(255, 255, 255, 1) !important,
-        0 0 20px rgba(255, 255, 255, 1) !important,
-        0 2px 10px rgba(0, 0, 0, 1) !important;
-    background: rgba(0, 0, 0, 1) !important;
-    padding: 0.5em 0.8em !important;
-    border-radius: 10px !important;
-    border: 3px solid rgba(255, 255, 255, 0.6) !important;
-    display: block !important;
+        0 0 8px rgba(255, 255, 255, 0.8),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 2px 8px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.3em 0.6em;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Promotional Messages Grid - 3 columns on desktop */
