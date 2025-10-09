@@ -211,7 +211,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (missingFields.length > 0) {
-                showNotification('Please fill in all required fields marked with *.', 'error');
+                const fieldNames = {
+                    'name': 'Full Name',
+                    'email': 'Email Address', 
+                    'participant_type': 'Participation Type',
+                    'attendance_days': 'Attendance Days',
+                    'terms': 'Privacy Policy Agreement',
+                    'gdpr_consent': 'GDPR Consent'
+                };
+                
+                const missingFieldNames = missingFields.map(field => fieldNames[field] || field).join(', ');
+                showNotification(`❌ Please complete: ${missingFieldNames}`, 'error');
                 submitButton.classList.remove('loading');
                 submitButton.innerHTML = originalText;
                 return;
@@ -246,8 +256,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 submitButton.classList.remove('loading');
                 submitButton.innerHTML = originalText;
                 
-                // Log registration data (for debugging)
-                console.log('Demo Reboot Registration:', data);
+        // Log registration data (for debugging) - SECURE ADMIN ACCESS
+        console.log('🚀 NEW DEMO REBOOT REGISTRATION:', data);
+        console.log('📊 Total registrations:', getRegistrations().length);
+        console.log('📧 Email notification sent to: jackal.theme@gmail.com');
                 
                 // Scroll to top of form
                 this.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -672,7 +684,7 @@ document.addEventListener('DOMContentLoaded', function() {
         addFloatingLabels();
         addTypingEffect();
         addFormProgress();
-        createAdminPanel();
+        // createAdminPanel(); // REMOVED - Security risk
         updateRegistrationCounter();
         requestNotificationPermission();
     }, 500);

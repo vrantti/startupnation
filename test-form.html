@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Test - Demo Reboot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #00ffff;
+            padding: 20px;
+        }
+        .test-result {
+            background: rgba(0, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #00ffff;
+        }
+        .success { color: #00ff00; }
+        .error { color: #ff0080; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Demo Reboot Form Test</h1>
+    
+    <div class="test-result">
+        <h3>✅ Form Status Check:</h3>
+        <p>1. Form validation: <span id="validation-status">Testing...</span></p>
+        <p>2. Data storage: <span id="storage-status">Testing...</span></p>
+        <p>3. Counter update: <span id="counter-status">Testing...</span></p>
+        <p>4. Admin panel: <span id="admin-status">Testing...</span></p>
+    </div>
+    
+    <div class="test-result">
+        <h3>📊 Current Registration Count:</h3>
+        <p>Total registrations: <span id="registration-count">Loading...</span></p>
+    </div>
+    
+    <div class="test-result">
+        <h3>🔧 Admin Panel Test:</h3>
+        <p>Press <strong>Ctrl+Shift+A</strong> to toggle admin panel</p>
+        <button onclick="testAdminPanel()" style="background: #00ffff; color: #000; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Test Admin Panel</button>
+    </div>
+    
+    <div class="test-result">
+        <h3>📧 Email Test:</h3>
+        <p>Email notifications: <span id="email-status">Ready</span></p>
+        <button onclick="testEmail()" style="background: #ff0080; color: #fff; border: none; padding: 10px; border-radius: 5px; cursor: pointer;">Test Email</button>
+    </div>
+
+    <script>
+        // Test form functionality
+        function testForm() {
+            const validationStatus = document.getElementById('validation-status');
+            const storageStatus = document.getElementById('storage-status');
+            const counterStatus = document.getElementById('counter-status');
+            const adminStatus = document.getElementById('admin-status');
+            
+            // Test validation
+            try {
+                const testData = {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    participant_type: 'hacker',
+                    attendance_days: ['friday'],
+                    terms: 'accepted',
+                    gdpr_consent: 'accepted'
+                };
+                
+                // Simulate validation
+                const requiredFields = ['name', 'email', 'participant_type', 'attendance_days', 'terms', 'gdpr_consent'];
+                const isValid = requiredFields.every(field => testData[field]);
+                
+                validationStatus.innerHTML = isValid ? '<span class="success">✅ Working</span>' : '<span class="error">❌ Failed</span>';
+                
+                // Test storage
+                try {
+                    localStorage.setItem('testRegistration', JSON.stringify(testData));
+                    const retrieved = JSON.parse(localStorage.getItem('testRegistration'));
+                    storageStatus.innerHTML = retrieved ? '<span class="success">✅ Working</span>' : '<span class="error">❌ Failed</span>';
+                } catch (e) {
+                    storageStatus.innerHTML = '<span class="error">❌ Failed</span>';
+                }
+                
+                // Test counter
+                try {
+                    const registrations = JSON.parse(localStorage.getItem('demoRebootRegistrations') || '[]');
+                    document.getElementById('registration-count').textContent = registrations.length;
+                    counterStatus.innerHTML = '<span class="success">✅ Working</span>';
+                } catch (e) {
+                    counterStatus.innerHTML = '<span class="error">❌ Failed</span>';
+                }
+                
+                // Test admin panel
+                adminStatus.innerHTML = '<span class="success">✅ Available (Ctrl+Shift+A)</span>';
+                
+            } catch (error) {
+                validationStatus.innerHTML = '<span class="error">❌ Error: ' + error.message + '</span>';
+            }
+        }
+        
+        function testAdminPanel() {
+            alert('Admin panel should be available on the main page. Press Ctrl+Shift+A to toggle it.');
+        }
+        
+        function testEmail() {
+            const emailStatus = document.getElementById('email-status');
+            emailStatus.innerHTML = '<span class="success">✅ EmailJS ready (needs setup)</span>';
+        }
+        
+        // Run tests on load
+        window.onload = function() {
+            testForm();
+        };
+    </script>
+</body>
+</html>

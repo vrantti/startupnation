@@ -2279,15 +2279,16 @@ body.demo-reboot-page {
     font-size: 1.1rem;
     line-height: 1.7;
     text-shadow:
-        0 0 4px rgba(255, 255, 255, 0.8),
-        0 0 8px rgba(255, 255, 255, 0.6),
-        0 2px 8px rgba(0, 0, 0, 1),
-        0 4px 12px rgba(0, 0, 0, 0.9);
-    font-weight: 500;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.3em 0.5em;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+        0 0 6px rgba(255, 255, 255, 1),
+        0 0 12px rgba(255, 255, 255, 0.8),
+        0 2px 10px rgba(0, 0, 0, 1),
+        0 4px 15px rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.4em 0.6em;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
 }
 
 /* Special styling for sponsor section text */
@@ -2345,10 +2346,12 @@ body.demo-reboot-page {
 /* Enhanced section headers - MAXIMUM VISIBILITY */
 .demo-reboot-page .section-header {
     margin-bottom: 2rem !important;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 1.5rem;
-    border-radius: 10px;
-    border: 2px solid rgba(0, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 3px solid rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .demo-reboot-page .punk-section-title {
@@ -2356,15 +2359,15 @@ body.demo-reboot-page {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 900;
     text-shadow:
-        0 0 8px rgba(0, 255, 255, 1),
-        0 0 16px rgba(0, 255, 255, 0.9),
-        0 0 24px rgba(0, 255, 255, 0.7),
-        0 2px 8px rgba(0, 0, 0, 1);
+        0 0 10px rgba(0, 255, 255, 1),
+        0 0 20px rgba(0, 255, 255, 0.9),
+        0 0 30px rgba(0, 255, 255, 0.7),
+        0 2px 10px rgba(0, 0, 0, 1);
     margin-bottom: 0.5rem;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.3em 0.6em;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.4em 0.8em;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 255, 255, 0.4);
 }
 
 .demo-reboot-page .punk-subtitle {
@@ -2372,12 +2375,13 @@ body.demo-reboot-page {
     font-size: 1.2rem;
     font-weight: 700;
     text-shadow:
-        0 0 6px rgba(255, 255, 255, 1),
-        0 0 12px rgba(255, 255, 255, 0.8),
-        0 2px 8px rgba(0, 0, 0, 1);
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.2em 0.5em;
-    border-radius: 6px;
+        0 0 8px rgba(255, 255, 255, 1),
+        0 0 16px rgba(255, 255, 255, 0.8),
+        0 2px 10px rgba(0, 0, 0, 1);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.3em 0.6em;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Promotional Messages Grid - 3 columns on desktop */
@@ -2458,21 +2462,21 @@ body.demo-reboot-page {
 }
 
 @keyframes heroGridPulse {
-    0%, 100% {
+    0%, 100% { 
         opacity: 0.15;
         transform: scale(1);
     }
-    50% {
+    50% { 
         opacity: 0.3;
         transform: scale(1.002);
     }
 }
 
 @keyframes cardGridFlicker {
-    0%, 100% {
+    0%, 100% { 
         opacity: 0.1;
     }
-    50% {
+    50% { 
         opacity: 0.3;
     }
 }
@@ -2571,39 +2575,41 @@ body.demo-reboot-page {
 
 /* Enhanced Form Readability - MAXIMUM CONTRAST */
 .demo-reboot-page .punk-form {
-    background: rgba(0, 0, 0, 0.9) !important;
-    padding: 2rem !important;
-    border-radius: 15px !important;
-    border: 2px solid rgba(0, 255, 255, 0.7) !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    border: 3px solid rgba(0, 255, 255, 0.8) !important;
     box-shadow:
-        0 0 40px rgba(0, 255, 255, 0.5),
+        0 0 50px rgba(0, 255, 255, 0.6),
         0 8px 32px rgba(0, 0, 0, 0.9) !important;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
 }
 
 .demo-reboot-page .punk-label {
     color: #00ffff !important;
     font-weight: 800 !important;
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     text-shadow: 
-        0 0 8px rgba(0, 255, 255, 1),
-        0 0 16px rgba(0, 255, 255, 0.8) !important;
-    margin-bottom: 0.5rem !important;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
+        0 0 10px rgba(0, 255, 255, 1),
+        0 0 20px rgba(0, 255, 255, 0.8) !important;
+    margin-bottom: 0.8rem !important;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.3em 0.6em;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .demo-reboot-page .punk-input,
 .demo-reboot-page .punk-select,
 .demo-reboot-page .punk-textarea {
-    background: rgba(0, 0, 0, 0.8) !important;
-    border: 2px solid rgba(0, 255, 255, 0.6) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.7) !important;
     color: #ffffff !important;
     font-size: 1rem !important;
-    padding: 1rem !important;
-    border-radius: 8px !important;
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+    padding: 1.2rem !important;
+    border-radius: 10px !important;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    font-weight: 500;
 }
 
 .demo-reboot-page .punk-input:focus,
@@ -2611,23 +2617,24 @@ body.demo-reboot-page {
 .demo-reboot-page .punk-textarea:focus {
     border-color: #00ffff !important;
     box-shadow:
-        0 0 25px rgba(0, 255, 255, 0.8),
-        inset 0 0 20px rgba(0, 255, 255, 0.2) !important;
-    background: rgba(0, 0, 0, 0.9) !important;
+        0 0 30px rgba(0, 255, 255, 0.9),
+        inset 0 0 20px rgba(0, 255, 255, 0.3) !important;
+    background: rgba(0, 0, 0, 1) !important;
 }
 
 .demo-reboot-page .punk-checkbox {
     color: #ffffff !important;
-    font-size: 0.95rem !important;
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.1em 0.3em;
-    border-radius: 3px;
+    font-size: 1rem !important;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .demo-reboot-page .checkmark {
-    background: rgba(0, 0, 0, 0.8) !important;
-    border: 2px solid rgba(0, 255, 255, 0.6) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.7) !important;
 }
 
 /* Enhanced list readability for WHY SUPPORT section */
