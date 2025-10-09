@@ -197,12 +197,12 @@ body.demo-reboot-page {
 }
 
 .promo-card-yellow {
-    background: linear-gradient(135deg, rgba(255, 255, 0, 0.15), rgba(255, 200, 0, 0.1));
-    border: 2px solid rgba(255, 255, 0, 0.5);
+    background: linear-gradient(135deg, rgba(128, 0, 255, 0.15), rgba(64, 0, 128, 0.1));
+    border: 2px solid rgba(128, 0, 255, 0.5);
 }
 
 .promo-card-yellow::before {
-    background: linear-gradient(45deg, #ffff00, #ffcc00, #ffff00);
+    background: linear-gradient(45deg, #8000ff, #4000ff, #8000ff);
     opacity: 0.3;
 }
 
@@ -265,8 +265,8 @@ body.demo-reboot-page {
 }
 
 .promo-card-yellow h3 {
-    color: #ffff00;
-    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+    color: #8000ff;
+    text-shadow: 0 0 10px rgba(128, 0, 255, 0.8);
 }
 
 .promo-card-green h3 {
@@ -628,6 +628,47 @@ body.demo-reboot-page {
     line-height: 1.4;
 }
 
+/* Event Description */
+.demo-reboot-page .event-description {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(0, 255, 255, 0.6) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    text-align: center !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3) !important;
+}
+
+.demo-reboot-page .event-description p {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.2rem !important;
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    margin: 0 !important;
+    font-weight: 500 !important;
+}
+
+/* Hack Challenges Section */
+.demo-reboot-page .hack-challenges-section {
+    margin: 2rem 0 !important;
+    padding: 0 2rem !important;
+}
+
+.demo-reboot-page .hack-challenges {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    margin: 2rem 0 !important;
+}
+
+@media (max-width: 768px) {
+    .demo-reboot-page .hack-challenges {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* PUNK FORM STYLES */
 .punk-form {
     background: rgba(0, 0, 0, 0.95) !important;
@@ -854,13 +895,13 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .visitors-card {
-    border-color: rgba(255, 255, 0, 0.6) !important;
-    box-shadow: 0 10px 30px rgba(255, 255, 0, 0.3) !important;
+    border-color: rgba(128, 0, 255, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(128, 0, 255, 0.3) !important;
 }
 
 .demo-reboot-page .visitors-card .audience-icon {
-    color: #ffff00 !important;
-    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8) !important;
+    color: #8000ff !important;
+    text-shadow: 0 0 20px rgba(128, 0, 255, 0.8) !important;
 }
 
 /* Responsive adjustments */
