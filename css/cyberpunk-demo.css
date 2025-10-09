@@ -779,8 +779,134 @@ body.demo-reboot-page {
 }
 
 /* ==========================================
-   DEBUGGING: Ensure all content is visible
+   TOP MISSION SECTION - NEW VISIBLE LOCATION
    ========================================== */
+
+.demo-reboot-page .top-mission-section {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(0, 255, 255, 0.6) !important;
+    border-radius: 20px !important;
+    padding: 3rem 2rem !important;
+    margin: 2rem 0 !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 15px 50px rgba(0, 255, 255, 0.3) !important;
+}
+
+.demo-reboot-page .mission-split {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    margin-bottom: 2rem !important;
+}
+
+.demo-reboot-page .mission-item {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 2px solid rgba(255, 0, 128, 0.6) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.demo-reboot-page .mission-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 900 !important;
+    color: #00ffff !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+    margin: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.demo-reboot-page .mission-statement {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 2px solid rgba(255, 255, 0, 0.6) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    text-align: center !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.demo-reboot-page .statement-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: #ffff00 !important;
+    text-shadow: 0 0 15px rgba(255, 255, 0, 0.8) !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+}
+
+.demo-reboot-page .statement-text {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.1rem !important;
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    margin: 0 !important;
+}
+
+.demo-reboot-page .manifesto-section {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 2px solid rgba(128, 0, 255, 0.6) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    text-align: center !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+.demo-reboot-page .manifesto-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 900 !important;
+    color: #8000ff !important;
+    text-shadow: 0 0 20px rgba(128, 0, 255, 0.8) !important;
+    margin-bottom: 0.5rem !important;
+    text-transform: uppercase !important;
+}
+
+.demo-reboot-page .manifesto-subtitle {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: #ff0080 !important;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.8) !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+}
+
+.demo-reboot-page .manifesto-description {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.2rem !important;
+    color: #e0e0e0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    margin-bottom: 1rem !important;
+    font-weight: 600 !important;
+}
+
+.demo-reboot-page .manifesto-tagline {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.3rem !important;
+    font-weight: 900 !important;
+    color: #00ffff !important;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+/* Responsive adjustments for top mission section */
+@media (max-width: 768px) {
+    .demo-reboot-page .mission-split {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .demo-reboot-page .top-mission-section {
+        padding: 2rem 1rem !important;
+    }
+}
 
 /* Force visibility for all text elements */
 .demo-reboot-page h1,
