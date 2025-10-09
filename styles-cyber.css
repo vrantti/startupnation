@@ -2243,9 +2243,34 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .sponsor-section .call-to-action-section {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
     display: block;
+}
+
+/* Make CALL NOW section smaller and more integrated */
+.demo-reboot-page .punk-contact {
+    background: rgba(0, 0, 0, 0.8) !important;
+    padding: 1rem !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(0, 255, 255, 0.4) !important;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.demo-reboot-page .punk-contact h3 {
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.demo-reboot-page .punk-contact p {
+    font-size: 0.9rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.demo-reboot-page .punk-contact .punk-button {
+    font-size: 0.9rem !important;
+    padding: 0.5rem 1rem !important;
 }
 
 /* Enhanced Text Readability for ALL sections - MAXIMUM CONTRAST */
@@ -2259,9 +2284,26 @@ body.demo-reboot-page {
         0 2px 8px rgba(0, 0, 0, 1),
         0 4px 12px rgba(0, 0, 0, 0.9);
     font-weight: 500;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.2em 0.4em;
-    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.3em 0.5em;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Special styling for sponsor section text */
+.demo-reboot-page .sponsor-section .punk-text {
+    background: rgba(0, 0, 0, 0.6) !important;
+    padding: 0.4em 0.6em !important;
+    border: 1px solid rgba(0, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+}
+
+/* Special styling for event details section */
+.demo-reboot-page .contact-info .punk-text {
+    background: rgba(0, 0, 0, 0.7) !important;
+    padding: 0.5em 0.7em !important;
+    border: 1px solid rgba(0, 255, 255, 0.3) !important;
+    border-radius: 8px !important;
 }
 
 .demo-reboot-page .punk-highlight {
@@ -2586,4 +2628,32 @@ body.demo-reboot-page {
 .demo-reboot-page .checkmark {
     background: rgba(0, 0, 0, 0.8) !important;
     border: 2px solid rgba(0, 255, 255, 0.6) !important;
+}
+
+/* Enhanced list readability for WHY SUPPORT section */
+.demo-reboot-page .punk-list {
+    background: rgba(0, 0, 0, 0.6) !important;
+    padding: 1.5rem !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(0, 255, 255, 0.3) !important;
+    margin: 1rem 0 !important;
+}
+
+.demo-reboot-page .punk-list li {
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8) !important;
+}
+
+.demo-reboot-page .punk-list li:last-child {
+    margin-bottom: 0 !important;
+}
+
+.demo-reboot-page .punk-list strong {
+    color: #00ffff !important;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 1) !important;
 }
