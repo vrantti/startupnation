@@ -174,8 +174,8 @@ body::after {
 
 @keyframes neonFlicker {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
-    25%, 75% { opacity: 0.9; }
+    50% { opacity: 1; }
+    25%, 75% { opacity: 1; }
 }
 
 @keyframes hologramShift {
@@ -487,7 +487,7 @@ body::after {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
-    animation: titleGlow 3s ease-in-out infinite alternate;
+    animation: none;
 }
 
 @keyframes titleGlow {
@@ -1485,7 +1485,7 @@ body.demo-reboot-page {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: cyberDystopia 2s ease-in-out infinite;
+    animation: none;
     text-shadow: 
         0 0 20px rgba(255, 0, 128, 0.8),
         0 0 40px rgba(0, 255, 255, 0.4),
@@ -1502,16 +1502,16 @@ body.demo-reboot-page {
         filter: hue-rotate(0deg) brightness(1.1) contrast(1.2);
     }
     25% { 
-        background-position: 25% 25%;
-        filter: hue-rotate(90deg) brightness(1.3) contrast(1.4);
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg) brightness(1.1) contrast(1.2);
     }
     50% { 
-        background-position: 100% 50%;
-        filter: hue-rotate(180deg) brightness(1.2) contrast(1.3);
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg) brightness(1.1) contrast(1.2);
     }
     75% { 
-        background-position: 75% 75%;
-        filter: hue-rotate(270deg) brightness(1.4) contrast(1.5);
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg) brightness(1.1) contrast(1.2);
     }
 }
 
@@ -1526,7 +1526,7 @@ body.demo-reboot-page {
         0 0 30px rgba(0, 255, 255, 0.4);
     margin-bottom: 1.5rem;
     filter: contrast(1.3) brightness(1.2);
-    animation: neonFlicker 3s ease-in-out infinite;
+    animation: none;
 }
 
 .punk-section-title {
@@ -1544,7 +1544,7 @@ body.demo-reboot-page {
     text-transform: uppercase;
     letter-spacing: -0.02em;
     margin-bottom: 0.8rem;
-    animation: cyberDystopia 2.5s ease-in-out infinite;
+    animation: none;
     filter: contrast(1.4) brightness(1.3);
 }
 
@@ -1605,7 +1605,7 @@ body.demo-reboot-page {
     color: #00ffff;
     font-weight: 600;
     text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
-    animation: neonFlicker 4s ease-in-out infinite;
+    animation: none;
 }
 
 .punk-accent {
