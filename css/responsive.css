@@ -1,0 +1,268 @@
+/* ==========================================
+   RESPONSIVE DESIGN COMPONENT
+   ========================================== */
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--bg-primary);
+        flex-direction: column;
+        justify-content: start;
+        padding: var(--space-xl);
+        transition: var(--transition-normal);
+        border-top: 1px solid var(--border-light);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero-content {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+    
+    .hero-stats {
+        max-width: 700px;
+        gap: var(--space-sm);
+    }
+    
+    .hero-stats .stat-item {
+        flex: 1 1 calc(50% - var(--space-sm));
+        min-width: 150px;
+        max-width: 200px;
+    }
+    
+    .stat-item {
+        padding: var(--space-sm);
+        min-height: 100px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cyberpunk Demo Responsive */
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+    }
+
+    .split-section {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .renaissance-mission-section {
+        padding: 1.5rem !important;
+    }
+
+    .section-separator {
+        margin: 2rem auto !important;
+    }
+
+    .section-spacer {
+        height: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--space-md);
+    }
+    
+    .hero-stats {
+        max-width: 500px;
+        gap: var(--space-xs);
+    }
+    
+    .hero-stats .stat-item {
+        flex: 1 1 calc(50% - var(--space-xs));
+        min-width: 120px;
+        max-width: 180px;
+    }
+    
+    .stat-item {
+        padding: var(--space-sm);
+        min-height: 90px;
+    }
+    
+    .stat-number {
+        font-size: 1.6rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    /* Cyberpunk Demo Mobile */
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 1rem;
+    }
+
+    .demo-reboot-page .punk-form {
+        padding: 1.5rem !important;
+    }
+    
+    .demo-reboot-page .punk-input,
+    .demo-reboot-page .punk-select,
+    .demo-reboot-page .punk-textarea {
+        padding: 1rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    .demo-reboot-page .punk-label {
+        font-size: 1rem !important;
+    }
+
+    .demo-reboot-page .punk-section-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .demo-reboot-page .punk-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-stats {
+        max-width: 400px;
+        gap: var(--space-xs);
+    }
+    
+    .hero-stats .stat-item {
+        flex: 1 1 calc(50% - var(--space-xs));
+        min-width: 100px;
+        max-width: 150px;
+    }
+    
+    .stat-item {
+        padding: var(--space-xs);
+        min-height: 80px;
+    }
+    
+    .stat-number {
+        font-size: 1.4rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .promo-messages {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .section {
+        padding: var(--space-xl) 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .demo-reboot-page .hero {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .promo-messages {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hack-challenges {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .section {
+        padding: var(--space-lg) 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .demo-reboot-page .punk-section-title {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+    }
+
+    .demo-reboot-page .punk-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+@media (prefers-contrast: high) {
+    :root {
+        --cyber-text: #ffffff;
+        --cyber-text-dim: #cccccc;
+        --neon-cyan: #00ffff;
+        --neon-pink: #ff0080;
+    }
+}
+
+/* PRINT STYLES */
+@media print {
+    .navbar,
+    .footer,
+    .btn {
+        display: none;
+    }
+    
+    body {
+        background: #ffffff;
+        color: #000000;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+}

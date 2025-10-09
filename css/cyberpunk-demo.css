@@ -1,0 +1,662 @@
+/* ==========================================
+   CYBERPUNK DEMO PAGE COMPONENT
+   ========================================== */
+
+/* DEMO REBOOT CYBERPUNK DYSTOPIA STYLING */
+html.demo-reboot-page,
+html body.demo-reboot-page {
+    font-family: var(--font-primary);
+    position: relative;
+    overflow-x: hidden;
+    color: #e0e0e0 !important;
+}
+
+/* MAIN BACKGROUND - The image should be the base layer */
+body.demo-reboot-page {
+    background: url('backgroundreboot.png') center center fixed !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* MAIN CONTAINER ALIGNMENT - PROPER STRUCTURE */
+.demo-reboot-page .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    text-align: center !important;
+}
+
+.demo-reboot-page .hero {
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+    display: block !important;
+}
+
+/* CENTER ALL CONTENT */
+.demo-reboot-page .hero-content {
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.demo-reboot-page .punk-title {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.demo-reboot-page .punk-subtitle {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* PROPER 2x3 GRID LAYOUT FOR CARDS - CENTERED */
+.demo-reboot-page .promo-messages {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 1.5rem !important;
+    margin: 2rem auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Main activities section - first 6 promotional items */
+.demo-reboot-page .promo-messages.main-activities {
+    margin-bottom: 1rem;
+}
+
+/* Responsive grid for smaller screens */
+@media (max-width: 768px) {
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 1rem;
+    }
+}
+
+/* PROMO CARD COLOR VARIANTS */
+.promo-card-cyan {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 200, 255, 0.1));
+    border: 2px solid rgba(0, 255, 255, 0.5);
+}
+
+.promo-card-cyan::before {
+    background: linear-gradient(45deg, #00ffff, #0080ff, #00ffff);
+    opacity: 0.3;
+}
+
+.promo-card-pink {
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.15), rgba(255, 50, 150, 0.1));
+    border: 2px solid rgba(255, 0, 128, 0.5);
+}
+
+.promo-card-pink::before {
+    background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080);
+    opacity: 0.3;
+}
+
+.promo-card-yellow {
+    background: linear-gradient(135deg, rgba(255, 255, 0, 0.15), rgba(255, 200, 0, 0.1));
+    border: 2px solid rgba(255, 255, 0, 0.5);
+}
+
+.promo-card-yellow::before {
+    background: linear-gradient(45deg, #ffff00, #ffcc00, #ffff00);
+    opacity: 0.3;
+}
+
+.promo-card-green {
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.15), rgba(0, 200, 0, 0.1));
+    border: 2px solid rgba(0, 255, 0, 0.5);
+}
+
+.promo-card-green::before {
+    background: linear-gradient(45deg, #00ff00, #00cc00, #00ff00);
+    opacity: 0.3;
+}
+
+.promo-card-orange {
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.15), rgba(255, 140, 0, 0.1));
+    border: 2px solid rgba(255, 165, 0, 0.5);
+}
+
+.promo-card-orange::before {
+    background: linear-gradient(45deg, #ffa500, #ff8c00, #ffa500);
+    opacity: 0.3;
+}
+
+.promo-card-purple {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(120, 30, 200, 0.1));
+    border: 2px solid rgba(138, 43, 226, 0.5);
+}
+
+.promo-card-purple::before {
+    background: linear-gradient(45deg, #8a2be2, #7b1fa2, #8a2be2);
+    opacity: 0.3;
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 15px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.promo-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.promo-card-cyan h3 {
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+}
+
+.promo-card-pink h3 {
+    color: #ff0080;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.8);
+}
+
+.promo-card-yellow h3 {
+    color: #ffff00;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+}
+
+.promo-card-green h3 {
+    color: #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.promo-card-orange h3 {
+    color: #ffa500;
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
+}
+
+.promo-card-purple h3 {
+    color: #8a2be2;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+}
+
+.promo-card p {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.demo-reboot-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Subtle grid pattern */
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 29px,
+            rgba(0, 255, 255, 0.015) 30px,
+            rgba(0, 255, 255, 0.015) 31px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 29px,
+            rgba(255, 0, 128, 0.015) 30px,
+            rgba(255, 0, 128, 0.015) 31px
+        ),
+        /* Gentle diagonal overlay */
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 59px,
+            rgba(255, 255, 0, 0.008) 60px,
+            rgba(255, 255, 0, 0.008) 61px
+        ) !important;
+    pointer-events: none;
+    z-index: -1;
+    animation: cyberGridPulse 8s ease-in-out infinite;
+}
+
+.demo-reboot-page::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Subtle circuit board pattern */
+        radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.008) 1px, transparent 1px),
+        radial-gradient(circle at 40% 70%, rgba(255, 0, 128, 0.008) 1px, transparent 1px),
+        radial-gradient(circle at 60% 20%, rgba(255, 255, 0, 0.006) 1px, transparent 1px),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.006) 1px, transparent 1px) !important;
+    background-size: 80px 80px, 60px 60px, 100px 100px, 70px 70px;
+    pointer-events: none;
+    z-index: -1;
+    animation: circuitFlicker 6s ease-in-out infinite;
+}
+
+.punk-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080, #ffff00, #ff0080);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: none;
+    text-shadow: 
+        0 0 20px rgba(255, 0, 128, 0.8),
+        0 0 40px rgba(0, 255, 255, 0.4),
+        0 0 60px rgba(255, 0, 128, 0.2);
+    letter-spacing: -0.03em;
+    line-height: 0.85;
+    text-transform: uppercase;
+    filter: contrast(1.2) brightness(1.1);
+}
+
+.punk-subtitle {
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    color: #00ffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.8),
+        0 0 30px rgba(0, 255, 255, 0.4);
+    margin-bottom: 1.5rem;
+    filter: contrast(1.3) brightness(1.2);
+    animation: none;
+}
+
+.punk-section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ffff00, #ff0080);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 
+        0 0 25px rgba(255, 0, 128, 0.6),
+        0 0 50px rgba(0, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+    animation: none;
+    filter: contrast(1.4) brightness(1.3);
+}
+
+.punk-card {
+    background: 
+        linear-gradient(135deg, rgba(255, 0, 128, 0.08), rgba(0, 255, 255, 0.08)),
+        linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(20, 20, 20, 0.9));
+    border: 1px solid #ff0080;
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 0 20px rgba(255, 0, 128, 0.4),
+        0 0 40px rgba(0, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    margin-bottom: 1.5rem;
+}
+
+.punk-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.punk-card:hover::before {
+    left: 100%;
+}
+
+.punk-card:hover {
+    transform: translateY(-3px) scale(1.01);
+    border-color: #00ffff;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.6),
+        0 0 60px rgba(255, 0, 128, 0.3),
+        0 0 90px rgba(0, 255, 255, 0.1);
+    background: 
+        linear-gradient(135deg, rgba(255, 0, 128, 0.12), rgba(0, 255, 255, 0.12)),
+        linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95));
+}
+
+.punk-text {
+    color: #e0e0e0 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.punk-highlight {
+    color: #00ffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8) !important;
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.punk-accent {
+    color: #ff0080;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(255, 0, 128, 0.8);
+    animation: neonFlicker 3.5s ease-in-out infinite;
+}
+
+.punk-list {
+    list-style: none;
+    padding: 0;
+}
+
+.punk-list li {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: rgba(255, 0, 128, 0.03);
+    border-left: 3px solid #ff0080;
+    border-radius: 0 6px 6px 0;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.punk-list li:hover {
+    background: rgba(0, 255, 255, 0.08);
+    border-left-color: #00ffff;
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.punk-list li strong {
+    color: #00ffff;
+    font-weight: 700;
+}
+
+.punk-quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #ffff00;
+    text-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+    border-left: 3px solid #ffff00;
+    padding-left: 1.2rem;
+    margin: 1.5rem 0;
+    background: rgba(255, 255, 0, 0.05);
+    padding: 1rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    animation: neonFlicker 5s ease-in-out infinite;
+}
+
+.punk-contact {
+    background: 
+        linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 255, 0.1)),
+        linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95));
+    border: 1px solid #ff0080;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 
+        0 0 25px rgba(255, 0, 128, 0.4),
+        0 0 50px rgba(0, 255, 255, 0.2);
+}
+
+.punk-contact h3 {
+    color: #00ffff;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* CHALLENGE CARD STYLES */
+.challenge-card {
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 12px 40px rgba(255, 20, 147, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.3);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 50px rgba(255, 20, 147, 0.5), inset 0 2px 0 rgba(255, 255, 255, 0.4);
+}
+
+.challenge-card-pink {
+    background: linear-gradient(135deg, rgba(255, 20, 147, 0.2), rgba(255, 50, 120, 0.15));
+    border: 3px solid rgba(255, 20, 147, 0.6);
+}
+
+.challenge-card-pink::before {
+    background: linear-gradient(45deg, #ff1493, #ff4080, #ff1493, #ff69b4);
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.challenge-card-cyan {
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(0, 150, 200, 0.15));
+    border: 3px solid rgba(0, 191, 255, 0.6);
+}
+
+.challenge-card-cyan::before {
+    background: linear-gradient(45deg, #00bfff, #0099cc, #00bfff, #40e0d0);
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.challenge-card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.4;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+.challenge-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.challenge-card-pink::after {
+    background: radial-gradient(circle at center, rgba(255, 20, 147, 0.1) 0%, transparent 70%);
+}
+
+.challenge-card-cyan::after {
+    background: radial-gradient(circle at center, rgba(0, 191, 255, 0.1) 0%, transparent 70%);
+}
+
+.challenge-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.challenge-card-pink h3 {
+    color: #ff1493;
+    text-shadow: 0 0 15px rgba(255, 20, 147, 0.9);
+}
+
+.challenge-card-cyan h3 {
+    color: #00bfff;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.9);
+}
+
+.challenge-card p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    line-height: 1.4;
+}
+
+/* PUNK FORM STYLES */
+.punk-form {
+    background: rgba(0, 0, 0, 0.95) !important;
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    border: 3px solid rgba(0, 255, 255, 0.8) !important;
+    box-shadow:
+        0 0 50px rgba(0, 255, 255, 0.6),
+        0 8px 32px rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(20px);
+}
+
+.punk-label {
+    color: #00ffff !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 255, 1),
+        0 0 20px rgba(0, 255, 255, 0.8) !important;
+    margin-bottom: 0.8rem !important;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.3em 0.6em;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.punk-input,
+.punk-select,
+.punk-textarea {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.7) !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    padding: 1.2rem !important;
+    border-radius: 10px !important;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.punk-input:focus,
+.punk-select:focus,
+.punk-textarea:focus {
+    border-color: #00ffff !important;
+    box-shadow:
+        0 0 30px rgba(0, 255, 255, 0.9),
+        inset 0 0 20px rgba(0, 255, 255, 0.3) !important;
+    background: rgba(0, 0, 0, 1) !important;
+}
+
+.punk-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.punk-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.punk-checkbox:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.punk-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.7) !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.punk-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: #00ffff;
+}
+
+.punk-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid #00ffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}

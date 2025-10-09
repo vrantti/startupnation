@@ -1,0 +1,150 @@
+/* ==========================================
+   UTILITIES COMPONENT
+   ========================================== */
+
+/* UTILITY CLASSES */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--space-sm); }
+.mb-2 { margin-bottom: var(--space-md); }
+.mb-3 { margin-bottom: var(--space-lg); }
+.mb-4 { margin-bottom: var(--space-xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--space-sm); }
+.mt-2 { margin-top: var(--space-md); }
+.mt-3 { margin-top: var(--space-lg); }
+.mt-4 { margin-top: var(--space-xl); }
+
+.hidden { display: none; }
+.visible { display: block; }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* CYBERPUNK UTILITIES */
+.punk-spacer {
+    height: 2rem;
+}
+
+.punk-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.5), transparent);
+    margin: 2rem 0;
+}
+
+/* FORM VALIDATION */
+.punk-input.error, .punk-select.error, .punk-textarea.error {
+    border-color: #ff0040 !important;
+    box-shadow: 0 0 15px rgba(255, 0, 64, 0.4) !important;
+    animation: errorPulse 0.5s ease-in-out;
+}
+
+.punk-input.success, .punk-select.success, .punk-textarea.success {
+    border-color: #00ff00 !important;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4) !important;
+}
+
+/* Enhanced Form Readability - MAXIMUM CONTRAST */
+.demo-reboot-page .punk-form {
+    background: rgba(0, 0, 0, 0.95) !important;
+    padding: 2.5rem !important;
+    border-radius: 20px !important;
+    border: 3px solid rgba(0, 255, 255, 0.8) !important;
+    box-shadow:
+        0 0 50px rgba(0, 255, 255, 0.6),
+        0 8px 32px rgba(0, 0, 0, 0.9) !important;
+    backdrop-filter: blur(20px);
+}
+
+.demo-reboot-page .punk-label {
+    color: #00ffff !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 255, 1),
+        0 0 20px rgba(0, 255, 255, 0.8) !important;
+    margin-bottom: 0.8rem !important;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0.3em 0.6em;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.demo-reboot-page .punk-input,
+.demo-reboot-page .punk-select,
+.demo-reboot-page .punk-textarea {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.7) !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    padding: 1.2rem !important;
+    border-radius: 10px !important;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.demo-reboot-page .punk-input:focus,
+.demo-reboot-page .punk-select:focus,
+.demo-reboot-page .punk-textarea:focus {
+    border-color: #00ffff !important;
+    box-shadow:
+        0 0 30px rgba(0, 255, 255, 0.9),
+        inset 0 0 20px rgba(0, 255, 255, 0.3) !important;
+    background: rgba(0, 0, 0, 1) !important;
+}
+
+.demo-reboot-page .punk-checkbox {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.demo-reboot-page .checkmark {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(0, 255, 255, 0.7) !important;
+}
+
+/* Enhanced list readability for WHY SUPPORT section */
+.demo-reboot-page .punk-list {
+    background: rgba(0, 0, 0, 0.6) !important;
+    padding: 1.5rem !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(0, 255, 255, 0.3) !important;
+    margin: 1rem 0 !important;
+}
+
+.demo-reboot-page .punk-list li {
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 0.8rem !important;
+    margin-bottom: 0.8rem !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8) !important;
+}
+
+.demo-reboot-page .punk-list li:last-child {
+    margin-bottom: 0 !important;
+}
+
+.demo-reboot-page .punk-list strong {
+    color: #00ffff !important;
+    text-shadow: 0 0 6px rgba(0, 255, 255, 1) !important;
+}
