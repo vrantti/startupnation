@@ -1415,14 +1415,35 @@ body.demo-reboot-page {
     display: block;
 }
 
-/* PROPER GRID LAYOUT FOR CARDS */
+/* PROPER 2x3 GRID LAYOUT FOR CARDS */
 .demo-reboot-page .promo-messages {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 1.5rem;
     margin: 2rem 0;
     padding: 0;
     width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive grid for smaller screens */
+@media (max-width: 768px) {
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-reboot-page .promo-messages {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        gap: 1rem;
+    }
 }
 
 .demo-reboot-page .promo-card {
@@ -2240,12 +2261,12 @@ body.demo-reboot-page {
     padding: 2rem;
 }
 
-/* Hero Section Container - Groups content with background */
+/* Hero Section Container - Groups content with background - REDUCED GAPS */
 .hero-section-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1.5rem;
     background: rgba(10, 10, 20, 0.8);
     border: 2px solid rgba(0, 255, 255, 0.3);
     border-radius: 20px;
@@ -2320,23 +2341,24 @@ body.demo-reboot-page {
     padding: 0.5rem 1rem !important;
 }
 
-/* PROPER TEXT CONTAINMENT */
+/* PROPER TEXT CONTAINMENT - ENHANCED VISIBILITY */
 .demo-reboot-page .punk-text {
     color: #ffffff !important;
     font-size: 1.1rem;
     line-height: 1.6;
     font-weight: 500;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9) !important;
     padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
     margin: 1rem 0;
     text-align: left;
     display: block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8) !important;
     max-width: 100%;
     width: 100%;
     box-sizing: border-box;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8) !important;
 }
 
 /* Clean section styling */
@@ -2385,11 +2407,11 @@ body.demo-reboot-page {
     backdrop-filter: blur(10px);
 }
 
-/* PROPER SECTION STRUCTURE */
+/* PROPER SECTION STRUCTURE - REDUCED GAPS */
 .demo-reboot-page .section-header {
-    margin: 2rem auto;
+    margin: 1rem auto;
     background: rgba(0, 0, 0, 0.8);
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 15px;
     border: 2px solid rgba(0, 255, 255, 0.6);
     text-align: center;
