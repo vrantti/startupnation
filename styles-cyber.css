@@ -1397,22 +1397,22 @@ body.demo-reboot-page {
 
 /* MAIN CONTAINER ALIGNMENT - PROPER STRUCTURE */
 .demo-reboot-page .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 100%;
-    box-sizing: border-box;
-    display: block;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
 }
 
 .demo-reboot-page .hero {
-    text-align: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-    box-sizing: border-box;
-    display: block;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+    display: block !important;
 }
 
 /* PROPER 2x3 GRID LAYOUT FOR CARDS */
@@ -1662,18 +1662,22 @@ body.demo-reboot-page {
 }
 
 .punk-text {
-    color: #e0e0e0;
-    font-size: 1rem;
-    line-height: 1.5;
-    font-weight: 400;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .punk-highlight {
-    color: #00ffff;
-    font-weight: 600;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
-    animation: none;
+    color: #00ffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8) !important;
+    animation: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .punk-accent {
@@ -2341,24 +2345,27 @@ body.demo-reboot-page {
     padding: 0.5rem 1rem !important;
 }
 
-/* PROPER TEXT CONTAINMENT - ENHANCED VISIBILITY */
+/* PROPER TEXT CONTAINMENT - ENHANCED VISIBILITY - NO FLASHING */
 .demo-reboot-page .punk-text {
     color: #ffffff !important;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    font-weight: 500;
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    font-weight: 500 !important;
     background: rgba(0, 0, 0, 0.9) !important;
-    padding: 1.5rem;
-    border-radius: 10px;
+    padding: 1.5rem !important;
+    border-radius: 10px !important;
     border: 2px solid rgba(255, 255, 255, 0.4) !important;
-    margin: 1rem 0;
-    text-align: left;
-    display: block;
+    margin: 1rem 0 !important;
+    text-align: left !important;
+    display: block !important;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8) !important;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     text-shadow: 0 0 4px rgba(255, 255, 255, 0.8) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
 }
 
 /* Clean section styling */
@@ -2373,15 +2380,18 @@ body.demo-reboot-page {
 
 .demo-reboot-page .punk-highlight {
     color: #00ffff !important;
-    font-weight: 700;
+    font-weight: 700 !important;
     text-shadow:
-        0 0 6px rgba(0, 255, 255, 0.8),
-        0 0 12px rgba(0, 255, 255, 0.6),
-        0 2px 6px rgba(0, 0, 0, 0.8);
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.08));
-    padding: 0.2em 0.4em;
-    border-radius: 6px;
-    border: 1px solid rgba(0, 255, 255, 0.3);
+        0 0 6px rgba(0, 255, 255, 0.8) !important,
+        0 0 12px rgba(0, 255, 255, 0.6) !important,
+        0 2px 6px rgba(0, 0, 0, 0.8) !important;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(0, 255, 255, 0.08)) !important;
+    padding: 0.2em 0.4em !important;
+    border-radius: 6px !important;
+    border: 1px solid rgba(0, 255, 255, 0.3) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
 }
 
 .demo-reboot-page .punk-accent {
@@ -2409,47 +2419,51 @@ body.demo-reboot-page {
 
 /* PROPER SECTION STRUCTURE - REDUCED GAPS */
 .demo-reboot-page .section-header {
-    margin: 1rem auto;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 1.5rem;
-    border-radius: 15px;
-    border: 2px solid rgba(0, 255, 255, 0.6);
-    text-align: center;
-    max-width: 1000px;
-    width: 100%;
-    box-sizing: border-box;
+    margin: 1rem auto !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    padding: 1.5rem !important;
+    border-radius: 15px !important;
+    border: 2px solid rgba(0, 255, 255, 0.6) !important;
+    text-align: center !important;
+    max-width: 1000px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .demo-reboot-page .about-content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    width: 100%;
-    box-sizing: border-box;
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 .demo-reboot-page .about-text {
-    width: 100%;
-    margin: 0;
-    padding: 0;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .demo-reboot-page .punk-section-title {
     color: #00ffff !important;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 900;
-    margin: 0.5rem 0;
-    text-align: center;
-    display: block;
+    font-size: clamp(1.8rem, 4vw, 2.5rem) !important;
+    font-weight: 900 !important;
+    margin: 0.5rem 0 !important;
+    text-align: center !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .demo-reboot-page .punk-subtitle {
     color: #ffffff !important;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0.3rem 0;
-    text-align: center;
-    display: block;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    margin: 0.3rem 0 !important;
+    text-align: center !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* Promotional Messages Grid - 3 columns on desktop */
