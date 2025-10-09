@@ -19,7 +19,7 @@ body.demo-reboot-page {
     background-attachment: fixed !important;
     margin: 0;
     padding: 0;
-    padding-top: 80px !important; /* Add space for fixed navbar */
+    padding-top: 100px !important; /* Increased space for fixed navbar */
     width: 100%;
     overflow-x: hidden;
 }
@@ -778,9 +778,20 @@ body.demo-reboot-page {
     transform: rotate(45deg);
 }
 
-/* ==========================================
-   TOP MISSION SECTION - NEW VISIBLE LOCATION
-   ========================================== */
+/* Ensure proper section spacing to prevent overlaps */
+.demo-reboot-page section {
+    margin: 2rem 0 !important;
+    padding: 2rem 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.demo-reboot-page .section-header {
+    margin-bottom: 2rem !important;
+    padding: 1rem 0 !important;
+    position: relative !important;
+    z-index: 2 !important;
+}
 
 .demo-reboot-page .top-mission-section {
     background: rgba(0, 0, 0, 0.8) !important;
