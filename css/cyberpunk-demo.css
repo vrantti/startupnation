@@ -786,8 +786,8 @@ body.demo-reboot-page {
     background: rgba(0, 0, 0, 0.8) !important;
     border: 2px solid rgba(0, 255, 255, 0.6) !important;
     border-radius: 20px !important;
-    padding: 3rem 2rem !important;
-    margin: 2rem 0 !important;
+    padding: 2rem 1.5rem !important;
+    margin: 1.5rem 0 !important;
     backdrop-filter: blur(10px) !important;
     box-shadow: 0 15px 50px rgba(0, 255, 255, 0.3) !important;
 }
@@ -795,15 +795,15 @@ body.demo-reboot-page {
 .demo-reboot-page .mission-split {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 2rem !important;
-    margin-bottom: 2rem !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .demo-reboot-page .mission-item {
     background: rgba(0, 0, 0, 0.6) !important;
     border: 2px solid rgba(255, 0, 128, 0.6) !important;
     border-radius: 15px !important;
-    padding: 2rem !important;
+    padding: 1.5rem !important;
     text-align: center !important;
     backdrop-filter: blur(5px) !important;
 }
@@ -823,8 +823,8 @@ body.demo-reboot-page {
     background: rgba(0, 0, 0, 0.6) !important;
     border: 2px solid rgba(255, 255, 0, 0.6) !important;
     border-radius: 15px !important;
-    padding: 2rem !important;
-    margin: 2rem 0 !important;
+    padding: 1.5rem !important;
+    margin: 1.5rem 0 !important;
     text-align: center !important;
     backdrop-filter: blur(5px) !important;
 }
@@ -852,8 +852,8 @@ body.demo-reboot-page {
     background: rgba(0, 0, 0, 0.6) !important;
     border: 2px solid rgba(128, 0, 255, 0.6) !important;
     border-radius: 15px !important;
-    padding: 2rem !important;
-    margin: 2rem 0 !important;
+    padding: 1.5rem !important;
+    margin: 1.5rem 0 !important;
     text-align: center !important;
     backdrop-filter: blur(5px) !important;
 }
