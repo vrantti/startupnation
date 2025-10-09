@@ -1429,6 +1429,11 @@ body.demo-reboot-page {
     margin-right: auto;
 }
 
+/* Main activities section - first 6 promotional items */
+.demo-reboot-page .promo-messages.main-activities {
+    margin-bottom: 1rem;
+}
+
 /* Responsive grid for smaller screens */
 @media (max-width: 768px) {
     .demo-reboot-page .promo-messages {
@@ -2282,6 +2287,21 @@ body.demo-reboot-page {
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* Hack Challenges Section - Secondary hero section */
+.hero-section-container.hack-challenges-section {
+    background: rgba(20, 10, 30, 0.9) !important;
+    border: 2px solid rgba(255, 0, 128, 0.4) !important;
+    box-shadow:
+        0 0 50px rgba(255, 0, 128, 0.3) !important,
+        0 0 100px rgba(0, 255, 255, 0.1) !important,
+        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.hero-section-container.hack-challenges-section::before {
+    background: linear-gradient(45deg, #ff0080, #ff4080, #ff0080) !important;
+    opacity: 0.15 !important;
+}
+
 .hero-section-container::before {
     content: '';
     position: absolute;
@@ -2607,6 +2627,58 @@ body.demo-reboot-page {
         0 0 30px rgba(255, 0, 128, 0.5) !important;
 }
 
+/* ==================== SECTION SEPARATORS ==================== */
+.section-separator {
+    height: 3px !important;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        #ff0080 20%,
+        #00ffff 40%,
+        #ffff00 60%,
+        #ff0080 80%,
+        transparent 100%) !important;
+    margin: 3rem auto !important;
+    max-width: 800px !important;
+    border-radius: 2px !important;
+    box-shadow:
+        0 0 20px rgba(255, 0, 128, 0.5) !important,
+        0 0 40px rgba(0, 255, 255, 0.3) !important;
+    animation: separatorGlow 3s ease-in-out infinite alternate !important;
+}
+
+@keyframes separatorGlow {
+    0% {
+        box-shadow:
+            0 0 20px rgba(255, 0, 128, 0.5) !important,
+            0 0 40px rgba(0, 255, 255, 0.3) !important;
+    }
+    100% {
+        box-shadow:
+            0 0 30px rgba(255, 0, 128, 0.8) !important,
+            0 0 60px rgba(0, 255, 255, 0.5) !important;
+    }
+}
+
+.section-spacer {
+    height: 4rem !important;
+    background:
+        radial-gradient(circle at 25% 25%, rgba(255, 0, 128, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(0, 255, 255, 0.05) 0%, transparent 50%) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.section-spacer::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .split-section {
@@ -2621,6 +2693,14 @@ body.demo-reboot-page {
 
     .renaissance-mission-section {
         padding: 1.5rem !important;
+    }
+
+    .section-separator {
+        margin: 2rem auto !important;
+    }
+
+    .section-spacer {
+        height: 2rem !important;
     }
 }
 
