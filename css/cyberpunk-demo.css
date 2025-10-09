@@ -19,6 +19,7 @@ body.demo-reboot-page {
     background-attachment: fixed !important;
     margin: 0;
     padding: 0;
+    padding-top: 80px !important; /* Add space for fixed navbar */
     width: 100%;
     overflow-x: hidden;
 }
@@ -40,6 +41,7 @@ body.demo-reboot-page {
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 2rem !important;
+    padding-top: 4rem !important; /* Add extra top padding */
     box-sizing: border-box !important;
     display: block !important;
 }
@@ -732,4 +734,142 @@ body.demo-reboot-page {
     border: solid #00ffff;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+}
+
+/* ==========================================
+   MISSING AUDIENCE CARDS & SPLIT SECTIONS
+   ========================================== */
+
+/* Renaissance Mission Section */
+.demo-reboot-page .renaissance-mission-section {
+    padding: 3rem 0 !important;
+    margin: 2rem 0 !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.demo-reboot-page .split-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    margin: 2rem 0 !important;
+    padding: 0 2rem !important;
+}
+
+.demo-reboot-page .split-item {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(0, 255, 255, 0.6) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3) !important;
+}
+
+.demo-reboot-page .split-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 900 !important;
+    color: #00ffff !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.demo-reboot-page .split-icon {
+    font-size: 3rem !important;
+    color: #ff0080 !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.8) !important;
+}
+
+/* Audience Cards */
+.demo-reboot-page .audience-cards {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem !important;
+    margin: 2rem 0 !important;
+    padding: 0 2rem !important;
+}
+
+.demo-reboot-page .audience-card {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(255, 0, 128, 0.6) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    text-align: center !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.demo-reboot-page .audience-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(255, 0, 128, 0.5) !important;
+    border-color: rgba(255, 0, 128, 0.9) !important;
+}
+
+.demo-reboot-page .audience-icon {
+    font-size: 2.5rem !important;
+    color: #ff0080 !important;
+    margin-bottom: 1rem !important;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.8) !important;
+}
+
+.demo-reboot-page .audience-title {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: #00ffff !important;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8) !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.demo-reboot-page .audience-description {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1rem !important;
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Card Variants */
+.demo-reboot-page .creators-card {
+    border-color: rgba(255, 0, 128, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.3) !important;
+}
+
+.demo-reboot-page .sponsors-card {
+    border-color: rgba(0, 255, 255, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3) !important;
+}
+
+.demo-reboot-page .sponsors-card .audience-icon {
+    color: #00ffff !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+}
+
+.demo-reboot-page .visitors-card {
+    border-color: rgba(255, 255, 0, 0.6) !important;
+    box-shadow: 0 10px 30px rgba(255, 255, 0, 0.3) !important;
+}
+
+.demo-reboot-page .visitors-card .audience-icon {
+    color: #ffff00 !important;
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .demo-reboot-page .split-section {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .demo-reboot-page .audience-cards {
+        grid-template-columns: 1fr !important;
+    }
 }
