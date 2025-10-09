@@ -2295,59 +2295,30 @@ body.demo-reboot-page {
     padding: 0.5rem 1rem !important;
 }
 
-/* BALANCED TEXT READABILITY - Cool but Visible and Centered */
+/* CLEAN SIMPLE TEXT STYLING */
 .demo-reboot-page .punk-text {
     color: #ffffff !important;
     font-size: 1.1rem;
-    line-height: 1.7;
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.9),
-        0 0 16px rgba(255, 255, 255, 0.7),
-        0 2px 8px rgba(0, 0, 0, 0.9);
-    font-weight: 600;
-    background: rgba(0, 0, 0, 0.75);
-    padding: 0.5em 0.7em;
+    line-height: 1.6;
+    font-weight: 500;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    margin: 0.3rem auto;
-    text-align: center;
-    max-width: 100%;
-    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1rem 0;
+    text-align: left;
     display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 
-/* Remove nuclear styling from other elements */
-.demo-reboot-page p:not(.punk-text),
-.demo-reboot-page div:not(.punk-text):not(.punk-card):not(.punk-highlight):not(.punk-accent),
-.demo-reboot-page span:not(.punk-text):not(.punk-highlight):not(.punk-accent) {
-    color: inherit;
-    background: none;
-    border: none;
-    padding: inherit;
-    margin: inherit;
-    text-shadow: inherit;
-    font-weight: inherit;
-    display: inherit;
-}
-
-/* Special styling for sponsor section text */
-.demo-reboot-page .sponsor-section .punk-text {
-    background: rgba(0, 0, 0, 0.95) !important;
-    padding: 0.6em 0.8em !important;
-    border: 3px solid rgba(255, 255, 255, 0.5) !important;
-    border-radius: 10px !important;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9) !important;
-}
-
-/* Special styling for event details section */
+/* Clean section styling */
+.demo-reboot-page .sponsor-section .punk-text,
 .demo-reboot-page .contact-info .punk-text {
-    background: rgba(0, 0, 0, 0.95) !important;
-    padding: 0.6em 0.8em !important;
-    border: 3px solid rgba(255, 255, 255, 0.5) !important;
-    border-radius: 10px !important;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.9) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    border-radius: 8px !important;
+    margin: 1rem 0 !important;
 }
 
 .demo-reboot-page .punk-highlight {
@@ -2386,56 +2357,32 @@ body.demo-reboot-page {
     backdrop-filter: blur(10px);
 }
 
-/* BALANCED SECTION HEADERS - Cool but Visible and Centered */
+/* Clean section headers */
 .demo-reboot-page .section-header {
-    margin: 2rem auto !important;
-    background: rgba(0, 0, 0, 0.6);
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.7);
     padding: 1.5rem;
-    border-radius: 15px;
-    border: 2px solid rgba(0, 255, 255, 0.4);
-    box-shadow: 
-        0 0 25px rgba(0, 255, 255, 0.3),
-        0 8px 32px rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 255, 0.5);
     text-align: center;
-    max-width: 100%;
-    width: 100%;
 }
 
 .demo-reboot-page .punk-section-title {
     color: #00ffff !important;
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 900;
-    text-shadow:
-        0 0 10px rgba(0, 255, 255, 0.8),
-        0 0 20px rgba(0, 255, 255, 0.6),
-        0 2px 8px rgba(0, 0, 0, 0.8);
-    margin: 0.5rem auto;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.4em 0.8em;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 255, 255, 0.3);
+    margin: 0.5rem 0;
     text-align: center;
     display: block;
-    max-width: 100%;
 }
 
 .demo-reboot-page .punk-subtitle {
     color: #ffffff !important;
     font-size: 1.2rem;
     font-weight: 700;
-    text-shadow:
-        0 0 8px rgba(255, 255, 255, 0.8),
-        0 0 16px rgba(255, 255, 255, 0.6),
-        0 2px 8px rgba(0, 0, 0, 0.8);
-    background: rgba(0, 0, 0, 0.4);
-    padding: 0.3em 0.6em;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0.3rem 0;
     text-align: center;
     display: block;
-    max-width: 100%;
-    margin: 0.3rem auto;
 }
 
 /* Promotional Messages Grid - 3 columns on desktop */
