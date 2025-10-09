@@ -893,6 +893,56 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // NEW FUNCTION: View all registrations in a popup
+    function viewAllRegistrations() {
+        const registrations = getRegistrations();
+        
+        if (registrations.length === 0) {
+            showNotification('No registrations yet.', 'info');
+            return;
+        }
+        
+        // Create popup window
+        const popup = window.open('', 'registrations', 'width=800,height=600,scrollbars=yes');
+        
+        let html = `
+            <html>
+            <head>
+                <title>Demo Reboot Registrations</title>
+                <style>
+                    body { font-family: Arial, sans-serif; margin: 20px; background: #000; color: #00ffff; }
+                    .registration { background: rgba(0, 255, 255, 0.1); padding: 15px; margin: 10px 0; border-radius: 8px; border: 1px solid #00ffff; }
+                    .header { color: #ff0080; font-weight: bold; margin-bottom: 10px; }
+                    .field { margin: 5px 0; }
+                    .label { color: #ffff00; font-weight: bold; }
+                </style>
+            </head>
+            <body>
+                <h1>🚀 Demo Reboot Registrations (${registrations.length} total)</h1>
+        `;
+        
+        registrations.forEach((reg, index) => {
+            html += `
+                <div class="registration">
+                    <div class="header">Registration #${index + 1} - ${reg.name}</div>
+                    <div class="field"><span class="label">Email:</span> ${reg.email}</div>
+                    <div class="field"><span class="label">Type:</span> ${reg.participant_type}</div>
+                    <div class="field"><span class="label">Company:</span> ${reg.company || 'Not provided'}</div>
+                    <div class="field"><span class="label">Attendance:</span> ${Array.isArray(reg.attendance_days) ? reg.attendance_days.join(', ') : reg.attendance_days}</div>
+                    <div class="field"><span class="label">Roles:</span> ${Array.isArray(reg.roles) ? reg.roles.join(', ') : reg.roles}</div>
+                    <div class="field"><span class="label">Interests:</span> ${Array.isArray(reg.interests) ? reg.interests.join(', ') : reg.interests}</div>
+                    <div class="field"><span class="label">Message:</span> ${reg.message || 'No message'}</div>
+                    <div class="field"><span class="label">Registered:</span> ${new Date(reg.timestamp).toLocaleString()}</div>
+                </div>
+            `;
+        });
+        
+        html += '</body></html>';
+        
+        popup.document.write(html);
+        popup.document.close();
+    }
+    
     // INSTANT BACKUP METHODS - Multiple ways to ensure data is captured
     function sendInstantNotifications(data) {
         // Method 1: Console logging (always works)
@@ -931,9 +981,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function backupToEmail(data) {
-        // Method 4: Multiple email notification methods
+        // EASIEST METHOD: Submit to Google Forms
+        submitToGoogleForms(data);
         
-        // 1. Mailto link with pre-filled data (always works)
+        // BACKUP: Mailto link with pre-filled data
         const subject = `🎉 Demo Reboot Registration - ${data.name}`;
         const attendanceDays = Array.isArray(data.attendance_days) ? data.attendance_days.join(', ') : data.attendance_days || 'Not specified';
         const roles = Array.isArray(data.roles) ? data.roles.join(', ') : data.roles || 'Not specified';
@@ -973,12 +1024,45 @@ GDPR Consent: ${data.gdpr_consent === 'accepted' ? 'Yes' : 'No'}
 This is an automated notification from Demo Reboot 2025 registration system.
         `;
         
-        // Try multiple email methods
-        sendEmailNotification(data, subject, body);
-        
         // Fallback: Open email client
         const mailtoLink = `mailto:jackal.theme@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         window.open(mailtoLink);
+    }
+    
+    // GOOGLE FORMS INTEGRATION - EASIEST METHOD
+    async function submitToGoogleForms(data) {
+        try {
+            // Google Forms endpoint (you need to create a Google Form and get this URL)
+            const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
+            
+            // Prepare form data for Google Forms
+            const formData = new FormData();
+            
+            // Map your form fields to Google Forms entry IDs
+            // You get these IDs by inspecting the Google Form HTML
+            formData.append('entry.123456789', data.name);           // Name field
+            formData.append('entry.987654321', data.email);          // Email field
+            formData.append('entry.111111111', data.participant_type); // Participant type
+            formData.append('entry.222222222', Array.isArray(data.attendance_days) ? data.attendance_days.join(', ') : data.attendance_days);
+            formData.append('entry.333333333', data.company || '');
+            formData.append('entry.444444444', data.experience || '');
+            formData.append('entry.555555555', Array.isArray(data.roles) ? data.roles.join(', ') : data.roles);
+            formData.append('entry.666666666', Array.isArray(data.interests) ? data.interests.join(', ') : data.interests);
+            formData.append('entry.777777777', data.message || '');
+            formData.append('entry.888888888', new Date().toLocaleString());
+            
+            // Submit to Google Forms
+            const response = await fetch(GOOGLE_FORMS_URL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Required for Google Forms
+            });
+            
+            console.log('✅ Registration submitted to Google Forms successfully!');
+            
+        } catch (error) {
+            console.log('⚠️ Google Forms submission failed, using backup method:', error);
+        }
     }
     
     // AUTOMATIC EMAIL NOTIFICATIONS
