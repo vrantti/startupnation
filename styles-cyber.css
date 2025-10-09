@@ -2296,6 +2296,334 @@ body.demo-reboot-page {
     animation: borderGlow 4s ease-in-out infinite alternate;
 }
 
+/* ==================== RENAISSANCE MISSION SECTION - HIGH VISIBILITY ==================== */
+.renaissance-mission-section {
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 3px solid rgba(255, 0, 128, 0.8) !important;
+    border-radius: 20px !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    box-shadow:
+        0 0 50px rgba(255, 0, 128, 0.4) !important,
+        0 0 100px rgba(0, 255, 255, 0.2) !important,
+        inset 0 0 50px rgba(0, 0, 0, 0.5) !important;
+    position: relative !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+.renaissance-mission-section::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080, #ffff00) !important;
+    border-radius: 20px !important;
+    z-index: -1 !important;
+    opacity: 0.3 !important;
+    animation: borderGlow 4s ease-in-out infinite alternate !important;
+}
+
+/* SPLIT SECTION */
+.split-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.split-item {
+    text-align: center !important;
+    padding: 2rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 15px !important;
+    border: 2px solid transparent !important;
+    position: relative !important;
+    transition: all 0.3s ease !important;
+}
+
+.split-item:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 40px rgba(255, 0, 128, 0.3) !important;
+}
+
+.creators-split {
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(255, 0, 128, 0.05)) !important;
+    border-color: rgba(255, 0, 128, 0.5) !important;
+}
+
+.demo-house-split {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.05)) !important;
+    border-color: rgba(0, 255, 255, 0.5) !important;
+}
+
+.split-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem) !important;
+    font-weight: 900 !important;
+    margin-bottom: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #ffffff !important;
+    text-shadow:
+        0 0 10px rgba(255, 0, 128, 0.8) !important,
+        0 0 20px rgba(255, 0, 128, 0.4) !important;
+}
+
+.creators-split .split-title {
+    text-shadow:
+        0 0 10px rgba(255, 0, 128, 1) !important,
+        0 0 20px rgba(255, 0, 128, 0.6) !important;
+}
+
+.demo-house-split .split-title {
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 1) !important,
+        0 0 20px rgba(0, 255, 255, 0.6) !important;
+}
+
+.split-icon {
+    font-size: 3rem !important;
+    margin-top: 1rem !important;
+}
+
+.creators-split .split-icon {
+    color: #ff0080 !important;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.8) !important;
+}
+
+.demo-house-split .split-icon {
+    color: #00ffff !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+}
+
+/* MISSION STATEMENT */
+.mission-statement {
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    padding: 2rem !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.mission-title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+    font-weight: 900 !important;
+    color: #ffff00 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow:
+        0 0 10px rgba(255, 255, 0, 1) !important,
+        0 0 20px rgba(255, 255, 0, 0.5) !important;
+}
+
+.mission-text {
+    font-size: 1.2rem !important;
+    line-height: 1.6 !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.8) !important;
+}
+
+.highlight-word {
+    color: #00ffff !important;
+    font-weight: 700 !important;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 1) !important,
+        0 0 20px rgba(0, 255, 255, 0.5) !important;
+}
+
+.highlight-phrase {
+    color: #ff0080 !important;
+    font-weight: 700 !important;
+    text-shadow:
+        0 0 10px rgba(255, 0, 128, 1) !important,
+        0 0 20px rgba(255, 0, 128, 0.5) !important;
+}
+
+/* AUDIENCE GRID */
+.audience-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 1.5rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.audience-card {
+    text-align: center !important;
+    padding: 2rem !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 15px !important;
+    border: 2px solid transparent !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.audience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+}
+
+.audience-card:hover::before {
+    opacity: 1 !important;
+}
+
+.audience-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1) !important;
+}
+
+.creators-card {
+    border-color: rgba(255, 0, 128, 0.5) !important;
+}
+
+.sponsors-card {
+    border-color: rgba(0, 255, 255, 0.5) !important;
+}
+
+.visitors-card {
+    border-color: rgba(255, 255, 0, 0.5) !important;
+}
+
+.audience-icon {
+    font-size: 3rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.creators-card .audience-icon {
+    color: #ff0080 !important;
+    text-shadow: 0 0 20px rgba(255, 0, 128, 0.8) !important;
+}
+
+.sponsors-card .audience-icon {
+    color: #00ffff !important;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.8) !important;
+}
+
+.visitors-card .audience-icon {
+    color: #ffff00 !important;
+    text-shadow: 0 0 20px rgba(255, 255, 0, 0.8) !important;
+}
+
+.audience-title {
+    font-size: 1.3rem !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 0.5rem !important;
+    color: #ffffff !important;
+}
+
+.creators-card .audience-title {
+    color: #ff0080 !important;
+    text-shadow: 0 0 10px rgba(255, 0, 128, 0.8) !important;
+}
+
+.sponsors-card .audience-title {
+    color: #00ffff !important;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8) !important;
+}
+
+.visitors-card .audience-title {
+    color: #ffff00 !important;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.8) !important;
+}
+
+.audience-description {
+    font-size: 1rem !important;
+    color: #e0e0e0 !important;
+    margin: 0 !important;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* RENAISSANCE MANIFESTO */
+.renaissance-manifesto {
+    text-align: center !important;
+    padding: 2rem !important;
+    background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 255, 0.1)) !important;
+    border-radius: 15px !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    margin-top: 2rem !important;
+}
+
+.manifesto-title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    margin-bottom: 0.5rem !important;
+    text-shadow:
+        0 0 10px rgba(255, 0, 128, 1) !important,
+        0 0 20px rgba(255, 0, 128, 0.5) !important;
+}
+
+.manifesto-subtitle {
+    font-size: clamp(1.3rem, 2vw, 1.8rem) !important;
+    font-weight: 900 !important;
+    color: #00ffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 1rem !important;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 1) !important,
+        0 0 20px rgba(0, 255, 255, 0.5) !important;
+}
+
+.manifesto-description {
+    font-size: 1.2rem !important;
+    color: #ffff00 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 1.5rem !important;
+    text-shadow:
+        0 0 10px rgba(255, 255, 0, 1) !important,
+        0 0 20px rgba(255, 255, 0, 0.5) !important;
+}
+
+.manifesto-tagline {
+    font-size: 1.3rem !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.tagline-highlight {
+    color: #ff0080 !important;
+    text-shadow:
+        0 0 15px rgba(255, 0, 128, 1) !important,
+        0 0 30px rgba(255, 0, 128, 0.5) !important;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .split-section {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    .renaissance-mission-section {
+        padding: 1.5rem !important;
+    }
+}
+
 /* Sponsor Section Layout - Single column flow */
 .demo-reboot-page .sponsor-section {
     display: block !important;
