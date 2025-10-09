@@ -1106,3 +1106,47 @@ body.demo-reboot-page {
         grid-template-columns: 1fr !important;
     }
 }
+
+/* ==========================================
+   PUNK QUOTE STYLING - ENHANCED VISIBILITY
+   ========================================== */
+
+.demo-reboot-page .punk-quote {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(255, 0, 128, 0.8) !important;
+    border-radius: 15px !important;
+    padding: 2rem !important;
+    margin: 2rem 0 !important;
+    text-align: center !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.4) !important;
+    position: relative !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    font-style: italic !important;
+    letter-spacing: 0.5px !important;
+}
+
+.demo-reboot-page .punk-quote::before {
+    content: '"' !important;
+    font-size: 4rem !important;
+    color: rgba(255, 0, 128, 0.6) !important;
+    position: absolute !important;
+    top: -10px !important;
+    left: 20px !important;
+    font-family: serif !important;
+}
+
+.demo-reboot-page .punk-quote::after {
+    content: '"' !important;
+    font-size: 4rem !important;
+    color: rgba(255, 0, 128, 0.6) !important;
+    position: absolute !important;
+    bottom: -20px !important;
+    right: 20px !important;
+    font-family: serif !important;
+}
