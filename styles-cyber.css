@@ -1403,6 +1403,7 @@ body.demo-reboot-page {
     width: 100% !important;
     box-sizing: border-box !important;
     display: block !important;
+    text-align: center !important;
 }
 
 .demo-reboot-page .hero {
@@ -1415,18 +1416,38 @@ body.demo-reboot-page {
     display: block !important;
 }
 
-/* PROPER 2x3 GRID LAYOUT FOR CARDS */
+/* CENTER ALL CONTENT */
+.demo-reboot-page .hero-content {
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.demo-reboot-page .punk-title {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+.demo-reboot-page .punk-subtitle {
+    text-align: center !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* PROPER 2x3 GRID LAYOUT FOR CARDS - CENTERED */
 .demo-reboot-page .promo-messages {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 1.5rem;
-    margin: 2rem 0;
-    padding: 0;
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 1.5rem !important;
+    margin: 2rem auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 /* Main activities section - first 6 promotional items */
@@ -1452,16 +1473,17 @@ body.demo-reboot-page {
 }
 
 .demo-reboot-page .promo-card {
-    background: rgba(0, 0, 0, 0.8);
-    border: 2px solid rgba(0, 255, 255, 0.5);
-    border-radius: 15px;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(0, 255, 255, 0.5) !important;
+    border-radius: 15px !important;
+    padding: 1.5rem !important;
+    text-align: center !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(10px) !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
 }
 
 .demo-reboot-page::before {
@@ -2270,21 +2292,23 @@ body.demo-reboot-page {
     padding: 2rem;
 }
 
-/* Hero Section Container - Groups content with background - REDUCED GAPS */
+/* Hero Section Container - Groups content with background - CENTERED */
 .hero-section-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    background: rgba(10, 10, 20, 0.8);
-    border: 2px solid rgba(0, 255, 255, 0.3);
-    border-radius: 20px;
-    position: relative;
-    backdrop-filter: blur(15px);
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 1.5rem !important;
+    background: rgba(10, 10, 20, 0.8) !important;
+    border: 2px solid rgba(0, 255, 255, 0.3) !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    backdrop-filter: blur(15px) !important;
     box-shadow:
         0 0 40px rgba(0, 255, 255, 0.2),
         0 8px 32px rgba(0, 0, 0, 0.6),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    text-align: center !important;
+    display: block !important;
 }
 
 /* Hack Challenges Section - Secondary hero section */
@@ -2345,12 +2369,15 @@ body.demo-reboot-page {
     animation: borderGlow 4s ease-in-out infinite alternate !important;
 }
 
-/* SPLIT SECTION */
+/* SPLIT SECTION - CENTERED */
 .split-section {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 2rem !important;
-    margin-bottom: 3rem !important;
+    margin: 0 auto 3rem auto !important;
+    max-width: 1000px !important;
+    width: 100% !important;
+    justify-content: center !important;
 }
 
 .split-item {
@@ -2463,12 +2490,15 @@ body.demo-reboot-page {
         0 0 20px rgba(255, 0, 128, 0.5) !important;
 }
 
-/* AUDIENCE GRID */
+/* AUDIENCE GRID - CENTERED */
 .audience-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
     gap: 1.5rem !important;
-    margin-bottom: 3rem !important;
+    margin: 0 auto 3rem auto !important;
+    max-width: 1000px !important;
+    width: 100% !important;
+    justify-content: center !important;
 }
 
 .audience-card {
@@ -2825,7 +2855,7 @@ body.demo-reboot-page {
     backdrop-filter: blur(10px);
 }
 
-/* PROPER SECTION STRUCTURE - REDUCED GAPS */
+/* PROPER SECTION STRUCTURE - CENTERED */
 .demo-reboot-page .section-header {
     margin: 1rem auto !important;
     background: rgba(0, 0, 0, 0.8) !important;
@@ -2836,6 +2866,7 @@ body.demo-reboot-page {
     max-width: 1000px !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    display: block !important;
 }
 
 .demo-reboot-page .about-content {
@@ -2844,12 +2875,16 @@ body.demo-reboot-page {
     padding: 0 2rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    text-align: center !important;
+    display: block !important;
 }
 
 .demo-reboot-page .about-text {
     width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
     padding: 0 !important;
+    text-align: center !important;
+    display: block !important;
 }
 
 .demo-reboot-page .punk-section-title {
