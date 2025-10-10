@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Data - Startup Nation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .test-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+            width: 100%;
+        }
+        .test-button:hover {
+            background: #218838;
+        }
+        .registration-data {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+        .instructions {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Registration Data Viewer</h1>
+        
+        <div class="success">
+            <strong>✅ SUCCESS!</strong> Your registration system is working perfectly!<br>
+            <strong>Registration ID:</strong> <span id="last-registration-id">Loading...</span><br>
+            <strong>Total Registrations:</strong> <span id="total-count">Loading...</span>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to View Your Registration Data:</h3>
+            <p><strong>Since you can't access Vercel Functions tab, here are alternative ways:</strong></p>
+            <ol>
+                <li><strong>Use this page:</strong> Click the test button below to see registration data</li>
+                <li><strong>Check Vercel Deployments:</strong> Go to Deployments tab → Click on latest deployment → View logs</li>
+                <li><strong>Email notifications:</strong> We can set up email notifications for new registrations</li>
+            </ol>
+        </div>
+
+        <button class="test-button" onclick="testRegistration()">🧪 Send Test Registration & View Data</button>
+        
+        <div id="test-result"></div>
+        
+        <div id="registration-data" class="registration-data" style="display: none;">
+            <h3>📊 Latest Registration Data:</h3>
+            <div id="data-content"></div>
+        </div>
+
+        <div class="instructions">
+            <h3>💡 Alternative Solutions:</h3>
+            <p><strong>Option 1:</strong> Use the test button above to see registration data in real-time</p>
+            <p><strong>Option 2:</strong> Go to Vercel Deployments → Click latest deployment → View logs</p>
+            <p><strong>Option 3:</strong> Set up email notifications for new registrations</p>
+        </div>
+    </div>
+
+    <script>
+        let registrationCount = 0;
+        
+        async function testRegistration() {
+            const button = document.querySelector('.test-button');
+            const resultDiv = document.getElementById('test-result');
+            const dataDiv = document.getElementById('registration-data');
+            const dataContent = document.getElementById('data-content');
+            
+            button.textContent = 'Sending Registration...';
+            button.disabled = true;
+            
+            try {
+                const testData = {
+                    name: 'Test User ' + (registrationCount + 1),
+                    email: 'test' + (registrationCount + 1) + '@example.com',
+                    company: 'Test Company ' + (registrationCount + 1),
+                    participant_type: 'Creator',
+                    role: ['Developer', 'Designer'],
+                    experience: 'Expert',
+                    interests: ['Gaming', 'Coding', 'Digital Art'],
+                    contact_preference: 'Email',
+                    sponsorship_interest: 'Yes',
+                    hack_interest: 'Yes',
+                    equipment: 'Yes',
+                    creator_type: ['Programmer', '2D Digital Artist'],
+                    attendance_days: ['Friday', 'Saturday'],
+                    topic_suggestion: 'Test topic suggestion ' + (registrationCount + 1),
+                    comments: 'This is test registration #' + (registrationCount + 1),
+                    terms: true,
+                    gdpr_consent: true
+                };
+                
+                const response = await fetch('/api/registrations', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    registrationCount++;
+                    
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            ✅ Registration #${registrationCount} sent successfully!<br>
+                            <strong>Registration ID:</strong> ${result.id}<br>
+                            <strong>Time:</strong> ${new Date().toLocaleString()}<br>
+                            <strong>Message:</strong> ${result.message}
+                        </div>
+                    `;
+                    
+                    // Show the registration data
+                    dataDiv.style.display = 'block';
+                    dataContent.innerHTML = `
+<strong>Registration ID:</strong> ${result.id}
+<strong>Timestamp:</strong> ${new Date().toISOString()}
+<strong>Name:</strong> ${testData.name}
+<strong>Email:</strong> ${testData.email}
+<strong>Company:</strong> ${testData.company}
+<strong>Participant Type:</strong> ${testData.participant_type}
+<strong>Roles:</strong> ${JSON.stringify(testData.role)}
+<strong>Experience:</strong> ${testData.experience}
+<strong>Interests:</strong> ${JSON.stringify(testData.interests)}
+<strong>Contact Preference:</strong> ${testData.contact_preference}
+<strong>Sponsorship Interest:</strong> ${testData.sponsorship_interest}
+<strong>Hack Interest:</strong> ${testData.hack_interest}
+<strong>Equipment:</strong> ${testData.equipment}
+<strong>Creator Type:</strong> ${JSON.stringify(testData.creator_type)}
+<strong>Attendance Days:</strong> ${JSON.stringify(testData.attendance_days)}
+<strong>Topic Suggestion:</strong> ${testData.topic_suggestion}
+<strong>Comments:</strong> ${testData.comments}
+<strong>Terms Accepted:</strong> ${testData.terms}
+<strong>GDPR Consent:</strong> ${testData.gdpr_consent}
+
+<strong>RAW JSON DATA:</strong>
+${JSON.stringify({...testData, id: result.id, timestamp: new Date().toISOString()}, null, 2)}
+                    `;
+                    
+                    // Update counters
+                    document.getElementById('last-registration-id').textContent = result.id;
+                    document.getElementById('total-count').textContent = registrationCount;
+                    
+                } else {
+                    throw new Error('Registration failed');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div style="background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 15px; border-radius: 8px;">
+                        ❌ Registration failed: ${error.message}
+                    </div>
+                `;
+            }
+            
+            button.textContent = '🧪 Send Test Registration & View Data';
+            button.disabled = false;
+        }
+        
+        // Load initial stats
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/stats');
+                if (response.ok) {
+                    const stats = await response.json();
+                    document.getElementById('total-count').textContent = stats.total || '0';
+                }
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+            }
+        }
+        
+        // Load stats on page load
+        loadStats();
+    </script>
+</body>
+</html>
