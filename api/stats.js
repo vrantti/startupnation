@@ -1,22 +1,6 @@
 // Vercel API route for statistics
 // File: api/stats.js
 
-const fs = require('fs').promises;
-const path = require('path');
-
-const DATA_FILE = path.join(process.cwd(), 'data', 'registrations.json');
-
-// Load registrations
-async function loadRegistrations() {
-    try {
-        const data = await fs.readFile(DATA_FILE, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error('Error loading registrations:', error);
-        return [];
-    }
-}
-
 export default async function handler(req, res) {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -35,15 +19,16 @@ export default async function handler(req, res) {
     }
 
     try {
-        const registrations = await loadRegistrations();
-        
+        // For demo purposes, return basic stats
+        // In a real app, this would connect to a database
         const stats = {
-            total: registrations.length,
-            guests: registrations.filter(r => r.participant_type === 'guest').length,
-            sponsors: registrations.filter(r => r.participant_type === 'sponsor').length,
-            hackers: registrations.filter(r => r.participant_type === 'hacker').length,
-            sponsorshipInterested: registrations.filter(r => r.sponsorship_interest && r.sponsorship_interest.toLowerCase().includes('yes')).length,
-            hackInterested: registrations.filter(r => r.hack_interest && r.hack_interest.toLowerCase().includes('yes')).length
+            total: 0,
+            guests: 0,
+            sponsors: 0,
+            hackers: 0,
+            sponsorshipInterested: 0,
+            hackInterested: 0,
+            message: "Demo mode - stats will show when connected to database"
         };
         
         res.status(200).json(stats);
