@@ -1112,23 +1112,28 @@ body.demo-reboot-page {
    ========================================== */
 
 .demo-reboot-page .punk-quote {
-    background: rgba(0, 0, 0, 0.9) !important;
-    border: 2px solid rgba(255, 0, 128, 0.8) !important;
-    border-radius: 15px !important;
-    padding: 2rem !important;
-    margin: 2rem 0 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    border: 3px solid rgba(255, 0, 128, 0.9) !important;
+    border-radius: 20px !important;
+    padding: 3rem 2rem !important;
+    margin: 3rem 0 !important;
     text-align: center !important;
-    backdrop-filter: blur(10px) !important;
-    box-shadow: 0 10px 30px rgba(255, 0, 128, 0.4) !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 
+        0 0 40px rgba(255, 0, 128, 0.6),
+        inset 0 0 20px rgba(255, 0, 128, 0.2) !important;
     position: relative !important;
     font-family: 'Inter', sans-serif !important;
-    font-size: 1.3rem !important;
-    font-weight: 600 !important;
-    color: #e0e0e0 !important;
-    line-height: 1.6 !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8) !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    line-height: 1.7 !important;
+    text-shadow: 
+        0 0 10px rgba(255, 0, 128, 0.8),
+        0 2px 4px rgba(0, 0, 0, 0.9) !important;
     font-style: italic !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 0.8px !important;
+    text-transform: none !important;
 }
 
 .demo-reboot-page .punk-quote::before {
