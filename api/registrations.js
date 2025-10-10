@@ -1,3 +1,6 @@
+// In-memory storage for registrations (temporary solution)
+let registrations = [];
+
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -11,7 +14,7 @@ export default async function handler(req, res) {
 
     try {
         if (req.method === 'GET') {
-            res.status(200).json([]);
+            res.status(200).json(registrations);
         } else if (req.method === 'POST') {
             const newRegistration = {
                 id: Date.now() + Math.random().toString(36).substr(2, 9),
@@ -41,11 +44,15 @@ export default async function handler(req, res) {
             
             console.log('COPY THIS REGISTRATION:', JSON.stringify(newRegistration));
             
+            // Store registration in memory
+            registrations.push(newRegistration);
+            
             res.status(200).json({ 
                 success: true, 
                 id: newRegistration.id,
-                message: "Registration received successfully! Check Vercel logs for all data.",
-                dataLogged: true
+                message: "Registration received successfully! View live dashboard for all data.",
+                dataLogged: true,
+                totalRegistrations: registrations.length
             });
         } else {
             res.status(405).json({ error: 'Method not allowed' });
