@@ -1353,7 +1353,7 @@
                                 </label>
                                 <div class="punk-checkboxes">
                                     <label class="punk-checkbox">
-                                        <input type="checkbox" name="attendance_days" value="friday" required>
+                                        <input type="checkbox" name="attendance_days" value="friday">
                                         <span class="checkmark"></span>
                                         Friday 24.10.2025 (1600-2400)
                                     </label>
@@ -1532,6 +1532,90 @@
             emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
         })();
     </script>
+    
+    <!-- Fixed Form Validation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('demoRebootForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get submit button and add loading state
+                    const submitButton = this.querySelector('.punk-button');
+                    const originalText = submitButton.innerHTML;
+                    submitButton.classList.add('loading');
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
+                    
+                    // Validate required fields
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const participantType = document.getElementById('participant_type').value;
+                    const attendanceCheckboxes = document.querySelectorAll('input[name="attendance_days"]:checked');
+                    const termsCheckbox = document.querySelector('input[name="terms"]:checked');
+                    const gdprCheckbox = document.querySelector('input[name="gdpr_consent"]:checked');
+                    
+                    // Check validation
+                    const errors = [];
+                    
+                    if (!name) errors.push('Full Name');
+                    if (!email) errors.push('Email Address');
+                    if (!participantType) errors.push('Participation Type');
+                    if (attendanceCheckboxes.length === 0) errors.push('Attendance Days');
+                    if (!termsCheckbox) errors.push('Privacy Policy Agreement');
+                    if (!gdprCheckbox) errors.push('GDPR Consent');
+                    
+                    // Email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (email && !emailRegex.test(email)) {
+                        errors.push('Valid Email Address');
+                    }
+                    
+                    if (errors.length > 0) {
+                        showNotification(`❌ Please complete: ${errors.join(', ')}`, 'error');
+                        submitButton.classList.remove('loading');
+                        submitButton.innerHTML = originalText;
+                        return;
+                    }
+                    
+                    // Success - simulate processing
+                    setTimeout(() => {
+                        showNotification('🎉 Welcome to the Revolution! You\'re now registered for Demo Reboot 2025.', 'success');
+                        form.reset();
+                        submitButton.classList.remove('loading');
+                        submitButton.innerHTML = originalText;
+                    }, 2000);
+                });
+            }
+            
+            // Simple notification function
+            function showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 100px;
+                    right: 20px;
+                    background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 10px;
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+                    z-index: 10000;
+                    max-width: 400px;
+                    font-family: 'Inter', sans-serif;
+                `;
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 5000);
+            }
+        });
+    </script>
+    
     <script src="script.js"></script>
 </body>
 </html>
