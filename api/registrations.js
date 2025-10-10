@@ -1,5 +1,6 @@
-// In-memory storage for registrations (temporary solution)
-let registrations = [];
+// Supabase configuration
+const SUPABASE_URL = 'https://ysnsqrskyzdgwfxtemuf.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlzbnNxcnNreXpkZ3dmeHRlbXVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAwNjc2MzQsImV4cCI6MjA3NTY0MzYzNH0.eLd9FY5JonKLn1pN6yWkm93xpXG4sKTM7A6DjEFgQSA';
 
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -14,7 +15,21 @@ export default async function handler(req, res) {
 
     try {
         if (req.method === 'GET') {
-            res.status(200).json(registrations);
+            // Get registrations from Supabase
+            const response = await fetch(`${SUPABASE_URL}/rest/v1/registrations?select=*`, {
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_KEY}`
+                }
+            });
+            
+            if (response.ok) {
+                const registrations = await response.json();
+                res.status(200).json(registrations);
+            } else {
+                console.error('Supabase GET error:', await response.text());
+                res.status(200).json([]);
+            }
         } else if (req.method === 'POST') {
             const newRegistration = {
                 id: Date.now() + Math.random().toString(36).substr(2, 9),
@@ -44,16 +59,37 @@ export default async function handler(req, res) {
             
             console.log('COPY THIS REGISTRATION:', JSON.stringify(newRegistration));
             
-            // Store registration in memory
-            registrations.push(newRegistration);
-            
-            res.status(200).json({ 
-                success: true, 
-                id: newRegistration.id,
-                message: "Registration received successfully! View live dashboard for all data.",
-                dataLogged: true,
-                totalRegistrations: registrations.length
+            // Save to Supabase database
+            const dbResponse = await fetch(`${SUPABASE_URL}/rest/v1/registrations`, {
+                method: 'POST',
+                headers: {
+                    'apikey': SUPABASE_KEY,
+                    'Authorization': `Bearer ${SUPABASE_KEY}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newRegistration)
             });
+            
+            if (dbResponse.ok) {
+                res.status(200).json({ 
+                    success: true, 
+                    id: newRegistration.id,
+                    message: "Registration saved to database successfully! Data is now permanent.",
+                    dataLogged: true,
+                    persistent: true
+                });
+            } else {
+                const errorText = await dbResponse.text();
+                console.error('Supabase POST error:', errorText);
+                res.status(200).json({ 
+                    success: true, 
+                    id: newRegistration.id,
+                    message: "Registration received! (Database save failed, but data logged to console)",
+                    dataLogged: true,
+                    persistent: false,
+                    error: errorText
+                });
+            }
         } else {
             res.status(405).json({ error: 'Method not allowed' });
         }
