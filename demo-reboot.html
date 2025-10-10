@@ -1531,14 +1531,94 @@
     </script>
     
     <!-- Fixed Form Validation - OVERRIDES script.js -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('demoRebootForm');
-            if (form) {
-                // Remove any existing event listeners
-                form.removeEventListener('submit', arguments.callee);
+        <script>
+            // Simple notification function
+            function showNotification(message, type = 'info') {
+                // Remove existing notifications
+                const existingNotifications = document.querySelectorAll('.notification');
+                existingNotifications.forEach(notification => notification.remove());
                 
-                form.addEventListener('submit', function(e) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.innerHTML = `
+                    <div class="notification-content">
+                        <span class="notification-message">${message}</span>
+                        <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+                    </div>
+                `;
+                
+                // Add styles
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    z-index: 10000;
+                    background: ${type === 'error' ? 'rgba(255, 0, 0, 0.9)' : type === 'success' ? 'rgba(0, 255, 0, 0.9)' : 'rgba(0, 0, 255, 0.9)'};
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+                    font-family: 'Courier New', monospace;
+                    font-weight: bold;
+                    max-width: 400px;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                
+                // Add animation keyframes
+                if (!document.querySelector('#notification-styles')) {
+                    const style = document.createElement('style');
+                    style.id = 'notification-styles';
+                    style.textContent = `
+                        @keyframes slideIn {
+                            from { transform: translateX(100%); opacity: 0; }
+                            to { transform: translateX(0); opacity: 1; }
+                        }
+                        .notification-content {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            gap: 10px;
+                        }
+                        .notification-close {
+                            background: none;
+                            border: none;
+                            color: white;
+                            font-size: 20px;
+                            cursor: pointer;
+                            padding: 0;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        .notification-close:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                            border-radius: 50%;
+                        }
+                    `;
+                    document.head.appendChild(style);
+                }
+                
+                // Add to page
+                document.body.appendChild(notification);
+                
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 5000);
+            }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('demoRebootForm');
+                if (form) {
+                    // Remove any existing event listeners
+                    form.removeEventListener('submit', arguments.callee);
+                    
+                    form.addEventListener('submit', async function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     
@@ -1591,17 +1671,17 @@
                                 email: email,
                                 company: document.getElementById('company').value,
                                 participant_type: participantType,
-                                role: Array.from(document.querySelectorAll('input[name="role"]:checked')).map(cb => cb.value),
+                                role: Array.from(document.querySelectorAll('input[name="roles"]:checked')).map(cb => cb.value),
                                 experience: document.getElementById('experience').value,
                                 interests: Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value),
                                 contact_preference: document.getElementById('contact_preference').value,
                                 sponsorship_interest: document.getElementById('sponsorship_interest').value,
                                 hack_interest: document.getElementById('hack_interest').value,
                                 equipment: document.getElementById('equipment').value,
-                                creator_type: Array.from(document.querySelectorAll('input[name="creator_type"]:checked')).map(cb => cb.value),
+                                creator_type: Array.from(document.querySelectorAll('input[name="content_creation"]:checked')).map(cb => cb.value),
                                 attendance_days: Array.from(attendanceCheckboxes).map(cb => cb.value),
                                 topic_suggestion: document.getElementById('topic_suggestion').value,
-                                comments: document.getElementById('comments').value,
+                                comments: document.getElementById('message').value,
                                 terms: termsCheckbox ? true : false,
                                 gdpr_consent: gdprCheckbox ? true : false
                             })
@@ -1624,115 +1704,7 @@
                     return false;
                 });
             }
-            
-            // Simple notification function
-            function showNotification(message, type = 'info') {
-                // Remove existing notifications
-                const existingNotification = document.querySelector('.notification');
-                if (existingNotification) {
-                    existingNotification.remove();
-                }
-                
-                const notification = document.createElement('div');
-                notification.className = 'notification';
-                notification.style.cssText = `
-                    position: fixed;
-                    top: 100px;
-                    right: 20px;
-                    background: ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#3b82f6'};
-                    color: white;
-                    padding: 1rem 1.5rem;
-                    border-radius: 10px;
-                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-                    z-index: 10000;
-                    max-width: 400px;
-                    font-family: 'Inter', sans-serif;
-                    transform: translateX(400px);
-                    transition: transform 0.3s ease;
-                `;
-                notification.textContent = message;
-                document.body.appendChild(notification);
-                
-                // Animate in
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(0)';
-                }, 100);
-                
-                // Auto remove after 5 seconds
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(400px)';
-                    setTimeout(() => {
-                        if (notification.parentNode) {
-                            notification.remove();
-                        }
-                    }, 300);
-                }, 5000);
-            }
-            
-            // Make notification function globally available
-            window.showNotification = showNotification;
-        });
-    </script>
-    
-    <!-- Load script.js AFTER our validation to prevent conflicts -->
-    <script>
-        // Disable the demoRebootForm validation in script.js
-        window.addEventListener('load', function() {
-            const form = document.getElementById('demoRebootForm');
-            if (form) {
-                // Remove any event listeners that might have been added by script.js
-                const newForm = form.cloneNode(true);
-                form.parentNode.replaceChild(newForm, form);
-                
-                // Re-add our validation
-                newForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    const submitButton = this.querySelector('.punk-button');
-                    const originalText = submitButton.innerHTML;
-                    submitButton.classList.add('loading');
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
-                    
-                    const name = document.getElementById('name').value.trim();
-                    const email = document.getElementById('email').value.trim();
-                    const participantType = document.getElementById('participant_type').value;
-                    const attendanceCheckboxes = document.querySelectorAll('input[name="attendance_days"]:checked');
-                    const termsCheckbox = document.querySelector('input[name="terms"]:checked');
-                    const gdprCheckbox = document.querySelector('input[name="gdpr_consent"]:checked');
-                    
-                    const errors = [];
-                    if (!name) errors.push('Full Name');
-                    if (!email) errors.push('Email Address');
-                    if (!participantType) errors.push('Participation Type');
-                    if (attendanceCheckboxes.length === 0) errors.push('Attendance Days');
-                    if (!termsCheckbox) errors.push('Privacy Policy Agreement');
-                    if (!gdprCheckbox) errors.push('GDPR Consent');
-                    
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (email && !emailRegex.test(email)) {
-                        errors.push('Valid Email Address');
-                    }
-                    
-                    if (errors.length > 0) {
-                        showNotification(`❌ Please complete: ${errors.join(', ')}`, 'error');
-                        submitButton.classList.remove('loading');
-                        submitButton.innerHTML = originalText;
-                        return false;
-                    }
-                    
-                    setTimeout(() => {
-                        showNotification('🎉 Welcome to the Revolution! You\'re now registered for Demo Reboot 2025.', 'success');
-                        this.reset();
-                        submitButton.classList.remove('loading');
-                        submitButton.innerHTML = originalText;
-                    }, 2000);
-                    
-                    return false;
-                });
-            }
-        });
-    </script>
+        </script>
     
     <script src="script.js"></script>
 </body>
