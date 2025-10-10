@@ -684,6 +684,7 @@
         // Easter egg function
         function showEasterEgg(event) {
             event.preventDefault();
+            console.log('Easter egg clicked!'); // Debug log
             
             // Create easter egg message
             const easterEgg = document.createElement('div');
@@ -698,10 +699,12 @@
             
             // Add to body
             document.body.appendChild(easterEgg);
+            console.log('Easter egg added to DOM'); // Debug log
             
             // Show with animation
             setTimeout(() => {
                 easterEgg.classList.add('show');
+                console.log('Easter egg shown'); // Debug log
             }, 10);
         }
 

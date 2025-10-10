@@ -1932,13 +1932,14 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    z-index: 99999 !important;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: auto;
 }
 
 .easter-egg-message.show {
@@ -1998,11 +1999,14 @@ html {
 
 /* Easter egg dropdown item styling */
 .dropdown-item.easter-egg {
-    opacity: 0.7;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
+    background: rgba(102, 126, 234, 0.05);
+    border-left: 3px solid #667eea;
 }
 
 .dropdown-item.easter-egg:hover {
     opacity: 1;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(102, 126, 234, 0.15);
+    transform: translateX(5px);
 }
