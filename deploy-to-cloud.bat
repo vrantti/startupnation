@@ -7,48 +7,57 @@ echo.
 echo This script will help you deploy to Railway for 24/7 operation.
 echo.
 
-echo [1/4] Checking if you have a GitHub account...
-echo Do you have a GitHub account? (y/n)
-set /p github_choice="Enter choice: "
+echo [1/4] Checking git setup...
 
-if /i "%github_choice%" neq "y" (
-    echo.
-    echo Please create a GitHub account first:
-    echo 1. Go to https://github.com/
-    echo 2. Sign up for free
-    echo 3. Come back and run this script again
-    pause
-    exit /b 1
-)
-
-echo.
-echo [2/4] Checking if code is pushed to GitHub...
-git status >nul 2>&1
+REM Check if git is initialized and has remote
+git remote -v >nul 2>&1
 if %errorlevel% neq 0 (
-    echo Git not initialized. Initializing...
+    echo Git not initialized or no remote found.
+    echo.
+    echo Setting up git repository...
     git init
     git add .
     git commit -m "Initial commit - Demo Reboot Backend"
     echo.
-    echo Please push to GitHub:
-    echo 1. Create a new repository on GitHub
-    echo 2. Run: git remote add origin YOUR_GITHUB_URL
-    echo 3. Run: git push -u origin main
-    echo 4. Come back and run this script again
+    echo Please set up GitHub repository:
+    echo 1. Go to https://github.com/new
+    echo 2. Create a new repository named 'startupnation'
+    echo 3. Copy the repository URL
+    echo 4. Run: git remote add origin YOUR_GITHUB_URL
+    echo 5. Run: git push -u origin main
+    echo 6. Come back and run this script again
     pause
     exit /b 1
 )
 
-echo ✓ Git repository ready
+echo ✓ Git repository ready with remote
+
+REM Check if there are uncommitted changes
+git diff --quiet
+if %errorlevel% neq 0 (
+    echo Uncommitted changes found. Committing...
+    git add .
+    git commit -m "Update for cloud deployment"
+)
+
+echo ✓ Code is up to date
 
 echo.
-echo [3/4] Preparing cloud deployment files...
+echo [2/4] Preparing cloud deployment files...
 
 REM Copy cloud-ready files
 copy "backend\server-cloud.js" "backend\server.js" >nul
 copy "backend\package-cloud.json" "backend\package.json" >nul
 
 echo ✓ Cloud deployment files prepared
+
+echo.
+echo [3/4] Committing cloud-ready files...
+git add .
+git commit -m "Cloud deployment ready" >nul
+git push >nul
+
+echo ✓ Cloud-ready files pushed to GitHub
 
 echo.
 echo [4/4] Opening Railway deployment...
@@ -66,9 +75,8 @@ echo 6. Wait for deployment to complete
 echo 7. Copy your Railway URL (e.g., https://your-app.railway.app)
 echo.
 echo After deployment:
-echo 1. Update demo-reboot.html - replace localhost:3001 with your Railway URL
-echo 2. Update admin-registrations.html - replace localhost:3001 with your Railway URL
-echo 3. Test registration from any device/browser
+echo 1. Run update-urls.bat and enter your Railway URL
+echo 2. Test registration from any device/browser
 echo.
 echo Your backend will now work 24/7 even when your computer is off!
 echo.
