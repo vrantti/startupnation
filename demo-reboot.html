@@ -762,6 +762,139 @@
                 gap: 1rem;
             }
         }
+
+        /* Navigation Dropdown Styles */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-dropdown-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-left-color: #667eea;
+            color: #fff;
+        }
+
+        .nav-dropdown-item.easter-egg-nav {
+            opacity: 0.7;
+            background: rgba(102, 126, 234, 0.05);
+            border-left-color: #667eea;
+        }
+
+        .nav-dropdown-item.easter-egg-nav:hover {
+            opacity: 1;
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        /* Easter Egg Modal Styles */
+        .easter-egg-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999 !important;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: auto;
+        }
+
+        .easter-egg-message.show {
+            opacity: 1;
+        }
+
+        .easter-egg-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+            max-width: 400px;
+            margin: 20px;
+        }
+
+        .easter-egg-message.show .easter-egg-content {
+            transform: scale(1);
+        }
+
+        .easter-egg-content h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .easter-egg-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #fff;
+        }
+
+        .easter-egg-close {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .easter-egg-close:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="demo-reboot-page">
@@ -772,7 +905,25 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" onclick="toggleNavDropdown(event)">
+                        Projects <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="nav-dropdown-menu" id="navDropdown">
+                        <a href="kasvihuoneilmiö.html" class="nav-dropdown-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Kasvihuoneilmiö</span>
+                        </a>
+                        <a href="demo-reboot.html" class="nav-dropdown-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Demo Reboot</span>
+                        </a>
+                        <a href="#" class="nav-dropdown-item easter-egg-nav" onclick="showEasterEgg(event)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Hidden Feature</span>
+                        </a>
+                    </div>
+                </li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -1704,6 +1855,60 @@
                 });
             }
         });
+
+        // Navigation Dropdown Functions
+        function toggleNavDropdown(event) {
+            event.preventDefault();
+            const dropdown = document.getElementById('navDropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('navDropdown');
+            const toggle = document.querySelector('.dropdown-toggle');
+            
+            if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Easter egg function
+        function showEasterEgg(event) {
+            event.preventDefault();
+            console.log('Easter egg clicked on Demo Reboot page!');
+            
+            // Create easter egg message
+            const easterEgg = document.createElement('div');
+            easterEgg.className = 'easter-egg-message';
+            easterEgg.innerHTML = `
+                <div class="easter-egg-content">
+                    <h3>🎉 EASTER EGG FOUND! 🎉</h3>
+                    <p>"Does not work but who the F cares"</p>
+                    <button onclick="closeEasterEgg()" class="easter-egg-close">Close</button>
+                </div>
+            `;
+            
+            // Add to body
+            document.body.appendChild(easterEgg);
+            console.log('Easter egg added to DOM');
+            
+            // Show with animation
+            setTimeout(() => {
+                easterEgg.classList.add('show');
+                console.log('Easter egg shown');
+            }, 10);
+        }
+
+        function closeEasterEgg() {
+            const easterEgg = document.querySelector('.easter-egg-message');
+            if (easterEgg) {
+                easterEgg.classList.remove('show');
+                setTimeout(() => {
+                    easterEgg.remove();
+                }, 300);
+            }
+        }
         </script>
     
     <script src="script.js"></script>
