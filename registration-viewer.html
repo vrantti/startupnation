@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Data Viewer - Startup Nation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .step {
+            margin: 15px 0;
+            padding: 15px;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+        .step-number {
+            background: #007bff;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .log-example {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .test-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        .test-button:hover {
+            background: #218838;
+        }
+        .registration-data {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Registration Data Viewer</h1>
+        
+        <div class="success">
+            <strong>✅ SUCCESS!</strong> Your registration was received successfully! The data is being logged to Vercel's function logs.
+        </div>
+
+        <div class="instructions">
+            <h2>📋 How to View Your Registration Data:</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Go to Vercel Dashboard:</strong> <a href="https://vercel.com/dashboard" target="_blank">https://vercel.com/dashboard</a>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Click on "startupnation" project</strong>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Click the "Functions" tab</strong> (NOT the "Logs" tab)
+            </div>
+            
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Click "View Function Logs" button</strong>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>Look for recent entries</strong> (around the time you registered)
+            </div>
+        </div>
+
+        <h3>🔍 What You Should See:</h3>
+        <div class="log-example">
+NEW REGISTRATION RECEIVED
+Registration ID: 1760122437720s3fknzt48
+Name: [Your Name]
+Email: [Your Email]
+Company: [Your Company]
+Participant Type: [Your Type]
+Roles: ["Developer","Designer"]
+Experience: Expert
+Interests: ["Gaming","Coding"]
+Contact Preference: Email
+Sponsorship Interest: Yes
+Hack Interest: Yes
+Equipment: Yes
+Creator Type: ["Programmer"]
+Attendance Days: ["Friday","Saturday"]
+Topic Suggestion: [Your suggestion]
+Comments: [Your comments]
+Terms Accepted: true
+GDPR Consent: true
+
+COPY THIS REGISTRATION: {"id":"1760122437720s3fknzt48","timestamp":"2025-01-10T21:42:40.000Z","name":"[Your Name]","email":"[Your Email]",...}
+        </div>
+
+        <h3>🧪 Test Registration (to verify logging works):</h3>
+        <button class="test-button" onclick="testRegistration()">Send Test Registration</button>
+        <div id="test-result"></div>
+
+        <div class="registration-data">
+            <h3>📊 Registration Statistics:</h3>
+            <p><strong>Total Registrations:</strong> <span id="total-registrations">Loading...</span></p>
+            <p><strong>Last Updated:</strong> <span id="last-updated">Loading...</span></p>
+        </div>
+
+        <div class="instructions">
+            <h3>💡 Pro Tips:</h3>
+            <ul>
+                <li>Use <span class="highlight">Ctrl+F</span> to search for specific registrations in the logs</li>
+                <li>Copy the JSON data from "COPY THIS REGISTRATION:" lines</li>
+                <li>Export logs from Vercel dashboard for backup</li>
+                <li>Consider setting up a proper database for production use</li>
+            </ul>
+        </div>
+
+        <div class="instructions">
+            <h3>🆘 If You Still Can't Find the Data:</h3>
+            <p>1. Make sure you're looking in <strong>Functions → View Function Logs</strong>, not general logs</p>
+            <p>2. Check if there are any recent log entries (within the last hour)</p>
+            <p>3. Try submitting another test registration using the button above</p>
+            <p>4. Contact support if the issue persists</p>
+        </div>
+    </div>
+
+    <script>
+        async function testRegistration() {
+            const button = document.querySelector('.test-button');
+            const resultDiv = document.getElementById('test-result');
+            
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            try {
+                const testData = {
+                    name: 'Test User',
+                    email: 'test@example.com',
+                    company: 'Test Company',
+                    participant_type: 'Creator',
+                    role: ['Developer'],
+                    experience: 'Expert',
+                    interests: ['Gaming', 'Coding'],
+                    contact_preference: 'Email',
+                    sponsorship_interest: 'Yes',
+                    hack_interest: 'Yes',
+                    equipment: 'Yes',
+                    creator_type: ['Programmer'],
+                    attendance_days: ['Friday'],
+                    topic_suggestion: 'Test topic',
+                    comments: 'This is a test registration',
+                    terms: true,
+                    gdpr_consent: true
+                };
+                
+                const response = await fetch('/api/registrations', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(testData)
+                });
+                
+                if (response.ok) {
+                    const result = await response.json();
+                    resultDiv.innerHTML = `
+                        <div class="success">
+                            ✅ Test registration sent successfully!<br>
+                            <strong>Registration ID:</strong> ${result.id}<br>
+                            <strong>Message:</strong> ${result.message}<br>
+                            <strong>Time:</strong> ${new Date().toLocaleString()}<br>
+                            <br>
+                            <strong>Now check Vercel Function Logs for this test data!</strong>
+                        </div>
+                    `;
+                } else {
+                    throw new Error('Registration failed');
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div style="background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 15px; border-radius: 8px;">
+                        ❌ Test registration failed: ${error.message}
+                    </div>
+                `;
+            }
+            
+            button.textContent = 'Send Test Registration';
+            button.disabled = false;
+        }
+        
+        // Load stats
+        async function loadStats() {
+            try {
+                const response = await fetch('/api/stats');
+                if (response.ok) {
+                    const stats = await response.json();
+                    document.getElementById('total-registrations').textContent = stats.total || 'N/A';
+                    document.getElementById('last-updated').textContent = new Date().toLocaleString();
+                }
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+            }
+        }
+        
+        // Load stats on page load
+        loadStats();
+    </script>
+</body>
+</html>
