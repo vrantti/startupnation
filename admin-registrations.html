@@ -14,6 +14,74 @@
             color: #ffffff;
         }
         
+        .login-form {
+            max-width: 400px;
+            margin: 10vh auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 3rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 0, 128, 0.3);
+            text-align: center;
+        }
+        
+        .login-title {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+        }
+        
+        .login-input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 0, 128, 0.3);
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        
+        .login-input:focus {
+            outline: none;
+            border-color: #ff0080;
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.3);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 0, 128, 0.3);
+        }
+        
+        .error-message {
+            color: #ff0080;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+        
+        .admin-content {
+            display: none;
+        }
+        
+        .admin-content.show {
+            display: block;
+        }
+        
         .admin-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -146,38 +214,109 @@
     </style>
 </head>
 <body class="admin-page">
-    <div class="container">
-        <div class="admin-header">
-            <h1 class="admin-title">DEMO REBOOT ADMIN</h1>
-            <p>Registration Management Dashboard</p>
-            <button class="refresh-btn" onclick="loadRegistrations()">
-                <i class="fas fa-sync-alt"></i> Refresh
-            </button>
-        </div>
-        
-        <div class="stats-grid" id="statsGrid">
-            <!-- Stats will be populated by JavaScript -->
-        </div>
-        
-        <button class="export-btn" onclick="exportRegistrations()">
-            <i class="fas fa-download"></i> Export to CSV
+    <!-- Login Form -->
+    <div class="login-form" id="loginForm">
+        <h1 class="login-title">DEMO REBOOT ADMIN</h1>
+        <p style="margin-bottom: 2rem; color: #ccc;">Enter password to access registration dashboard</p>
+        <input type="password" class="login-input" id="passwordInput" placeholder="Enter admin password" autocomplete="current-password">
+        <button class="login-btn" onclick="checkPassword()">
+            <i class="fas fa-lock"></i> Access Dashboard
         </button>
-        
-        <div class="registrations-table">
-            <div class="table-header">
-                <div>Name</div>
-                <div>Email</div>
-                <div>Type</div>
-                <div>Date</div>
-                <div>Actions</div>
+        <div class="error-message" id="errorMessage" style="display: none;"></div>
+    </div>
+    
+    <!-- Admin Content -->
+    <div class="admin-content" id="adminContent">
+        <div class="container">
+            <div class="admin-header">
+                <h1 class="admin-title">DEMO REBOOT ADMIN</h1>
+                <p>Registration Management Dashboard</p>
+                <button class="refresh-btn" onclick="loadRegistrations()">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                <button class="refresh-btn" onclick="logout()" style="background: rgba(255, 0, 128, 0.2); color: #ff0080; border-color: rgba(255, 0, 128, 0.5); margin-left: 1rem;">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
             </div>
-            <div id="registrationsList">
-                <!-- Registrations will be populated by JavaScript -->
+            
+            <div class="stats-grid" id="statsGrid">
+                <!-- Stats will be populated by JavaScript -->
+            </div>
+            
+            <button class="export-btn" onclick="exportRegistrations()">
+                <i class="fas fa-download"></i> Export to CSV
+            </button>
+            
+            <button class="export-btn" onclick="addTestRegistration()" style="background: linear-gradient(45deg, #8000ff, #ff0080); margin-left: 1rem;">
+                <i class="fas fa-plus"></i> Add Test Registration
+            </button>
+            
+            <div style="background: rgba(255, 255, 0, 0.1); border: 2px solid rgba(255, 255, 0, 0.3); border-radius: 10px; padding: 1rem; margin: 2rem 0; color: #ffff00;">
+                <strong>⚠️ Note:</strong> Registrations are stored in browser localStorage. To see registrations from other browsers/computers, you need to set up a backend database. For now, this shows registrations from the current browser only.
+            </div>
+            
+            <div class="registrations-table">
+                <div class="table-header">
+                    <div>Name</div>
+                    <div>Email</div>
+                    <div>Type</div>
+                    <div>Date</div>
+                    <div>Actions</div>
+                </div>
+                <div id="registrationsList">
+                    <!-- Registrations will be populated by JavaScript -->
+                </div>
             </div>
         </div>
     </div>
     
     <script>
+        // Password protection
+        const ADMIN_PASSWORD = 'demoreboot2025'; // Change this to your desired password
+        
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (password === ADMIN_PASSWORD) {
+                // Store session
+                sessionStorage.setItem('adminLoggedIn', 'true');
+                // Show admin content
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('adminContent').classList.add('show');
+                // Load registrations
+                loadRegistrations();
+            } else {
+                errorMessage.textContent = 'Invalid password. Please try again.';
+                errorMessage.style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+        
+        function logout() {
+            sessionStorage.removeItem('adminLoggedIn');
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('adminContent').classList.remove('show');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('errorMessage').style.display = 'none';
+        }
+        
+        // Check if already logged in
+        function checkLoginStatus() {
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('adminContent').classList.add('show');
+                loadRegistrations();
+            }
+        }
+        
+        // Allow Enter key to submit password
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+        
         // Load registrations from localStorage
         function loadRegistrations() {
             const registrations = JSON.parse(localStorage.getItem('demoRebootRegistrations') || '[]');
@@ -336,11 +475,48 @@
             window.URL.revokeObjectURL(url);
         }
         
-        // Load registrations on page load
-        document.addEventListener('DOMContentLoaded', loadRegistrations);
+        function addTestRegistration() {
+            const testReg = {
+                id: Date.now() + Math.random().toString(36).substr(2, 9),
+                timestamp: new Date().toISOString(),
+                name: 'Test User',
+                email: 'test@example.com',
+                company: 'Test Company',
+                participant_type: 'hacker',
+                role: ['Developer/Coder'],
+                experience: 'intermediate',
+                interests: ['Gaming', 'Coding/Development'],
+                contact_preference: 'email',
+                sponsorship_interest: 'yes',
+                hack_interest: 'yes',
+                equipment: 'yes',
+                creator_type: ['Programmer/Developer'],
+                attendance_days: ['friday', 'saturday'],
+                topic_suggestion: 'AI and Machine Learning',
+                comments: 'This is a test registration',
+                terms: true,
+                gdpr_consent: true
+            };
+            
+            const registrations = JSON.parse(localStorage.getItem('demoRebootRegistrations') || '[]');
+            registrations.push(testReg);
+            localStorage.setItem('demoRebootRegistrations', JSON.stringify(registrations));
+            
+            loadRegistrations();
+            alert('Test registration added!');
+        }
         
-        // Auto-refresh every 30 seconds
-        setInterval(loadRegistrations, 30000);
+        // Load registrations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+        });
+        
+        // Auto-refresh every 30 seconds (only if logged in)
+        setInterval(function() {
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                loadRegistrations();
+            }
+        }, 30000);
     </script>
 </body>
 </html>
