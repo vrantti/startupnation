@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "**/*",
-      "use": "@vercel/static"
+  "functions": {
+    "api/registrations.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/stats.js": {
+      "runtime": "nodejs18.x"
     }
-  ],
+  },
   "headers": [
     {
       "source": "/(.*)",
