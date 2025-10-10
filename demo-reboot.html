@@ -1533,13 +1533,17 @@
         })();
     </script>
     
-    <!-- Fixed Form Validation -->
+    <!-- Fixed Form Validation - OVERRIDES script.js -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('demoRebootForm');
             if (form) {
+                // Remove any existing event listeners
+                form.removeEventListener('submit', arguments.callee);
+                
                 form.addEventListener('submit', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     
                     // Get submit button and add loading state
                     const submitButton = this.querySelector('.punk-button');
@@ -1575,7 +1579,7 @@
                         showNotification(`❌ Please complete: ${errors.join(', ')}`, 'error');
                         submitButton.classList.remove('loading');
                         submitButton.innerHTML = originalText;
-                        return;
+                        return false;
                     }
                     
                     // Success - simulate processing
@@ -1585,12 +1589,21 @@
                         submitButton.classList.remove('loading');
                         submitButton.innerHTML = originalText;
                     }, 2000);
+                    
+                    return false;
                 });
             }
             
             // Simple notification function
             function showNotification(message, type = 'info') {
+                // Remove existing notifications
+                const existingNotification = document.querySelector('.notification');
+                if (existingNotification) {
+                    existingNotification.remove();
+                }
+                
                 const notification = document.createElement('div');
+                notification.className = 'notification';
                 notification.style.cssText = `
                     position: fixed;
                     top: 100px;
@@ -1603,15 +1616,89 @@
                     z-index: 10000;
                     max-width: 400px;
                     font-family: 'Inter', sans-serif;
+                    transform: translateX(400px);
+                    transition: transform 0.3s ease;
                 `;
                 notification.textContent = message;
                 document.body.appendChild(notification);
                 
+                // Animate in
                 setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.remove();
-                    }
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+                
+                // Auto remove after 5 seconds
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(400px)';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.remove();
+                        }
+                    }, 300);
                 }, 5000);
+            }
+            
+            // Make notification function globally available
+            window.showNotification = showNotification;
+        });
+    </script>
+    
+    <!-- Load script.js AFTER our validation to prevent conflicts -->
+    <script>
+        // Disable the demoRebootForm validation in script.js
+        window.addEventListener('load', function() {
+            const form = document.getElementById('demoRebootForm');
+            if (form) {
+                // Remove any event listeners that might have been added by script.js
+                const newForm = form.cloneNode(true);
+                form.parentNode.replaceChild(newForm, form);
+                
+                // Re-add our validation
+                newForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const submitButton = this.querySelector('.punk-button');
+                    const originalText = submitButton.innerHTML;
+                    submitButton.classList.add('loading');
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PROCESSING...';
+                    
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const participantType = document.getElementById('participant_type').value;
+                    const attendanceCheckboxes = document.querySelectorAll('input[name="attendance_days"]:checked');
+                    const termsCheckbox = document.querySelector('input[name="terms"]:checked');
+                    const gdprCheckbox = document.querySelector('input[name="gdpr_consent"]:checked');
+                    
+                    const errors = [];
+                    if (!name) errors.push('Full Name');
+                    if (!email) errors.push('Email Address');
+                    if (!participantType) errors.push('Participation Type');
+                    if (attendanceCheckboxes.length === 0) errors.push('Attendance Days');
+                    if (!termsCheckbox) errors.push('Privacy Policy Agreement');
+                    if (!gdprCheckbox) errors.push('GDPR Consent');
+                    
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (email && !emailRegex.test(email)) {
+                        errors.push('Valid Email Address');
+                    }
+                    
+                    if (errors.length > 0) {
+                        showNotification(`❌ Please complete: ${errors.join(', ')}`, 'error');
+                        submitButton.classList.remove('loading');
+                        submitButton.innerHTML = originalText;
+                        return false;
+                    }
+                    
+                    setTimeout(() => {
+                        showNotification('🎉 Welcome to the Revolution! You\'re now registered for Demo Reboot 2025.', 'success');
+                        this.reset();
+                        submitButton.classList.remove('loading');
+                        submitButton.innerHTML = originalText;
+                    }, 2000);
+                    
+                    return false;
+                });
             }
         });
     </script>
