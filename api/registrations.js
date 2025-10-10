@@ -1,27 +1,44 @@
 // Vercel API route for registrations
 // File: api/registrations.js
 
-// Simple in-memory storage for demo purposes
-// Note: This resets on each deployment but allows the form to work
-const REGISTRATIONS_KEY = 'demo_reboot_registrations';
+const fs = require('fs').promises;
+const path = require('path');
 
-// Get registrations from memory (simplified for demo)
-function getRegistrations() {
-    // In a real app, this would use a database or Vercel KV
-    // For demo purposes, we'll use a simple approach
-    return [];
+const DATA_FILE = path.join(process.cwd(), 'data', 'registrations.json');
+
+// Ensure data directory exists
+async function ensureDataFile() {
+    try {
+        await fs.mkdir(path.dirname(DATA_FILE), { recursive: true });
+        await fs.access(DATA_FILE);
+    } catch {
+        await fs.writeFile(DATA_FILE, JSON.stringify([]));
+    }
 }
 
-// Store registration in memory (simplified for demo)
-function storeRegistration(registration) {
-    // In a real app, this would save to a database or Vercel KV
-    console.log('Registration stored:', registration.id);
-    return true;
+// Load registrations
+async function loadRegistrations() {
+    try {
+        const data = await fs.readFile(DATA_FILE, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error loading registrations:', error);
+        return [];
+    }
 }
 
-console.log('Demo registration API loaded');
+// Save registrations
+async function saveRegistrations(registrations) {
+    try {
+        await fs.writeFile(DATA_FILE, JSON.stringify(registrations, null, 2));
+        return true;
+    } catch (error) {
+        console.error('Error saving registrations:', error);
+        return false;
+    }
+}
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -33,28 +50,31 @@ export default async function handler(req, res) {
         return;
     }
 
+    await ensureDataFile();
+
     try {
         if (req.method === 'GET') {
             // Get all registrations
-            const registrations = getRegistrations();
+            const registrations = await loadRegistrations();
             res.status(200).json(registrations);
         } else if (req.method === 'POST') {
             // Add new registration
+            const registrations = await loadRegistrations();
+            
             const newRegistration = {
                 id: Date.now() + Math.random().toString(36).substr(2, 9),
                 timestamp: new Date().toISOString(),
                 ...req.body
             };
-
-            const stored = storeRegistration(newRegistration);
-            if (stored) {
+            
+            registrations.push(newRegistration);
+            
+            const saved = await saveRegistrations(registrations);
+            if (saved) {
                 res.status(200).json({ success: true, id: newRegistration.id });
             } else {
-                res.status(500).json({ error: 'Failed to store registration' });
+                res.status(500).json({ error: 'Failed to save registration' });
             }
-        } else if (req.method === 'DELETE') {
-            // Delete registration by ID (simplified for demo)
-            res.status(200).json({ success: true, message: 'Registration deleted (demo mode)' });
         } else {
             res.status(405).json({ error: 'Method not allowed' });
         }
