@@ -401,6 +401,10 @@
                             <i class="fas fa-brain"></i>
                             <span>AI Research Lab</span>
                         </a>
+                        <a href="#" class="dropdown-item easter-egg" onclick="showEasterEgg(event)">
+                            <i class="fas fa-question-circle"></i>
+                            <span>Hidden Feature</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -676,6 +680,40 @@
                 button.classList.remove('active');
             }
         });
+
+        // Easter egg function
+        function showEasterEgg(event) {
+            event.preventDefault();
+            
+            // Create easter egg message
+            const easterEgg = document.createElement('div');
+            easterEgg.className = 'easter-egg-message';
+            easterEgg.innerHTML = `
+                <div class="easter-egg-content">
+                    <h3>🎉 EASTER EGG FOUND! 🎉</h3>
+                    <p>"Does not work but who the F cares"</p>
+                    <button onclick="closeEasterEgg()" class="easter-egg-close">Close</button>
+                </div>
+            `;
+            
+            // Add to body
+            document.body.appendChild(easterEgg);
+            
+            // Show with animation
+            setTimeout(() => {
+                easterEgg.classList.add('show');
+            }, 10);
+        }
+
+        function closeEasterEgg() {
+            const easterEgg = document.querySelector('.easter-egg-message');
+            if (easterEgg) {
+                easterEgg.classList.remove('show');
+                setTimeout(() => {
+                    easterEgg.remove();
+                }, 300);
+            }
+        }
     </script>
 </body>
 </html>
