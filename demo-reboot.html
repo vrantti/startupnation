@@ -1579,13 +1579,47 @@
                         return false;
                     }
                     
-                    // Success - simulate processing
-                    setTimeout(() => {
-                        showNotification('🎉 Welcome to the Revolution! You\'re now registered for Demo Reboot 2025.', 'success');
-                        form.reset();
-                        submitButton.classList.remove('loading');
-                        submitButton.innerHTML = originalText;
-                    }, 2000);
+                    // Submit to backend
+                    try {
+                        const response = await fetch('http://localhost:3001/api/registrations', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                email: email,
+                                company: document.getElementById('company').value,
+                                participant_type: participantType,
+                                role: Array.from(document.querySelectorAll('input[name="role"]:checked')).map(cb => cb.value),
+                                experience: document.getElementById('experience').value,
+                                interests: Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value),
+                                contact_preference: document.getElementById('contact_preference').value,
+                                sponsorship_interest: document.getElementById('sponsorship_interest').value,
+                                hack_interest: document.getElementById('hack_interest').value,
+                                equipment: document.getElementById('equipment').value,
+                                creator_type: Array.from(document.querySelectorAll('input[name="creator_type"]:checked')).map(cb => cb.value),
+                                attendance_days: Array.from(attendanceCheckboxes).map(cb => cb.value),
+                                topic_suggestion: document.getElementById('topic_suggestion').value,
+                                comments: document.getElementById('comments').value,
+                                terms: termsCheckbox ? true : false,
+                                gdpr_consent: gdprCheckbox ? true : false
+                            })
+                        });
+                        
+                        if (response.ok) {
+                            showNotification('🎉 Welcome to the Revolution! You\'re now registered for Demo Reboot 2025.', 'success');
+                            form.reset();
+                        } else {
+                            throw new Error('Registration failed');
+                        }
+                    } catch (error) {
+                        console.error('Registration error:', error);
+                        showNotification('❌ Registration failed. Please try again or contact support.', 'error');
+                    }
+                    
+                    submitButton.classList.remove('loading');
+                    submitButton.innerHTML = originalText;
                     
                     return false;
                 });
