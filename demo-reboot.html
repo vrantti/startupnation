@@ -498,6 +498,35 @@
             .vr-experiences p {
                 font-size: 0.8rem !important;
             }
+
+            /* Back to Home button mobile fix */
+            .demo-banner {
+                position: fixed !important;
+                top: 10px !important;
+                left: 10px !important;
+                z-index: 1000 !important;
+                background: rgba(0, 0, 0, 0.8) !important;
+                padding: 8px 12px !important;
+                border-radius: 6px !important;
+                border: 1px solid rgba(0, 255, 255, 0.5) !important;
+            }
+
+            .demo-link {
+                text-decoration: none !important;
+                color: #00ffff !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+            }
+
+            .demo-text {
+                display: block !important;
+                white-space: nowrap !important;
+            }
+
+            /* Add top padding to hero content to avoid overlap */
+            .hero-content {
+                padding-top: 60px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1922,6 +1951,28 @@
                     text.style.fontSize = '16px';
                 }
             });
+
+            // Make back button more prominent on mobile
+            const backButton = document.querySelector('.demo-banner');
+            if (backButton) {
+                backButton.style.position = 'fixed';
+                backButton.style.top = '10px';
+                backButton.style.left = '10px';
+                backButton.style.zIndex = '1000';
+                backButton.style.background = 'rgba(0, 0, 0, 0.9)';
+                backButton.style.padding = '10px 15px';
+                backButton.style.borderRadius = '8px';
+                backButton.style.border = '2px solid #00ffff';
+                backButton.style.boxShadow = '0 0 15px rgba(0, 255, 255, 0.5)';
+                
+                // Add click animation
+                backButton.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            }
         }
 
         // Easter egg function
