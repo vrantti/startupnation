@@ -499,9 +499,24 @@
                 font-size: 0.8rem !important;
             }
 
-            /* Back to Home button - completely hide on mobile */
+            /* Back to Home button - FORCE HIDE on mobile with multiple selectors */
             .demo-banner {
                 display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                position: absolute !important;
+                left: -9999px !important;
+                top: -9999px !important;
+            }
+
+            .demo-link {
+                display: none !important;
+                visibility: hidden !important;
+            }
+
+            .demo-text {
+                display: none !important;
+                visibility: hidden !important;
             }
 
             /* Fix focus section grid layout */
@@ -1956,10 +1971,10 @@
                 }
             });
 
-            // Hide back button on mobile - it's interfering with content
+            // FORCE REMOVE back button on mobile - completely delete it
             const backButton = document.querySelector('.demo-banner');
             if (backButton) {
-                backButton.style.display = 'none';
+                backButton.remove(); // Completely remove from DOM
             }
         }
 
