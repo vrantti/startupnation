@@ -86,6 +86,79 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Navigation Dropdown Styles -->
+    <style>
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .nav-dropdown .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .nav-dropdown .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-dropdown .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .nav-dropdown .dropdown-item:hover {
+            color: #00ffff;
+        }
+        
+        .nav-dropdown .dropdown-item i {
+            color: #00ffff;
+            width: 20px;
+        }
+        
+        .section-cta {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #00ffff;
+            color: #00ffff;
+        }
+        
+        .btn-outline:hover {
+            background: #00ffff;
+            color: #000;
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -180,7 +253,23 @@
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-dropdown">
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <div class="dropdown-menu">
+                        <a href="demo-reboot.html" class="dropdown-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Demo Reboot 2025</span>
+                        </a>
+                        <a href="kasvihuoneilmiö.html" class="dropdown-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Kasvuhuoneilmiö</span>
+                        </a>
+                        <a href="#projects" class="dropdown-item">
+                            <i class="fas fa-code"></i>
+                            <span>Tech Innovation Hub</span>
+                        </a>
+                    </div>
+                </li>
                 <li><a href="#ecosystem" class="nav-link">Ecosystem</a></li>
                 <li><a href="#events" class="nav-link">Events</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -208,13 +297,17 @@
             <h1 class="hero-title">STARTUP NATION</h1>
             <p class="hero-subtitle">The ATTITUDE of being a top tier entrepreneur and a pioneer unites the mankind under the hood of STARTUP NATION. We promote and unite the most innovative people in the world to have a voice and push above their current weight on their way to become the next unicorn.</p>
             <div class="hero-cta">
-                <a href="#about" class="btn btn-primary">
+                <a href="demo-reboot.html" class="btn btn-primary">
                     <i class="fas fa-rocket"></i>
-                    Launch Your Journey
+                    Join Demo Reboot 2025
                 </a>
-                <a href="#contact" class="btn btn-secondary">
+                <a href="#about" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                </a>
+                <a href="#contact" class="btn btn-outline">
                     <i class="fas fa-users"></i>
-                    Join the Revolution
+                    Join the Community
                 </a>
             </div>
             <div class="hero-stats">
@@ -306,6 +399,16 @@
             <div class="section-header">
                 <h2 class="section-title">REVOLUTIONARY PROJECTS</h2>
                 <p class="section-subtitle">Cutting-edge initiatives that are reshaping the startup landscape</p>
+                <div class="section-cta">
+                    <a href="demo-reboot.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Join Demo Reboot 2025
+                    </a>
+                    <a href="kasvihuoneilmiö.html" class="btn btn-secondary">
+                        <i class="fas fa-leaf"></i>
+                        Explore Kasvuhuoneilmiö
+                    </a>
+                </div>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
@@ -372,39 +475,6 @@
                     <div class="project-stats">
                         <span>40+ Green Startups</span>
                         <span>€5M+ Impact</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Projects Dropdown -->
-            <div class="projects-dropdown">
-                <h3>Explore More Projects</h3>
-                <div class="dropdown-container">
-                    <button class="dropdown-btn" onclick="toggleDropdown()">
-                        <span>View All Projects</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu" id="projectsDropdown">
-                        <a href="kasvihuoneilmiö.html" class="dropdown-item">
-                            <i class="fas fa-leaf"></i>
-                            <span>Kasvihuoneilmiö</span>
-                        </a>
-                        <a href="demo-reboot.html" class="dropdown-item">
-                            <i class="fas fa-rocket"></i>
-                            <span>Demo Reboot</span>
-                        </a>
-                        <a href="#projects" class="dropdown-item">
-                            <i class="fas fa-code"></i>
-                            <span>Tech Innovation Hub</span>
-                        </a>
-                        <a href="#projects" class="dropdown-item">
-                            <i class="fas fa-brain"></i>
-                            <span>AI Research Lab</span>
-                        </a>
-                        <a href="#" class="dropdown-item easter-egg" onclick="showEasterEgg(event)">
-                            <i class="fas fa-question-circle"></i>
-                            <span>Hidden Feature</span>
-                        </a>
                     </div>
                 </div>
             </div>
