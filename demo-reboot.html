@@ -763,31 +763,6 @@
             }
         }
 
-        /* Home Dropdown Arrow Easter Egg */
-        .nav-dropdown {
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
-
-        .dropdown-arrow {
-            margin-left: 8px;
-            cursor: pointer;
-            color: #ffffff;
-            font-size: 1em;
-            transition: all 0.3s ease;
-            opacity: 1;
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-
-        .dropdown-arrow:hover {
-            color: rgba(255, 255, 255, 1);
-            opacity: 1;
-            transform: scale(1.3);
-        }
 
         /* Easter Egg Modal Styles */
         .easter-egg-message {
@@ -868,10 +843,7 @@
         <div class="nav-container">
             <a href="index.html" class="logo">STARTUP NATION</a>
             <ul class="nav-menu">
-                <li class="nav-dropdown">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <span class="dropdown-arrow" onclick="showEasterEgg(event)"><i class="fas fa-chevron-down"></i></span>
-                </li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="index.html#projects" class="nav-link">Projects</a></li>
                 <li><a href="index.html#contact" class="nav-link">Contact</a></li>
