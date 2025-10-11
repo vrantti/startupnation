@@ -499,29 +499,9 @@
                 font-size: 0.8rem !important;
             }
 
-            /* Back to Home button mobile fix - move it away from title */
+            /* Back to Home button - completely hide on mobile */
             .demo-banner {
-                position: fixed !important;
-                top: 60px !important;
-                right: 10px !important;
-                z-index: 1000 !important;
-                background: rgba(0, 0, 0, 0.9) !important;
-                padding: 8px 12px !important;
-                border-radius: 6px !important;
-                border: 1px solid rgba(0, 255, 255, 0.5) !important;
-                transform: translateY(0) !important;
-            }
-
-            .demo-link {
-                text-decoration: none !important;
-                color: #00ffff !important;
-                font-size: 11px !important;
-                font-weight: 600 !important;
-            }
-
-            .demo-text {
-                display: block !important;
-                white-space: nowrap !important;
+                display: none !important;
             }
 
             /* Fix focus section grid layout */
@@ -1976,27 +1956,10 @@
                 }
             });
 
-            // Make back button more prominent on mobile - position away from title
+            // Hide back button on mobile - it's interfering with content
             const backButton = document.querySelector('.demo-banner');
             if (backButton) {
-                backButton.style.position = 'fixed';
-                backButton.style.top = '60px';
-                backButton.style.right = '10px';
-                backButton.style.zIndex = '1000';
-                backButton.style.background = 'rgba(0, 0, 0, 0.9)';
-                backButton.style.padding = '8px 12px';
-                backButton.style.borderRadius = '6px';
-                backButton.style.border = '1px solid #00ffff';
-                backButton.style.boxShadow = '0 0 10px rgba(0, 255, 255, 0.3)';
-                backButton.style.fontSize = '11px';
-                
-                // Add click animation
-                backButton.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                });
+                backButton.style.display = 'none';
             }
         }
 
