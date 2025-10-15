@@ -1368,6 +1368,30 @@
                         </div>
                         <p class="punk-text" style="font-size: 1.1rem; margin-top: 1.5rem;">As a sponsor, you can drop challenges, test ideas, or request creative input — and see what the community produces in real time.</p>
                     </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="punk-button" onclick="toggleSponsorCTA()" style="margin-top: 1rem;">
+                            <i class="fas fa-star"></i>
+                            <span id="sponsorCTA">BECOME A SPONSOR</span>
+                        </button>
+                    </div>
+
+                    <div id="sponsorCTAContent" class="sponsor-cta-content" style="display: none;">
+                        <div class="punk-card" style="margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, rgba(255, 0, 128, 0.1), rgba(0, 255, 255, 0.1)); border: 2px solid rgba(255, 0, 128, 0.5);">
+                            <p class="punk-text" style="font-size: 1.2rem; margin-bottom: 1rem;">
+                                We'd love to have you join as a sponsor and stand with us in shaping something <span class="punk-accent">bold, authentic, and future-facing</span>.
+                            </p>
+                            <p class="punk-text" style="font-size: 1.2rem; margin-bottom: 1.5rem; font-weight: 700; text-transform: uppercase;">
+                                <span class="punk-highlight">DEMO REBOOT → Real Demos. Real People. The Renaissance of Attitude.</span>
+                            </p>
+                            <p class="punk-text" style="margin-bottom: 0.5rem;">
+                                Best regards,
+                            </p>
+                            <p class="punk-text" style="margin-bottom: 0.5rem;">
+                                Demo Reboot Team
+                            </p>
+                        </div>
+                    </div>
                     
 
                         <!-- ==================== SPONSOR & PARTNER LOGOS ==================== -->
@@ -1786,10 +1810,6 @@
                         <img src="images/TRES.png" alt="TRES" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.8));">
                         <div style="position: absolute; top: -8px; right: -8px; background: linear-gradient(45deg, #ff0080, #00ffff); color: #000; padding: 4px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; animation: tresBadge 1.5s ease-in-out infinite;">CO-ORGANIZER</div>
                     </div>
-                    <!-- Tampere Startup Association Logo -->
-                    <div class="footer-logo" style="background: rgba(255, 255, 0, 0.1); border: 2px solid rgba(255, 255, 0, 0.3); border-radius: 15px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; min-height: 100px; display: flex; align-items: center; justify-content: center;">
-                        <div style="color: #ffff00; font-weight: 700; font-size: 1rem; line-height: 1.2;">TAMPERE<br>STARTUP<br>ASSOCIATION</div>
-                    </div>
                 </div>
             </div>
             
@@ -2105,13 +2125,26 @@
         function toggleSponsorDetails() {
             const content = document.getElementById('sponsorDetails');
             const toggle = document.getElementById('sponsorToggle');
-            
+
             if (content.style.display === 'none') {
                 content.style.display = 'block';
                 toggle.textContent = 'HIDE DETAILS';
             } else {
                 content.style.display = 'none';
                 toggle.textContent = 'WHY SUPPORT?';
+            }
+        }
+
+        function toggleSponsorCTA() {
+            const content = document.getElementById('sponsorCTAContent');
+            const toggle = document.getElementById('sponsorCTA');
+
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                toggle.textContent = 'HIDE CTA';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = 'BECOME A SPONSOR';
             }
         }
 
