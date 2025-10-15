@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsors - Demo Reboot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #e0e0e0;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cyber-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .cyber-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 20px;
+        }
+
+        .cyber-title {
+            font-size: 3rem;
+            color: #00ffff;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .cyber-subtitle {
+            font-size: 1.2rem;
+            color: #ff0080;
+            margin-bottom: 2rem;
+        }
+
+        .punk-button {
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .punk-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+        }
+
+        .sponsor-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 0, 128, 0.1);
+            border: 2px solid rgba(255, 0, 128, 0.3);
+            border-radius: 20px;
+        }
+
+        .sponsor-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(255, 0, 128, 0.5);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .benefit-item i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .how-it-works {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1));
+            border: 2px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .funding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .funding-item {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .funding-item h4 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .call-to-action {
+            margin: 3rem 0;
+            text-align: center;
+            padding: 3rem;
+            background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(0, 255, 255, 0.2));
+            border: 3px solid rgba(255, 0, 128, 0.5);
+            border-radius: 25px;
+        }
+
+        .call-to-action h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff0080;
+        }
+
+        .sponsor-logos {
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .sponsor-logo {
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .sponsor-logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .sponsor-logo img {
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes tresGlow {
+            0% { box-shadow: 0 0 20px rgba(255, 0, 128, 0.3); }
+            100% { box-shadow: 0 0 40px rgba(255, 0, 128, 0.6); }
+        }
+
+        @keyframes tresBadge {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .tres-logo {
+            animation: tresGlow 2s ease-in-out infinite alternate;
+        }
+
+        .tres-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            animation: tresBadge 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="cyber-container">
+        <a href="demo-reboot.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> ← BACK TO DEMO REBOOT
+        </a>
+
+        <div class="cyber-header">
+            <h1 class="cyber-title">SPONSOR THE REVOLUTION</h1>
+            <p class="cyber-subtitle">Fuel the Renaissance of Attitude</p>
+        </div>
+
+        <!-- Why Sponsor Section -->
+        <div class="sponsor-section">
+            <h2 style="color: #ff0080; text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">WHY SPONSOR DEMO REBOOT?</h2>
+            <p style="font-size: 1.3rem; text-align: center; margin-bottom: 2rem;">
+                By sponsoring <span style="color: #00ffff; font-weight: 700;">Demo Reboot</span>, you're not funding a traditional event. You're fueling:
+            </p>
+
+            <div class="sponsor-benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-lightbulb" style="color: #ff0080;"></i>
+                    <h4 style="color: #ff0080;">Innovation Access</h4>
+                    <p>Fresh demos, bold experiments, prototypes, and art styles.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-brain" style="color: #00ffff;"></i>
+                    <h4 style="color: #00ffff;">Outside-the-box Thinking</h4>
+                    <p>Non-conventional responses and unpredictable creative sparks.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-star" style="color: #ffff00;"></i>
+                    <h4 style="color: #ffff00;">New Talent Discovery</h4>
+                    <p>Connect with exceptional developers and artists who rarely fit into "official" spaces.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-sync-alt" style="color: #00ff00;"></i>
+                    <h4 style="color: #00ff00;">Cross-sector Inspiration</h4>
+                    <p>Games, art, tech, museums, culture — all colliding.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-fire" style="color: #ff8000;"></i>
+                    <h4 style="color: #ff8000;">Movement & Identity</h4>
+                    <p>Be part of the Renaissance of Attitude — a grassroots cultural reboot, not a KPI-driven program.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="how-it-works">
+            <h2 style="color: #00ffff; font-size: 2.5rem; margin-bottom: 2rem;">HOW IT WORKS</h2>
+
+            <div class="funding-grid">
+                <div class="funding-item">
+                    <h4 style="color: #00ffff;">50% TO CREATORS</h4>
+                    <p>Direct funding to the creators and participants</p>
+                </div>
+                <div class="funding-item">
+                    <h4 style="color: #ff0080;">50% TO DEMO HOUSE</h4>
+                    <p>Builds the permanent DEMO HOUSE in Tampere</p>
+                </div>
+            </div>
+
+            <p style="font-size: 1.2rem; margin-top: 2rem;">
+                As a sponsor, you can drop challenges, test ideas, or request creative input — and see what the community produces in real time.
+            </p>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="call-to-action">
+            <h3>READY TO JOIN THE REVOLUTION?</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                We'd love to have you join as a sponsor and stand with us in shaping something
+                <span style="color: #ff0080; font-weight: 700;">bold, authentic, and future-facing</span>.
+            </p>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem; color: #00ffff; font-weight: 700;">
+                DEMO REBOOT → Real Demos. Real People. The Renaissance of Attitude.
+            </p>
+            <p style="margin-bottom: 2rem;">Best regards,<br>Demo Reboot Team</p>
+
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">LET'S SCHEDULE A QUICK CALL</h3>
+            <p style="margin-bottom: 2rem;">to discuss how your involvement could look.</p>
+            <a href="tel:+358403075232" class="punk-button">
+                <i class="fas fa-phone"></i>
+                CALL NOW
+            </a>
+        </div>
+
+        <!-- Current Sponsors -->
+        <div class="sponsor-logos">
+            <h2 style="color: #ffff00; text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">OUR AMAZING SPONSORS & PARTNERS</h2>
+
+            <div class="logos-grid">
+                <!-- TRES Logo - HIGHLIGHTED -->
+                <div class="sponsor-logo tres-logo">
+                    <img src="images/TRES.png" alt="TRES">
+                    <div class="tres-badge">FEATURED</div>
+                </div>
+
+                <!-- NEXR Logo -->
+                <div class="sponsor-logo">
+                    <img src="images/NEXR.png" alt="NEXR">
+                </div>
+
+                <!-- Virtual Dawn Logo -->
+                <div class="sponsor-logo">
+                    <img src="images/VD_BR_Default.png" alt="Virtual Dawn">
+                </div>
+            </div>
+
+            <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem; color: #e0e0e0;">
+                Want to join our sponsor family? <a href="tel:+358403075232" style="color: #00ffff; text-decoration: underline;">Contact us now!</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
