@@ -556,16 +556,37 @@
             /* Footer logos mobile optimization */
             .footer-logos-grid {
                 grid-template-columns: 1fr !important;
-                gap: 1rem !important;
+                gap: 1.5rem !important;
+                padding: 1rem 0 !important;
             }
 
             .footer-logo {
-                min-height: 80px !important;
-                padding: 1rem !important;
+                min-height: 90px !important;
+                padding: 1.2rem !important;
+                margin: 0.5rem 0 !important;
             }
 
-            .footer-logo div {
-                font-size: 1rem !important;
+            .footer-logo img {
+                max-height: 60px !important;
+                max-width: 80% !important;
+            }
+
+            .footer-logos-section {
+                padding: 1.5rem 0 !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .footer-logos-section h4 {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* TRES badge mobile optimization */
+            .tres-badge {
+                font-size: 0.6rem !important;
+                padding: 3px 6px !important;
+                top: -6px !important;
+                right: -6px !important;
             }
 
             .focus-item {
@@ -1662,7 +1683,7 @@
                     <!-- TRES Logo - HIGHLIGHTED -->
                     <div class="footer-logo tres-footer-logo" style="background: linear-gradient(135deg, rgba(255, 0, 128, 0.2), rgba(0, 255, 255, 0.2)); border: 3px solid rgba(255, 0, 128, 0.8); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.3s ease; min-height: 120px; display: flex; align-items: center; justify-content: center; position: relative; box-shadow: 0 0 25px rgba(255, 0, 128, 0.4); animation: tresGlow 2s ease-in-out infinite alternate;">
                         <img src="images/TRES.png" alt="TRES" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 0 10px rgba(255, 0, 128, 0.8));">
-                        <div style="position: absolute; top: -8px; right: -8px; background: linear-gradient(45deg, #ff0080, #00ffff); color: #000; padding: 4px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; animation: tresBadge 1.5s ease-in-out infinite;">CO-ORGANIZER</div>
+                        <div class="tres-badge" style="position: absolute; top: -8px; right: -8px; background: linear-gradient(45deg, #ff0080, #00ffff); color: #000; padding: 4px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: 900; text-transform: uppercase; animation: tresBadge 1.5s ease-in-out infinite;">CO-ORGANIZER</div>
                     </div>
                     <!-- Virtual Dawn Logo -->
                     <div class="footer-logo" style="background: rgba(255, 255, 0, 0.1); border: 2px solid rgba(255, 255, 0, 0.3); border-radius: 15px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; min-height: 100px; display: flex; align-items: center; justify-content: center;">
