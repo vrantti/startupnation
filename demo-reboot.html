@@ -1107,7 +1107,7 @@
             </div>
             <h1 class="punk-title">DEMO REBOOT</h1>
             <div class="hero-logo" style="margin: 2rem 0; display: flex; justify-content: center;">
-                <img src="images/VD_BR_Default.png" alt="Demo Reboot Logo" style="max-width: 300px; max-height: 200px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6)); animation: heroLogoGlow 3s ease-in-out infinite alternate;">
+                <img src="images/demoreboot.png" alt="Demo Reboot Logo" style="max-width: 300px; max-height: 200px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6)); animation: heroLogoGlow 3s ease-in-out infinite alternate;">
             </div>
             <p class="punk-subtitle">Tampere Nokia Arena - Paidia • 24.10.2025 1600 - 26.10.2025 1200 • The Renaissance of Attitude</p>
             
@@ -1176,18 +1176,15 @@
                     <p>Non-stop gaming, big screen, epic sessions</p>
                 </div>
                 <div class="promo-card promo-card-orange">
-                    <h3>🎤 LISTEN TO INTERESTING REAL LIFE TECH AND BUSINESS AND GAMING EXPERIENCES IN AD HOC SPEECHES!</h3>
+                    <h3>🎤 AD HOC SPEECHES & REAL STORIES</h3>
                     <p>Real stories from industry veterans and developers</p>
                 </div>
                 <div class="promo-card promo-card-purple">
-                    <h3>📱 NETWORKING OPPORTUNITY YOU CANNOT MISS, COME TO MAKE CONTENT FOR YOUR SOCIAL MEDIA, MEET PEOPLE!</h3>
+                    <h3>📱 NETWORKING & CONTENT CREATION</h3>
                     <p>Connect, create content, build your network</p>
                 </div>
             </div>
 
-            <!-- ==================== SECTION BREAK ==================== -->
-            <div class="section-spacer"></div>
-            <div class="section-separator"></div>
 
             <!-- ==================== HACK CHALLENGES & FEATURES ==================== -->
             <div class="section-header">
@@ -1207,51 +1204,13 @@
                     </div>
                 </div>
 
-                <!-- ==================== EVENT DESCRIPTION ==================== -->
-                <div class="event-description">
-                    <p>non stop gaming and streaming, non stop creation and demoing, ton of ad hoc speeches, open doors (just sign up), and ton of creativity</p>
-                </div>
 
             </div>
             
-            <!-- ==================== QUICK INFO TOGGLE ==================== -->
-            <div class="quick-info-section" style="margin: 2rem 0;">
-                <button class="punk-button" onclick="toggleQuickInfo()" style="margin-bottom: 1rem;">
-                    <i class="fas fa-info-circle"></i>
-                    <span id="quickInfoToggle">SHOW EVENT DETAILS</span>
-                </button>
-                <div id="quickInfoContent" class="punk-card" style="display: none; margin-top: 1rem;">
-                    <h4 class="punk-accent" style="margin-bottom: 1rem;">🚪 DOORS OPEN</h4>
-                    <p><strong>Friday 24.10.2025 16:00 - Sunday 26.10.2025 12:00</strong></p>
-                    <p><strong>Location:</strong> Tampere Nokia Arena - Paidia</p>
-                    <p><strong>Price:</strong> COMPLETELY FREE EVENT</p>
-                    <div style="margin-top: 1rem;">
-                        <p><strong>Need help?</strong></p>
-                        <a href="https://discord.gg/pTdzDHC5ax" class="punk-button" style="margin: 0.5rem;">Discord</a>
-                        <a href="https://wa.me/358403075232" class="punk-button" style="margin: 0.5rem;">WhatsApp</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="hero-cta">
-                <a href="#register" class="punk-button">
-                    <i class="fas fa-ticket-alt"></i>
-                    REGISTER NOW
-                </a>
-                <a href="#schedule" class="punk-button">
-                    <i class="fas fa-calendar"></i>
-                    VIEW SCHEDULE
-                </a>
-            </div>
         </div>
     </section>
 
-    <!-- ==================== MAJOR SECTION BREAK ==================== -->
-    <div style="height: 2rem;"></div>
-
-    <!-- ==================== SECTION SEPARATOR ==================== -->
-    <div class="section-spacer"></div>
-    <div class="section-separator"></div>
 
     <!-- Event Info -->
     <section id="schedule" class="projects">
@@ -2159,18 +2118,6 @@
         window.addEventListener('resize', detectMobile);
 
         // Collapsible sections functions
-        function toggleQuickInfo() {
-            const content = document.getElementById('quickInfoContent');
-            const toggle = document.getElementById('quickInfoToggle');
-            
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-                toggle.textContent = 'HIDE EVENT DETAILS';
-            } else {
-                content.style.display = 'none';
-                toggle.textContent = 'SHOW EVENT DETAILS';
-            }
-        }
 
         function toggleSponsorDetails() {
             const content = document.getElementById('sponsorDetails');
