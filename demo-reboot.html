@@ -542,13 +542,9 @@
                 padding: 1.5rem !important;
             }
 
-            .official-logo {
-                width: 150px !important;
-                height: 150px !important;
-            }
-
-            .official-logo span {
-                font-size: 1.5rem !important;
+            .hero-logo img {
+                max-width: 250px !important;
+                max-height: 150px !important;
             }
 
             /* Image optimization for mobile */
@@ -678,10 +674,21 @@
             animation: sponsorLogoHover 0.3s ease-out !important;
         }
 
-        /* Official logo hover effect */
-        .official-logo:hover {
-            transform: scale(1.1) !important;
-            box-shadow: 0 0 50px rgba(0, 255, 255, 0.8), 0 0 100px rgba(255, 0, 128, 0.4) !important;
+        /* Hero logo animation */
+        @keyframes heroLogoGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6)) drop-shadow(0 0 40px rgba(255, 0, 128, 0.3));
+                transform: scale(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.9)) drop-shadow(0 0 60px rgba(255, 0, 128, 0.5));
+                transform: scale(1.02);
+            }
+        }
+
+        .hero-logo:hover img {
+            transform: scale(1.05) !important;
+            filter: drop-shadow(0 0 40px rgba(0, 255, 255, 1)) drop-shadow(0 0 80px rgba(255, 0, 128, 0.6)) !important;
         }
 
         /* Footer logo hover effects */
@@ -1099,6 +1106,9 @@
                 </a>
             </div>
             <h1 class="punk-title">DEMO REBOOT</h1>
+            <div class="hero-logo" style="margin: 2rem 0; display: flex; justify-content: center;">
+                <img src="images/VD_BR_Default.png" alt="Demo Reboot Logo" style="max-width: 300px; max-height: 200px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6)); animation: heroLogoGlow 3s ease-in-out infinite alternate;">
+            </div>
             <p class="punk-subtitle">Tampere Nokia Arena - Paidia • 24.10.2025 1600 - 26.10.2025 1200 • The Renaissance of Attitude</p>
             
             <!-- ==================== MISSION & MANIFESTO - TOP SECTION ==================== -->
@@ -1220,19 +1230,6 @@
                         <a href="https://discord.gg/pTdzDHC5ax" class="punk-button" style="margin: 0.5rem;">Discord</a>
                         <a href="https://wa.me/358403075232" class="punk-button" style="margin: 0.5rem;">WhatsApp</a>
                     </div>
-                </div>
-            </div>
-            <!-- ==================== OFFICIAL LOGO SECTION ==================== -->
-            <div class="official-logo-section">
-                <div class="punk-card" style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1)); border: 2px solid rgba(0, 255, 255, 0.5);">
-                    <h3 class="punk-accent" style="font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: uppercase;">OFFICIAL DEMO REBOOT LOGO</h3>
-                    <div class="logo-container" style="display: flex; justify-content: center; align-items: center; margin: 2rem 0;">
-                        <!-- Placeholder for official Demo Reboot logo -->
-                        <div class="official-logo" style="width: 200px; height: 200px; background: linear-gradient(45deg, #00ffff, #ff0080); border-radius: 20px; display: flex; align-items: center; justify-content: center; border: 3px solid rgba(0, 255, 255, 0.8); box-shadow: 0 0 30px rgba(0, 255, 255, 0.5); animation: logoGlow 3s ease-in-out infinite alternate;">
-                            <span style="color: #000; font-size: 2rem; font-weight: 900; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);">DEMO<br>REBOOT</span>
-                        </div>
-                    </div>
-                    <p class="punk-text" style="font-size: 1.1rem; margin-top: 1rem;">The Renaissance of Attitude • 24.10.2025</p>
                 </div>
             </div>
 
@@ -1370,12 +1367,6 @@
             <div id="sponsorDetails" class="sponsor-details" style="display: none;">
             <div class="about-content">
                 <div class="about-text">
-                    <div class="punk-card" style="margin-bottom: 0.5rem;">
-                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">HELLO DEAR POSSIBLE CREATIVE REVOLUTIONIST!</h3>
-                        <p class="punk-text" style="line-height: 1.6; margin-bottom: 1.5rem;">
-                            We'd like to invite you to be part of <span class="punk-highlight">Demo Reboot</span>, a next-level creative weekend happening <span class="punk-accent">24.10.2025 1600 - 26.10.2025 1200</span> at <span class="punk-highlight">Tampere Nokia Arena - Paidia</span>. This event is organized as a non-profit initiative via Tampere Startup Association, with one mission: <span class="punk-highlight">reboot the Finnish demoscene</span> and give creators, coders, artists, and musicians a place to jam, collide, and spark new ideas.
-                        </p>
-                    </div>
                     
                     <h3 class="punk-accent" style="font-size: 1.8rem; margin-bottom: 1.5rem; text-transform: uppercase;">WHY SUPPORT?</h3>
                     <p class="punk-text" style="margin-bottom: 1rem; font-size: 1.2rem;">By sponsoring <span class="punk-highlight">Demo Reboot</span>, you're not funding a traditional event. You're fueling:</p>
@@ -1487,10 +1478,6 @@
             <div class="section-header">
                 <h2>JOIN THE REVOLUTION</h2>
                 <p>Secure your spot at the Renaissance of Attitude</p>
-                <button class="punk-button" onclick="toggleAdvancedForm()" style="margin-top: 1rem;">
-                    <i class="fas fa-cog"></i>
-                    <span id="formToggle">SHOW ADVANCED OPTIONS</span>
-                </button>
             </div>
             <div class="contact-content">
                 <div class="contact-form">
@@ -1530,7 +1517,6 @@
                                     <option value="hacker">⚡ Hacker - I want to hack/create with you</option>
                             </select>
                         </div>
-                        <div id="advancedFormFields" style="display: none;">
                         <div class="form-group">
                                 <label for="roles" class="punk-label">
                                     <i class="fas fa-user-tag"></i>
@@ -1829,7 +1815,6 @@
                                     I consent to the processing of my personal data for event organization purposes (GDPR Art. 6(1)(a)) *
                                 </label>
                             </div>
-                        </div>
                             <button type="submit" class="punk-button punk-button-primary">
                                 <i class="fas fa-rocket"></i>
                                 JOIN THE REVOLUTION
@@ -2200,18 +2185,6 @@
             }
         }
 
-        function toggleAdvancedForm() {
-            const content = document.getElementById('advancedFormFields');
-            const toggle = document.getElementById('formToggle');
-            
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-                toggle.textContent = 'HIDE ADVANCED OPTIONS';
-            } else {
-                content.style.display = 'none';
-                toggle.textContent = 'SHOW ADVANCED OPTIONS';
-            }
-        }
         </script>
     
     <script src="script.js"></script>
