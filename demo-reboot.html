@@ -1203,6 +1203,25 @@
                 </div>
 
             </div>
+            
+            <!-- ==================== QUICK INFO TOGGLE ==================== -->
+            <div class="quick-info-section" style="margin: 2rem 0;">
+                <button class="punk-button" onclick="toggleQuickInfo()" style="margin-bottom: 1rem;">
+                    <i class="fas fa-info-circle"></i>
+                    <span id="quickInfoToggle">SHOW EVENT DETAILS</span>
+                </button>
+                <div id="quickInfoContent" class="punk-card" style="display: none; margin-top: 1rem;">
+                    <h4 class="punk-accent" style="margin-bottom: 1rem;">🚪 DOORS OPEN</h4>
+                    <p><strong>Friday 24.10.2025 16:00 - Sunday 26.10.2025 12:00</strong></p>
+                    <p><strong>Location:</strong> Tampere Nokia Arena - Paidia</p>
+                    <p><strong>Price:</strong> COMPLETELY FREE EVENT</p>
+                    <div style="margin-top: 1rem;">
+                        <p><strong>Need help?</strong></p>
+                        <a href="https://discord.gg/pTdzDHC5ax" class="punk-button" style="margin: 0.5rem;">Discord</a>
+                        <a href="https://wa.me/358403075232" class="punk-button" style="margin: 0.5rem;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
             <!-- ==================== OFFICIAL LOGO SECTION ==================== -->
             <div class="official-logo-section">
                 <div class="punk-card" style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1)); border: 2px solid rgba(0, 255, 255, 0.5);">
@@ -1343,7 +1362,12 @@
             <div class="section-header">
                 <h2>SPONSOR THE REVOLUTION</h2>
                 <p>Fuel the Renaissance of Attitude</p>
+                <button class="punk-button" onclick="toggleSponsorDetails()" style="margin-top: 1rem;">
+                    <i class="fas fa-handshake"></i>
+                    <span id="sponsorToggle">LEARN MORE ABOUT SPONSORING</span>
+                </button>
             </div>
+            <div id="sponsorDetails" class="sponsor-details" style="display: none;">
             <div class="about-content">
                 <div class="about-text">
                     <div class="punk-card" style="margin-bottom: 0.5rem;">
@@ -1453,6 +1477,7 @@
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     </section>
 
@@ -1462,6 +1487,10 @@
             <div class="section-header">
                 <h2>JOIN THE REVOLUTION</h2>
                 <p>Secure your spot at the Renaissance of Attitude</p>
+                <button class="punk-button" onclick="toggleAdvancedForm()" style="margin-top: 1rem;">
+                    <i class="fas fa-cog"></i>
+                    <span id="formToggle">SHOW ADVANCED OPTIONS</span>
+                </button>
             </div>
             <div class="contact-content">
                 <div class="contact-form">
@@ -1501,6 +1530,7 @@
                                     <option value="hacker">⚡ Hacker - I want to hack/create with you</option>
                             </select>
                         </div>
+                        <div id="advancedFormFields" style="display: none;">
                         <div class="form-group">
                                 <label for="roles" class="punk-label">
                                     <i class="fas fa-user-tag"></i>
@@ -1799,6 +1829,7 @@
                                     I consent to the processing of my personal data for event organization purposes (GDPR Art. 6(1)(a)) *
                                 </label>
                             </div>
+                        </div>
                             <button type="submit" class="punk-button punk-button-primary">
                                 <i class="fas fa-rocket"></i>
                                 JOIN THE REVOLUTION
@@ -1807,69 +1838,7 @@
                     </div>
                 </div>
                 
-                <!-- EVENT DETAILS SECTION -->
-                <div class="contact-info" style="margin-top: 3rem;">
-                    <div class="punk-card" style="margin-bottom: 1rem;">
-                        <h3 class="punk-accent" style="font-size: 1.5rem; margin-bottom: 1rem; text-transform: uppercase;">EVENT DETAILS</h3>
-                        <div class="contact-item" style="margin-bottom: 1rem;">
-                            <i class="fas fa-calendar" style="color: #00ffff; margin-right: 0.5rem;"></i>
-                        <div>
-                                <strong style="color: #ff0080;">Date:</strong> October 24-26, 2025
-                        </div>
-                    </div>
-                        <div class="contact-item" style="margin-bottom: 1rem;">
-                            <i class="fas fa-clock" style="color: #00ffff; margin-right: 0.5rem;"></i>
-                        <div>
-                                <strong style="color: #ff0080;">Time:</strong> 24.10.2025 1600 - 26.10.2025 1200
-                        </div>
-                    </div>
-                        <div class="contact-item" style="margin-bottom: 1rem;">
-                            <i class="fas fa-map-marker-alt" style="color: #00ffff; margin-right: 0.5rem;"></i>
-                        <div>
-                                <strong style="color: #ff0080;">Location:</strong> Tampere Nokia Arena - Paidia<br>
-                            Tampere, Finland
-                        </div>
-                    </div>
-                        <div class="contact-item" style="margin-bottom: 1rem;">
-                            <i class="fas fa-ticket-alt" style="color: #00ffff; margin-right: 0.5rem;"></i>
-                        <div>
-                                <strong style="color: #ff0080;">Price:</strong> FREE EVENT<br>
-                        </div>
-                        </div>
-                        <div class="contact-item" style="margin-bottom: 1rem; padding: 1rem; background: linear-gradient(135deg, rgba(255, 255, 0, 0.1), rgba(255, 200, 0, 0.05)); border: 1px solid rgba(255, 255, 0, 0.3); border-radius: 10px;">
-                            <i class="fas fa-heart" style="color: #ffff00; margin-right: 0.5rem;"></i>
-                        <div>
-                                <strong style="color: #ffff00;">COMPLETELY FREE EVENT - Sponsors help us make it even better!</strong>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    <div class="punk-card" style="margin-bottom: 1rem;">
-                        <h3 class="punk-highlight" style="font-size: 1.3rem; margin-bottom: 1rem; text-transform: uppercase;">WHAT TO EXPECT</h3>
-                        <ul class="punk-list" style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 0.5rem;">
-                                <i class="fas fa-gamepad" style="color: #ff0080; margin-right: 0.5rem;"></i>
-                                Non-stop gaming and streaming
-                            </li>
-                            <li style="margin-bottom: 0.5rem;">
-                                <i class="fas fa-code" style="color: #00ffff; margin-right: 0.5rem;"></i>
-                                Non-stop creation and demoing
-                            </li>
-                            <li style="margin-bottom: 0.5rem;">
-                                <i class="fas fa-microphone" style="color: #ffff00; margin-right: 0.5rem;"></i>
-                                Ad hoc speeches and presentations
-                            </li>
-                            <li style="margin-bottom: 0.5rem;">
-                                <i class="fas fa-users" style="color: #ff0080; margin-right: 0.5rem;"></i>
-                                Open doors - just sign up!
-                            </li>
-                            <li>
-                                <i class="fas fa-lightbulb" style="color: #00ffff; margin-right: 0.5rem;"></i>
-                                Tons of creativity and innovation
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <!-- EVENT DETAILS SECTION - MOVED TO COLLAPSIBLE QUICK INFO -->
             </div>
         </div>
     </section>
@@ -2203,6 +2172,46 @@
         // Initialize mobile detection when page loads
         document.addEventListener('DOMContentLoaded', detectMobile);
         window.addEventListener('resize', detectMobile);
+
+        // Collapsible sections functions
+        function toggleQuickInfo() {
+            const content = document.getElementById('quickInfoContent');
+            const toggle = document.getElementById('quickInfoToggle');
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                toggle.textContent = 'HIDE EVENT DETAILS';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = 'SHOW EVENT DETAILS';
+            }
+        }
+
+        function toggleSponsorDetails() {
+            const content = document.getElementById('sponsorDetails');
+            const toggle = document.getElementById('sponsorToggle');
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                toggle.textContent = 'HIDE SPONSOR DETAILS';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = 'LEARN MORE ABOUT SPONSORING';
+            }
+        }
+
+        function toggleAdvancedForm() {
+            const content = document.getElementById('advancedFormFields');
+            const toggle = document.getElementById('formToggle');
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                toggle.textContent = 'HIDE ADVANCED OPTIONS';
+            } else {
+                content.style.display = 'none';
+                toggle.textContent = 'SHOW ADVANCED OPTIONS';
+            }
+        }
         </script>
     
     <script src="script.js"></script>
