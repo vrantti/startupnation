@@ -975,6 +975,18 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Discord Banner Animation */
+        @keyframes discordPulse {
+            0% { 
+                box-shadow: 0 0 20px rgba(88, 101, 242, 0.6);
+                transform: scale(1);
+            }
+            100% { 
+                box-shadow: 0 0 30px rgba(88, 101, 242, 0.9), 0 0 40px rgba(114, 137, 218, 0.4);
+                transform: scale(1.02);
+            }
+        }
+
         /* Responsive Form Styles */
         @media (max-width: 768px) {
             .punk-checkboxes {
@@ -1694,6 +1706,51 @@
                 </div>
                 
                 <!-- EVENT DETAILS SECTION - MOVED TO COLLAPSIBLE QUICK INFO -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Organizer Section -->
+    <section class="organizer-section" style="background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1)); padding: 3rem 0; border-top: 2px solid rgba(0, 255, 255, 0.3);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="color: #00ffff; text-shadow: 0 0 20px rgba(0, 255, 255, 0.8); margin-bottom: 1rem;">MEET THE ORGANIZER</h2>
+                <p style="color: #e0e0e0; font-size: 1.2rem;">The person behind Demo Reboot 2025</p>
+            </div>
+            
+            <div class="organizer-card" style="background: rgba(10, 10, 20, 0.9); border: 2px solid rgba(0, 255, 255, 0.5); border-radius: 20px; padding: 2rem; text-align: center; max-width: 600px; margin: 0 auto; box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);">
+                
+                <!-- Discord First Banner -->
+                <div class="discord-first-banner" style="background: linear-gradient(135deg, #5865F2, #7289DA); border: 2px solid #ffffff; border-radius: 15px; padding: 1rem; margin-bottom: 2rem; animation: discordPulse 2s ease-in-out infinite alternate;">
+                    <h3 style="color: #ffffff; margin: 0; font-size: 1.5rem; text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);">
+                        🎮 GO TO DISCORD FIRST! 🎮
+                    </h3>
+                    <p style="color: #ffffff; margin: 0.5rem 0 0 0; font-size: 1.1rem;">
+                        <a href="https://discord.gg/pTdzDHC5ax" style="color: #ffffff; text-decoration: underline; font-weight: bold;">https://discord.gg/pTdzDHC5ax</a>
+                    </p>
+                </div>
+                
+                <!-- Organizer Image -->
+                <div class="organizer-image" style="margin-bottom: 1.5rem;">
+                    <img src="images/theorganizer.gif" alt="Antti Martikainen" style="max-width: 200px; max-height: 200px; border-radius: 50%; border: 3px solid rgba(0, 255, 255, 0.6); box-shadow: 0 0 20px rgba(0, 255, 255, 0.4); object-fit: cover;">
+                </div>
+                
+                <!-- Organizer Info -->
+                <div class="organizer-info">
+                    <h3 style="color: #00ffff; font-size: 1.8rem; margin-bottom: 1rem; text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);">Antti Martikainen</h3>
+                    <p style="color: #ff0080; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600;">Volunteer</p>
+                    
+                    <div class="contact-info" style="background: rgba(0, 0, 0, 0.5); border-radius: 10px; padding: 1rem; margin-top: 1rem;">
+                        <p style="color: #e0e0e0; margin: 0.5rem 0; font-size: 1.1rem;">
+                            <i class="fas fa-phone" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                            <a href="tel:+358403075232" style="color: #00ffff; text-decoration: none;">+358 40 307 5232</a>
+                        </p>
+                        <p style="color: #e0e0e0; margin: 0.5rem 0; font-size: 1.1rem;">
+                            <i class="fas fa-envelope" style="color: #00ffff; margin-right: 0.5rem;"></i>
+                            <a href="mailto:mardigain@gmail.com" style="color: #00ffff; text-decoration: none;">mardigain@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
