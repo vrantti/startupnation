@@ -560,6 +560,26 @@
                 padding: 1rem 0 !important;
             }
 
+            /* NEXR funding section mobile optimization */
+            .nexr-funding-section {
+                min-height: 180px !important;
+                padding: 1rem !important;
+            }
+
+            .nexr-funding-section img[alt="NEXR"] {
+                max-height: 60px !important;
+            }
+
+            .nexr-funding-section img[alt="European Union"] {
+                max-width: 50px !important;
+                max-height: 30px !important;
+            }
+
+            .nexr-funding-section p {
+                font-size: 0.6rem !important;
+                line-height: 1.1 !important;
+            }
+
             .footer-logo {
                 min-height: 90px !important;
                 padding: 1.2rem !important;
@@ -1330,9 +1350,20 @@
                         <div style="position: absolute; top: -10px; right: -10px; background: linear-gradient(45deg, #ff0080, #00ffff); color: #000; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: 900; text-transform: uppercase; animation: tresBadge 1.5s ease-in-out infinite;">FEATURED</div>
                     </div>
 
-                    <!-- NEXR Logo -->
-                    <div class="sponsor-logo" style="background: rgba(0, 0, 0, 0.8); border: 2px solid rgba(0, 255, 255, 0.6); border-radius: 15px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; height: 120px; display: flex; align-items: center; justify-content: center;">
-                        <img src="images/NEXR.png" alt="NEXR" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));">
+                    <!-- NEXR Logo with EU Funding -->
+                    <div class="sponsor-logo nexr-funding-section" style="background: rgba(0, 0, 0, 0.8); border: 2px solid rgba(0, 255, 255, 0.6); border-radius: 15px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <!-- NEXR Logo -->
+                        <div style="margin-bottom: 1rem;">
+                            <img src="images/NEXR.png" alt="NEXR" style="max-width: 100%; max-height: 80px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));">
+                        </div>
+                        <!-- EU Logo -->
+                        <div style="margin-bottom: 0.8rem;">
+                            <img src="images/eu.png" alt="European Union" style="max-width: 60px; max-height: 40px; object-fit: contain; filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.4));">
+                        </div>
+                        <!-- Funding Text -->
+                        <p style="font-size: 0.7rem; color: #e0e0e0; line-height: 1.2; margin: 0; text-align: center; opacity: 0.8;">
+                            This Project was supported by NEXR – Next Extended Reality (funded by NextGenerationEU and Business Finland, co-research project number 5703/31/2023).
+                        </p>
                     </div>
 
                     <!-- VD_BR_Default Logo -->
