@@ -1148,11 +1148,8 @@
 </head>
 <body class="demo-reboot-page">
     <!-- Kick.com Streaming Notification -->
-    <div class="kick-streaming-notification" style="position: fixed; top: 50%; right: 20px; transform: translateY(-50%); z-index: 1000; background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95)); border: 2px solid rgba(83, 252, 24, 0.8); border-radius: 15px; padding: 1rem; box-shadow: 0 0 25px rgba(83, 252, 24, 0.6); animation: kickPulse 2s ease-in-out infinite alternate; max-width: 200px;">
-        <!-- Close button -->
-        <button onclick="document.querySelector('.kick-streaming-notification').style.display='none'" style="position: absolute; top: 8px; right: 8px; background: rgba(255, 255, 255, 0.3); color: #ffffff; border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; font-size: 12px; font-weight: bold; z-index: 1001; display: flex; align-items: center; justify-content: center; transition: background 0.2s ease;">×</button>
-        
-        <div style="text-align: center; padding-top: 5px;">
+    <div class="kick-streaming-notification" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95)); border: 2px solid rgba(83, 252, 24, 0.8); border-radius: 15px; padding: 1rem; box-shadow: 0 0 25px rgba(83, 252, 24, 0.6); animation: kickPulse 2s ease-in-out infinite alternate; max-width: 300px; width: 90%;">
+        <div style="text-align: center;">
             <div style="color: #53fc18; font-weight: 900; font-size: 1.1rem; margin-bottom: 0.3rem; text-shadow: 0 0 10px rgba(83, 252, 24, 0.8);">
                 📺 LIVE STREAM
             </div>
@@ -1197,14 +1194,15 @@
             background: rgba(255, 255, 255, 0.5) !important;
         }
         
-        /* Mobile responsive - make it less intrusive */
+        /* Mobile responsive - bottom positioning */
         @media (max-width: 768px) {
             .kick-streaming-notification {
-                right: 10px !important;
-                max-width: 150px !important;
+                bottom: 10px !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                max-width: 280px !important;
+                width: 95% !important;
                 padding: 0.8rem !important;
-                top: 20px !important;
-                transform: none !important;
                 font-size: 0.8rem !important;
             }
             
