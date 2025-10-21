@@ -1147,90 +1147,8 @@
     </style>
 </head>
 <body class="demo-reboot-page">
-    <!-- Kick.com Streaming Notification -->
-    <div class="kick-streaming-notification" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95)); border: 2px solid rgba(83, 252, 24, 0.8); border-radius: 15px; padding: 1rem; box-shadow: 0 0 25px rgba(83, 252, 24, 0.6); animation: kickPulse 2s ease-in-out infinite alternate; max-width: 300px; width: 90%;">
-        <div style="text-align: center;">
-            <div style="color: #53fc18; font-weight: 900; font-size: 1.1rem; margin-bottom: 0.3rem; text-shadow: 0 0 10px rgba(83, 252, 24, 0.8);">
-                📺 LIVE STREAM
-            </div>
-            <div style="color: #ffffff; font-weight: 600; font-size: 0.8rem; margin-bottom: 0.5rem; opacity: 0.9;">
-                Starts FRIDAY 17:00
-            </div>
-            <div style="color: #ffffff; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.8rem;">
-                Watch the event live!
-            </div>
-            <a href="https://kick.com/virtualdawn" target="_blank" style="display: inline-block; background: rgba(83, 252, 24, 0.2); color: #53fc18; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.8rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(83, 252, 24, 0.5);">
-                @virtualdawn
-            </a>
-        </div>
-    </div>
 
     <!-- Kick.com Animation -->
-    <style>
-        @keyframes kickPulse {
-            0% { 
-                box-shadow: 0 0 25px rgba(83, 252, 24, 0.8);
-                transform: translateY(-50%) scale(1);
-            }
-            100% { 
-                box-shadow: 0 0 35px rgba(83, 252, 24, 1), 0 0 50px rgba(0, 255, 0, 0.6);
-                transform: translateY(-50%) scale(1.02);
-            }
-        }
-        
-        .kick-streaming-notification:hover {
-            transform: translateY(-50%) scale(1.05) !important;
-            box-shadow: 0 0 35px rgba(83, 252, 24, 0.8), 0 0 50px rgba(83, 252, 24, 0.4) !important;
-        }
-        
-        .kick-streaming-notification a:hover {
-            background: rgba(83, 252, 24, 0.4) !important;
-            color: #ffffff !important;
-            transform: scale(1.1);
-            border-color: rgba(83, 252, 24, 0.8) !important;
-        }
-        
-        .kick-streaming-notification button:hover {
-            background: rgba(255, 255, 255, 0.5) !important;
-        }
-        
-        /* Mobile responsive - bottom positioning */
-        @media (max-width: 768px) {
-            .kick-streaming-notification {
-                bottom: 10px !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                max-width: 280px !important;
-                width: 95% !important;
-                padding: 0.8rem !important;
-                font-size: 0.8rem !important;
-            }
-            
-            .kick-streaming-notification div[style*="font-size: 1.1rem"] {
-                font-size: 0.9rem !important;
-            }
-            
-            .kick-streaming-notification div[style*="font-size: 0.8rem"] {
-                font-size: 0.7rem !important;
-            }
-            
-            .kick-streaming-notification div[style*="font-size: 0.9rem"] {
-                font-size: 0.8rem !important;
-            }
-            
-            .kick-streaming-notification a {
-                font-size: 0.7rem !important;
-                padding: 0.4rem 0.8rem !important;
-            }
-        }
-        
-        /* Very small screens - hide completely */
-        @media (max-width: 480px) {
-            .kick-streaming-notification {
-                display: none !important;
-            }
-        }
-    </style>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -2226,5 +2144,21 @@
         </script>
     
     <script src="script.js"></script>
+
+    <!-- Kick.com Streaming Notification - Outside Main Content -->
+    <div class="kick-streaming-notification" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95)); border: 2px solid rgba(83, 252, 24, 0.8); border-radius: 15px; padding: 1rem; margin: 2rem auto; max-width: 400px; text-align: center; box-shadow: 0 0 25px rgba(83, 252, 24, 0.6);">
+        <div style="color: #53fc18; font-weight: 900; font-size: 1.2rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px rgba(83, 252, 24, 0.8);">
+            📺 LIVE STREAM
+        </div>
+        <div style="color: #ffffff; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.5rem; opacity: 0.9;">
+            Starts FRIDAY 17:00
+        </div>
+        <div style="color: #ffffff; font-weight: 700; font-size: 1rem; margin-bottom: 1rem;">
+            Watch the event live!
+        </div>
+        <a href="https://kick.com/virtualdawn" target="_blank" style="display: inline-block; background: rgba(83, 252, 24, 0.2); color: #53fc18; padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 800; font-size: 0.9rem; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; border: 1px solid rgba(83, 252, 24, 0.5);">
+            @virtualdawn
+        </a>
+    </div>
 </body>
 </html>
